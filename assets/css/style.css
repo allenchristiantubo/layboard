@@ -1,0 +1,106 @@
+#loginsection{
+    background-image: url("../images/LoginBackground.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#registrationsection{
+    background-image:url("../images/RegistrationBackground.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.bg-main
+{
+    background:#FAFAFA;
+}
+
+.logo-word
+{
+    background-image: url("../images/Layboard Logo.png");
+    background-size: cover;
+    width:100%;
+    height:55px;
+}
+
+.btn-main {
+    color: #fff;
+    background-color: #75BA40;
+    border-color: #75BA40;
+    font-family: Arial Rounded MT;
+}
+  
+.btn-main:hover {
+    color: #fff;
+    background-color: #5E9736;
+    border-color: #5E9736;
+ }
+  
+.btn-main:focus, .btn-main.focus {
+color: #fff;
+background-color: #5E9736;
+border-color: #5E9736;
+box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+
+.btn-main.disabled, .btn-main:disabled {
+color: #fff;
+background-color: #5E9736;
+border-color: #5E9736;
+}
+
+.btn-main:not(:disabled):not(.disabled):active, .btn-main:not(:disabled):not(.disabled).active,
+.show > .btn-main.dropdown-toggle {
+color: #fff;
+background-color: #5E9736;
+border-color: #5E9736;
+}
+
+.btn-main:not(:disabled):not(.disabled):active:focus, .btn-main:not(:disabled):not(.disabled).active:focus,
+.show > .btn-main.dropdown-toggle:focus {
+box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+
+.btn-sub {
+    color: #fff;
+    background-color: #194055;
+    border-color: #194055;
+    font-family: Arial Rounded MT;
+  }
+  
+  .btn-sub:hover {
+    color: #fff;
+    background-color: #102A38;
+    border-color: #102A38;
+  }
+  
+  .btn-sub:focus, .btn-sub.focus {
+    color: #fff;
+    background-color: #102A38;
+    border-color: #102A38;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  }
+  
+  .btn-sub.disabled, .btn-sub:disabled {
+    color: #fff;
+    background-color: #102A38;
+    border-color: #102A38;
+  }
+  
+  .btn-sub:not(:disabled):not(.disabled):active, .btn-sub:not(:disabled):not(.disabled).active,
+  .show > .btn-sub.dropdown-toggle {
+    color: #fff;
+    background-color: #194055;;
+    border-color: #194055;;
+  }
+  
+  .btn-sub:not(:disabled):not(.disabled):active:focus, .btn-sub:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-sub.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  }
+
+  .text-green{
+    color:#75BA40;
+  }
