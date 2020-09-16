@@ -1,0 +1,6 @@
+CRITICAL - 2020-09-13 16:20:02 --> Call to undefined function App\Controllers\show_404()
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\Pages->view()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

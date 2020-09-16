@@ -1,0 +1,131 @@
+CRITICAL - 2020-09-16 10:27:53 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:28:02 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:50:33 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:51:27 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:51:30 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:53:23 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:53:33 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:55:41 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:55:47 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-16 10:56:51 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists('allentubo09@gma...')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:00:20 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists('allentubo09@gma...')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:00:28 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists(NULL)
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:15:28 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists('a')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:15:34 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists(NULL)
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:20:13 --> Call to a member function from() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists('a')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:20:22 --> Call to a member function from() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists(NULL)
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 11:20:59 --> Call to a member function from() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(11): App\Models\Freelancers_model->email_exists('a')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 12:51:28 --> Call to a member function query() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(30): App\Models\Freelancers_model->login('allentubo09@gma...', 'zsbalgioigo0609')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->login()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 13:45:34 --> Call to a member function query() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\EmployersController.php(20): App\Models\Employers_model->login('allentubo09@yah...', 'zsbalgioigo')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\EmployersController->login()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-16 13:45:39 --> Call to a member function query() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\EmployersController.php(20): App\Models\Employers_model->login(NULL, NULL)
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\EmployersController->login()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EmployersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

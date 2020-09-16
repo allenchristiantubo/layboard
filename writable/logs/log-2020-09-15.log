@@ -1,0 +1,247 @@
+CRITICAL - 2020-09-15 17:54:36 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 17:54:40 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 17:56:58 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 17:57:09 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 17:57:22 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:00:54 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:01:03 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:01:07 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:04:00 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:09:42 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:10:31 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:10:43 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:14:52 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:16:31 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:19:55 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:19:56 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:19:57 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:19:57 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:19:57 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:25:44 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:29:39 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:31:12 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:31:17 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:35:21 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:35:28 --> Class 'App\Controllers\Frealancers_model' not found
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:50:28 --> Call to a member function getPost() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:50:46 --> Call to a member function getPost() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:51:10 --> Call to a member function getPost() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 18:56:02 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:21:01 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:25:18 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:25:42 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:32:37 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:37:08 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:42:40 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:44:46 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:48:13 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:48:26 --> Too few arguments to function App\Controllers\FreelancersController::__construct(), 0 passed in D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php on line 890 and exactly 1 expected
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(890): App\Controllers\FreelancersController->__construct()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(399): CodeIgniter\CodeIgniter->createController()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 19:53:39 --> Call to a member function selectCount() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\app\Controllers\FreelancersController.php(12): App\Models\Freelancers_model->email_exists('a')
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-15 19:56:07 --> Call to a member function email_exists() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-15 20:13:03 --> Call to a member function database() on null
+#0 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(918): App\Controllers\FreelancersController->email_exists()
+#1 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FreelancersController))
+#2 D:\ALLEN\XAMPP\htdocs\layboardv2\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboardv2\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
