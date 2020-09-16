@@ -68,7 +68,7 @@
                                 <button class="btn btn-sub btn-block">Freelancer</button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-sub btn-block">Employer</button>
+                                <button class="btn btn-outline-sub btn-block">Employer</button>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-md-6 mx-auto">
                     <hr>
-                    <small>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS Notifications from us and can opt out any time.</small>
+                    <small>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.</small>
                     <button class="btn btn-main btn-block">Sign Up</button>
                     </div>
                 </div>
