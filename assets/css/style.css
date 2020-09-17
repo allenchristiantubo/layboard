@@ -104,6 +104,7 @@ box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
   .btn-outline-sub {
     color: #194055;
     border-color: #194055;
+    font-family: Arial Rounded MT;
   }
   
   .btn-outline-sub:hover {
@@ -136,3 +137,26 @@ box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
   .text-green{
     color:#75BA40;
   }
+
+
+  /* FOR TEXTBOXES or INPUT BOXES  */
+  .was-validated .custom-select:valid {
+    background-image: none;
+  }
+  
+  
+  .was-validated .custom-select:invalid {
+  background-image: none;
+  }
+
+  .form-control.is-invalid, .form-control.is-valid{
+      background-image: none;
+  }
+
+  .invalid-feedback.feedback-icon {
+    position: absolute;
+    width: auto;
+    bottom: 10px;
+    right: 10px;
+    margin-top: 0;
+}

@@ -21,7 +21,7 @@ class Freelancers_model extends Model
     {
         $db = db_connect();
         
-        $sql = "SELECT * FROM freelancers AS f JOIN freelancers_status AS fs ON  fs.freelancer_id = f.freelancer_id JOIN freelancers_info AS fi ON fi.freelancer_id = f.freelancer_id WHERE f.email_address = ? AND fs.activation_status = 1";
+        $sql = "SELECT * FROM freelancers AS f JOIN freelancers_status AS fs ON  fs.freelancer_id = f.freelancer_id WHERE f.email_address = ? AND fs.activation_status = 1";
         
         $query = $db->query($sql, [$email]);
         $row = $query->getRowArray();

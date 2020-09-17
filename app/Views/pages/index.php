@@ -25,7 +25,7 @@
                         <button class="btn btn-main btn-block" id="btnLogin">Login</button>
                         <a href="" class="btn btn-link btn-block">Forgot password?</a>
                         <hr>
-                        <button class="btn btn-sub btn-block">Create Account</button>
+                        <button class="btn btn-sub btn-block" id="btnCreateAccount">Create Account</button>
                     </div>
                 </div>
             </div>
@@ -42,21 +42,25 @@
                 <div class="row">
                     <div class="col-md-6 mx-auto form-group">
                         <input type="text" class="form-control" placeholder="Email address" id="txtRegisterEmail">
+                        <div class="invalid-feedback" id="txtRegisterEmailValidation"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto form-group">
                         <input type="password" class="form-control" placeholder="Password" id="txtRegisterPassword">
+                        <div class="invalid-feedback" id="txtRegisterPasswordValidation"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto">
                         <div class="form-row">
                             <div class="col form-group">
-                            <input type="text" class="form-control" placeholder="Firstname" id="txtRegisterEmail">
+                                <input type="text" class="form-control" placeholder="Firstname" id="txtRegisterFirstname">
+                                <div class="invalid-feedback" id="txtRegisterFirstnameValidation"></div>
                             </div>
                             <div class="col form-group">
-                            <input type="text" class="form-control" placeholder="Lastname" id="txtRegisterEmail">
+                                <input type="text" class="form-control" placeholder="Lastname" id="txtRegisterLastname">
+                                <div class="invalid-feedback" id="txtRegisterLastnameValidation"></div>
                             </div>
                         </div>
                     </div>
@@ -65,19 +69,25 @@
                     <div class="col-md-6 mx-auto">
                         <div class="form-row">
                             <div class="col">
-                                <button class="btn btn-sub btn-block">Freelancer</button>
+                                <button class="btn btn-outline-sub btn-block" id="btnFreelancer">Freelancer</button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-outline-sub btn-block">Employer</button>
+                                <button class="btn btn-outline-sub btn-block" id="btnEmployer">Employer</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto form-group">
+                        <input type="hidden" class="form-control is-invalid" id="txtRegisterUserType">
+                        <div class="invalid-feedback" id="txtRegisterUserTypeValidation"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto">
                     <hr>
                     <small>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.</small>
-                    <button class="btn btn-main btn-block">Sign Up</button>
+                    <button class="btn btn-main btn-block" id="btnSignUp">Sign Up</button>
                     </div>
                 </div>
                 
@@ -177,8 +187,164 @@ $(document).ready(function() {
         }
     });
 
-    $("#btnCreateAccount").click(function(){
+    $("#btnCreateAccount").click(function(e){
         e.preventDefault();
+        $.fn.pagepiling.moveTo(2);
+    });
+
+    $("#txtRegisterEmail").blur(function(){
+        var email = $("#txtRegisterEmail").val();
+        if(email == "" || (!email.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterEmail").addClass("is-invalid");
+            $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
+        }
+    }).focus(function(){
+        $("#txtRegisterEmail").removeClass("is-invalid");
+        $("#txtRegisterEmailValidation").html('');
+    });
+
+    $("#txtRegisterPassword").blur(function(){
+        var password = $("#txtRegisterPassword").val();
+        if(password == "" || (!password.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterPassword").addClass("is-invalid");
+            $("#txtRegisterPasswordValidation").html('<i class="fas fa-exclamation-circle"></i> Password is required.');
+        }
+    }).focus(function(){
+        $("#txtRegisterPassword").removeClass("is-invalid");
+        $("#txtRegisterPasswordValidation").html('');
+    });
+
+    $("#txtRegisterFirstname").blur(function (){
+        var firstname = $("#txtRegisterFirstname").val();
+        if(firstname == "" || (!firstname.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterFirstname").addClass("is-invalid");
+            $("#txtRegisterFirstnameValidation").html('<i class="fas fa-exclamation-circle"></i> Firstname is required.');
+        }
+    }).focus(function(){
+        $("#txtRegisterFirstname").removeClass("is-invalid");
+        $("#txtRegisterFirstnameValidation").html('');
+    });
+
+    $("#txtRegisterLastname").blur(function (){
+        var lastname = $("#txtRegisterLastname").val();
+        if(lastname == "" || (!lastname.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterLastname").addClass("is-invalid");
+            $("#txtRegisterLastnameValidation").html('<i class="fas fa-exclamation-circle"></i> Lastname is required.')
+        }
+    }).focus(function(){
+        $("#txtRegisterLastname").removeClass("is-invalid");
+        $("#txtRegisterLastnameInvalid").html('');
+    });
+
+    $("#btnSignUp").click(function(e){
+        e.preventDefault();
+        var email = $("#txtRegisterEmail").val();
+        var password = $("#txtRegisterPassword").val();
+        var firstname = $("#txtRegisterFirstname").val();
+        var lastname = $("#txtRegisterLastname").val();
+        var usertype = $("#txtRegisterUserType").val();
+        var url;
+        var emailValidated = false, passwordValidated = false, firstnameValidated = false, lastnameValidated = false, usertypeValidate = false;
+
+        if(email == "" || (!email.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterEmail").addClass("is-invalid");
+            $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
+        }
+        else
+        {
+            emailValidated = true;
+        }
+        
+        if(password == "" || (!password.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterPassword").addClass("is-invalid");
+            $("#txtRegisterPasswordValidation").html('<i class="fas fa-exclamation-circle"></i> Password is required.');
+        }
+        else
+        {
+            passwordValidated = true;
+        }
+
+        if(firstname == "" || (!firstname.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterFirstname").addClass("is-invalid");
+            $("#txtRegisterFirstnameValidation").html('<i class="fas fa-exclamation-circle"></i> Firstname is required.');
+        }
+        else
+        {
+            firstnameValidated = true;
+        }
+
+        if(lastname == "" || (!lastname.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterLastname").addClass("is-invalid");
+            $("#txtRegisterLastnameValidation").html('<i class="fas fa-exclamation-circle"></i> Lastname is required.')  
+        }
+        else
+        {
+            lastnameValidated = true;
+        }
+
+        if(usertype == "" || (!usertype.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterUserType").addClass("is-invalid");
+            $("#txtRegisterUserTypeValidation").html('<i class="fas fa-exclamation-circle"></i> Account type is required.')
+        }
+        else
+        {
+            usertypeValidated = true;
+            if(usertype == "freelancer")
+            {
+                url = "/FreelancersController/create_account";
+            }
+            else if(usertype == "employer")
+            {
+                url = "/EmployersController/create_account";
+            }
+        }
+
+        if(emailValidated && passwordValidated && firstnameValidated && lastnameValidated && usertypeValidated)
+        {
+            $.ajax({
+                type: "POST",
+                url: baseURL + url,
+                data: {email:email,password:password,firstname:firstname,lastname:lastname},
+                dataType: "html",
+                success: function (response) {
+                    if(response)
+                    {
+                        
+                    }
+                }
+            });
+        }
+    });
+
+    $("#btnFreelancer").click(function(e){
+        e.preventDefault();
+        $("#txtRegisterUserType").val("freelancer");
+        $("#btnFreelancer").removeClass("btn-outline-sub");
+        $("#btnFreelancer").addClass("btn-sub");
+        $("#btnEmployer").removeClass("btn-sub");
+        $("#btnEmployer").addClass("btn-outline-sub");
+        $("#txtRegistrationUserType").removeClass("is-invalid");
+        $("#txtRegistrationUserTypeValidation").html('');
+    });
+
+    $("#btnEmployer").click(function(e){
+        e.preventDefault();
+        $("#txtRegisterUserType").val("employer");
+        $("#btnFreelancer").removeClass("btn-sub");
+        $("#btnFreelancer").addClass("btn-outline-sub");
+        $("#btnEmployer").removeClass("btn-outline-sub");
+        $("#btnEmployer").addClass("btn-sub");
+        $("#txtRegistrationUserType").removeClass("is-invalid");
+        $("#txtRegistrationUserTypeValidation").html('');
     });
     
     var attemptCounter = 0;
