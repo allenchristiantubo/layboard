@@ -1,23 +1,21 @@
 <?php
 
 ?>
-<div id="pagepiling">      
+<div id="header"><div class="logo-word ml-3"></div></div>
+<div id="pagepiling">
     <div class="section" id="loginsection">
         <div class="row">
             <div class="col-md-6 ml-auto">
-                <div class="row">
-                    <div class="col-md-6 mx-auto">
-                        <div class="logo-word"></div>
-                    </div>
-                </div>
                 <div class="row mt-3">
                     <div class="col-md-6 mx-auto form-group">
                         <input type="text" class="form-control" placeholder="Email address" id="txtLoginEmail">
+                        <div class="invalid-feedback" id="txtLoginEmailValidation"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto form-group">
                         <input type="password" class="form-control" placeholder="Password" id="txtLoginPassword">
+                        <div class="invalid-feedback" id="txtLoginPasswordValidation"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -87,12 +85,15 @@
                     <div class="col-md-6 mx-auto">
                     <hr>
                     <small>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.</small>
-                    <button class="btn btn-main btn-block" id="btnSignUp">Sign Up</button>
+                    <button class="btn btn-sub btn-block" id="btnSignUp">Sign Up</button>
                     </div>
                 </div>
                 
             </div>
         </div>
+    </div>
+    <div class="section" id="aboutsection">
+
     </div>
 </div>
 <?php if(is_array($load_js)):?>
@@ -104,10 +105,22 @@
 <script>
 
 $(document).ready(function() {
+
+    // $('#fullpage').fullpage({
+    //     //options here
+    //     anchors:['firstPage', 'secondPage'],
+	// 	autoScrolling:true,
+    //     scrollHorizontally: true,
+    //     navigation:true,
+    //     css3:true,
+	// });
+
+	//methods
+	// $.fn.fullpage.setAllowScrolling(false);
     $("#pagepiling").pagepiling({
         anchors: ['loginsection', 'registrationsection'],
-        sectionsColor: ['#F4F4F4', '#F4F4F4'],
-        css3:false,
+        sectionsColor: ['#F8F9FA', '#F8F9FA'],
+        css3:true,
         navigation: {
             'position': 'right'
         },
@@ -127,26 +140,30 @@ $(document).ready(function() {
         e.preventDefault();
         var email = $("#txtLoginEmail").val();
         var password = $("#txtLoginPassword").val();
-        
+        var emailValidation = false, passwordValidation = false;
+
         if(email == "" || (!email.replace(/\s/g, '').length))
         {
-            Swal.fire({
-                title:"<h3 class='text-danger'><i class='fas fa-times-circle'></i> Error!</h3>",
-                text:"Email is required.",
-                showConfirmButton:false,
-                timer: 2000
-            });
-        }
-        else if(password == "" || (!password.replace(/\s/g, '').length))
-        {
-            Swal.fire({
-                title:"<h3 class='text-danger'><i class='fas fa-times-circle'></i> Error!</h3>",
-                text:"Password is required.",
-                showConfirmButton:false,
-                timer: 2000
-            });
+            $("#txtLoginEmail").addClass("is-invalid");
+            $("#txtLoginEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
         }
         else
+        {
+            emailValidation = true;
+        }
+        
+        
+        if(password == "" || (!password.replace(/\s/g, '').length))
+        {
+            $("#txtLoginPassword").addClass("is-invalid");
+            $("#txtLoginPasswordValidation").html('<i class="fas fa-exclamation-circle"></i> Password is required.');
+        }
+        else
+        {
+            passwordValidation = true;
+        }
+        
+        if(emailValidation && passwordValidation)
         {
             $.ajax({
                 type: "POST",
@@ -310,18 +327,7 @@ $(document).ready(function() {
 
         if(emailValidated && passwordValidated && firstnameValidated && lastnameValidated && usertypeValidated)
         {
-            $.ajax({
-                type: "POST",
-                url: baseURL + url,
-                data: {email:email,password:password,firstname:firstname,lastname:lastname},
-                dataType: "html",
-                success: function (response) {
-                    if(response)
-                    {
-                        
-                    }
-                }
-            });
+            register(email, password, firstname, lastname, url);
         }
     });
 
@@ -332,8 +338,8 @@ $(document).ready(function() {
         $("#btnFreelancer").addClass("btn-sub");
         $("#btnEmployer").removeClass("btn-sub");
         $("#btnEmployer").addClass("btn-outline-sub");
-        $("#txtRegistrationUserType").removeClass("is-invalid");
-        $("#txtRegistrationUserTypeValidation").html('');
+        $("#txtRegisterUserType").removeClass("is-invalid");
+        $("#txtRegisterUserTypeValidation").html('');
     });
 
     $("#btnEmployer").click(function(e){
@@ -343,11 +349,36 @@ $(document).ready(function() {
         $("#btnFreelancer").addClass("btn-outline-sub");
         $("#btnEmployer").removeClass("btn-outline-sub");
         $("#btnEmployer").addClass("btn-sub");
-        $("#txtRegistrationUserType").removeClass("is-invalid");
-        $("#txtRegistrationUserTypeValidation").html('');
+        $("#txtRegisterUserType").removeClass("is-invalid");
+        $("#txtRegisterUserTypeValidation").html('');
     });
     
+
+    function register(email, password, firstname, lastname, url)
+    {
+        $.ajax({
+                type: "POST",
+                url: baseURL + url,
+                data: {email:email,password:password,firstname:firstname,lastname:lastname},
+                dataType: "html",
+                success: function (response) {
+                    if(response)
+                    {
+                        Swal.fire({
+                            title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
+                            text:"Account created successfully, registered as " + usertype + ".",
+                            showConfirmButton:false,
+                            timer:3000
+                        }).then(function(){
+                            $.fn.pagepiling.moveTo(1);
+                        });
+                    }
+                }
+            });
+    }
+
     var attemptCounter = 0;
+
     function login(email, password, usertype)
     {
         if(usertype == "freelancer")

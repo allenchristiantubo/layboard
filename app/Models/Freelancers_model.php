@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Libraries\Common_utils;
 class Freelancers_model extends Model
 {
     
@@ -39,6 +40,73 @@ class Freelancers_model extends Model
                 return false;
             }
         }
+    }
+
+    public function create_account($email, $password, $firstname, $lastname)
+    {
+        $db = db_connect();
+        $builder = $db->table('freelancers');
+        $common_utils = new Common_utils();
+
+        $validateFreelancerSlug = 0;
+        while($validateFreelancerSlug <= 0)
+        {
+            $freelancerSlug = $common_utils->GenerateRandomString(20);
+            $builder->where(['freelancer_slug' => $freelancerSlug]);
+            $count = $builder->countAllResults();
+            if($count == 0)
+            {
+                $validateFreelancerSlug = 1;
+            }
+        }
+
+        $validateFreelancerCode = 0;
+        while($validateFreelancerCode <= 0)
+        {
+            $freelancerCode = $common_utils->GenerateRandomString(8);
+            $builder->where(['freelancer_code' => $freelancerCode]);
+            $count = $builder->countAllResults();
+            if($count == 0)
+            {
+                $validateFreelancerCode = 1;
+            }
+        }
+
+        $newFreelancerDataParams = array(
+            "email_address" => $email,
+            "freelancer_pass" => md5($password),
+            "freelancer_slug" => $freelancerSlug,
+            "freelancer_code" => $freelancerCode,
+            "date_created" => date("Y-m-d")
+        );
+
+        $builder->insert($newFreelancerDataParams);
+        $freelancerID = $db->insertID();
+
+        $newFreelancerInfoDataParams = array(
+            "freelancer_id" => $freelancerID,
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "contact_no" => "",
+            "gender" => ""
+        );
+
+        $builder = $db->table("freelancers_info");
+        $builder->insert($newFreelancerInfoDataParams);
+
+        $newFreelancerStatusDataParams = array(
+            "freelancer_id" => $freelancerID,
+            "verification_status" => 0,
+            "activation_status" => 1,
+            "online_status" => 0,
+            "profile_status" => 0,
+            "payment_status" => 0
+        );
+
+        $builder = $db->table("freelancers_status");
+        $builder->insert($newFreelancerStatusDataParams);
+
+        return $db->affectedRows() > 0; 
     }
 }
 ?>

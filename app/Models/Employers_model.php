@@ -3,7 +3,7 @@
 use CodeIgniter\Model;
 class Employers_model extends Model
 {
-    public function email_exists($email)
+    public function email_exists($email) : bool
     {
         $db = db_connect();
         $builder = $db->table('employers');
@@ -16,7 +16,7 @@ class Employers_model extends Model
         return false;
     }
 
-    public function login($email, $password)
+    public function login($email, $password) : bool
     {
         $db = db_connect();
 
@@ -40,8 +40,10 @@ class Employers_model extends Model
         }
     }
 
-    public function register()
+    public function create_account($email, $password, $firstname, $lastname)
     {
+        $db = db_connect();
 
+        
     }
 }
