@@ -41,11 +41,11 @@ class Employers_model extends Model
         }
     }
 
-    public function create_account($email, $password, $firstname, $lastname)
+    public function create_account($email, $password, $firstname, $lastname) : bool
     {
         $db = db_connect();
 
-        $builder = $db->table('freelancers');
+        $builder = $db->table('employers');
         $common_utils = new Common_utils();
 
         $validateEmployerSlug = 0;
@@ -72,6 +72,15 @@ class Employers_model extends Model
             }
         }
 
-        
+        $newEmployerDataParams = array(
+            "email_address" => $email,
+            "employer_pass" => md5($password),
+            "employer_slug" => $employerSlug,
+            "employer_code" => $employerCode,
+            "date_created" => date("Y-m-d")
+        );
+
+        $builder->insert($newEmployerDataParams);
+        $employerID = $db->insertID();
     }
 }
