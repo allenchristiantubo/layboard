@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Libraries\Common_utils;
 class Employers_model extends Model
 {
     public function email_exists($email) : bool
@@ -43,6 +44,33 @@ class Employers_model extends Model
     public function create_account($email, $password, $firstname, $lastname)
     {
         $db = db_connect();
+
+        $builder = $db->table('freelancers');
+        $common_utils = new Common_utils();
+
+        $validateEmployerSlug = 0;
+        while($validateEmployerSlug <= 0)
+        {
+            $employerSlug = $common_utils->GenerateRandomString(20);
+            $builder->where(['freelancer_slug' => $employerSlug]);
+            $count = $builder->countAllResults();
+            if($count == 0)
+            {
+                $validateEmployerSlug = 1;
+            }
+        }
+
+        $validateEmployerCode = 0;
+        while($validateEmployerCode <= 0)
+        {
+            $employerCode = $common->utils->GenerateRandomString(8);
+            $builder->where(['freelancer_code' => $employerCode]);
+            $count = $buildr->countAllResults();
+            if($count == 0)
+            {
+                $validateEmployerCode = 1;
+            }
+        }
 
         
     }
