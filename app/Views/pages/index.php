@@ -209,6 +209,30 @@ $(document).ready(function() {
         $.fn.pagepiling.moveTo(2);
     });
 
+    $("#txtLoginEmail").blur(function(){
+        var email = $("#txtLoginEmail").val();
+        if(email == "" || (!email.replace(/\s/g,'').length))
+        {
+            $("#txtLoginEmail").addClass("is-invalid");
+            $("#txtLoginEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
+        }
+    }).focus(function(){
+        $("#txtLoginEmail").removeClass("is-invalid");
+        $("#txtLoginEmailValidation").html('');
+    });
+
+    $("#txtLoginPassword").blur(function(){
+        var password = $("#txtLoginPassword").val();
+        if(password == "" || (!password.replace(/\s/g,'').length))
+        {
+            $("#txtLoginPassword").addClass("is-invalid");
+            $("#txtLoginPasswordValidation").html('<i class="fas fa-exclamation-circle"></i> Password is required.');
+        }
+    }).focus(function(){
+        $("#txtLoginPassword").removeClass("is-invalid");
+        $("#txtLoginPasswordValidation").html('');
+    });
+
     $("#txtRegisterEmail").blur(function(){
         var email = $("#txtRegisterEmail").val();
         if(email == "" || (!email.replace(/\s/g,'').length))
