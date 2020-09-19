@@ -63,9 +63,9 @@ class Employers_model extends Model
         $validateEmployerCode = 0;
         while($validateEmployerCode <= 0)
         {
-            $employerCode = $common->utils->GenerateRandomString(8);
+            $employerCode = $common_utils->GenerateRandomString(8);
             $builder->where(['freelancer_code' => $employerCode]);
-            $count = $buildr->countAllResults();
+            $count = $builder->countAllResults();
             if($count == 0)
             {
                 $validateEmployerCode = 1;
@@ -82,5 +82,29 @@ class Employers_model extends Model
 
         $builder->insert($newEmployerDataParams);
         $employerID = $db->insertID();
+        
+        $newEmployerInfoDataParams = array(
+            "employer_id" => $employerID,
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "gender" => ""
+        );
+
+        $builder = $db->table("freelancers_info");
+        $builder->insert($newFreelancerInfoDataParams);
+
+        $newEmployerStatusDataParams = array(
+            "employer_id" => $employerID,
+            "verification_status" => 0,
+            "activation_status" => 1,
+            "online_status" => 0,
+            "profile_status" => 0,
+            "payment_status" => 0
+        );
+
+        $builder = $db->table("employer_status");
+        $builder->insert($newFreelancerStatusDataParams);
+
+        return $db->affectedRows() > 0; 
     }
 }

@@ -26,7 +26,7 @@ class EmployersController extends BaseController
     {
         $employersModel = new Employers_model();
 
-        $email = $this->$request->getVar('email');
+        $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
         $firstname = $this->request->getVar('firstname');
         $lastname = $this->request->getVar('lastname');

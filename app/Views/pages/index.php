@@ -2,41 +2,61 @@
 
 ?>
 <div id="header">
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="myNav">
-  <a class="navbar-brand" href="<?php echo base_url(); ?>"><div class="logo-word ml-3"></div></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav ml-auto" id="menu">
-      <li class="nav-item" data-menuanchor="aboutsection">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item" data-menuanchor="contactsection">
-          <a href="#contact" class="nav-link">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="myNav">
+    <a class="navbar-brand" href="<?php echo base_url(); ?>"><div class="logo-word ml-3"></div></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto" id="menu">
+        <li class="nav-item" data-menuanchor="introsection">
+            <a class="nav-link" href="#intro">About</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
 </div>
 
 <div id="fullpage">
+<div class="section" id="introsection">
+        <div class="slide" id="about-slide1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="h1">Online freelance platform for the tech industry.</div>
+                        <div class="h6 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
+                        <div class="row mt-5">
+                            <div class="col-md-4">
+                                <button class="btn btn-main btn-block" id="btnGoToLogin">Login</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-sub btn-block" id="btnGoToRegister">Join with us</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+        <div class="slide" id="about-slide2">
+
+        </div>
+    </div>
     <div class="section" id="loginsection">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 ml-auto">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-body">
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" placeholder="Email address" id="txtLoginEmail">
+                                <input type="text" class="form-control" placeholder="Email Address" id="txtLoginEmail">
                                 <div class="invalid-feedback" id="txtLoginEmailValidation"></div>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" id="txtLoginPassword">
                                 <div class="invalid-feedback" id="txtLoginPasswordValidation"></div>
                             </div>
-                            <button class="btn btn-sub btn-block" id="btnLogin">Login</button>
-                            <a href="" class="btn btn-link btn-block">Forgot password?</a>
+                            <button class="btn btn-sub btn-block" id="btnLogin">Log In</button>
+                            <a href="" class="btn btn-link btn-block">Forgot Password?</a>
                             <hr>
                             <div class="row justify-content-center">
                                 <button class="btn btn-main" id="btnCreateAccount">Create New Account</button>
@@ -51,7 +71,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card shadow">
                         <div class="card-body">
                             <h5 class="text-center">Join us on Layboard</h5>
                             <div class="form-group">
@@ -81,7 +101,7 @@
                                     <button class="btn btn-outline-sub btn-block" id="btnEmployer">Employer</button>
                                 </div>
                             </div>
-                            <div class="col-md-6 mx-auto form-group">
+                            <div class="form-group">
                                 <input type="hidden" class="form-control is-invalid" id="txtRegisterUserType">
                                 <div class="invalid-feedback" id="txtRegisterUserTypeValidation"></div>
                             </div>
@@ -92,17 +112,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="section" id="aboutsection">
-        <div class="slide" id="about-slide1">
-            <div class="container">
-                <h3>About Us</h3>
-                <h6>Layboard is an online freelance platform for the tech industry.</h6>
-            </div>
-        </div>
-        <div class="slide" id="about-slide2">
-
         </div>
     </div>
 </div>
@@ -118,12 +127,12 @@ $(document).ready(function() {
 
     $('#fullpage').fullpage({
         //options here
-        anchors:['login', 'registration','about'],
-        navigationTooltips: ['Login', 'Registration', 'About Us'],
+        anchors:['intro', 'login','register'],
         css3:true,
         navigation:true,
         menu:"#menu",
         // continuousVertical: true,
+        autoScrolling:true
 	});
 
 	//methods
@@ -217,8 +226,18 @@ $(document).ready(function() {
 
     $("#btnCreateAccount").click(function(e){
         e.preventDefault();
-        $.fn.pagepiling.moveTo(2);
+        $.fn.fullpage.moveTo(3);
     });
+
+    $("#btnGoToRegister").click(function(e){
+        e.preventDefault();
+        $.fn.fullpage.moveTo(3);
+    });
+
+    $("#btnGoToLogin").click(function(e){
+        e.preventDefault();
+        $.fn.fullpage.moveTo(2);
+    })
 
     $("#txtLoginEmail").blur(function(){
         var email = $("#txtLoginEmail").val();
@@ -401,11 +420,11 @@ $(document).ready(function() {
                     {
                         Swal.fire({
                             title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
-                            text:"Account created successfully, registered as " + usertype + ".",
+                            text:"Account created successfully.",
                             showConfirmButton:false,
                             timer:3000
                         }).then(function(){
-                            $.fn.pagepiling.moveTo(1);
+                            $.fn.fullpage.moveTo(2);
                         });
                     }
                 }
