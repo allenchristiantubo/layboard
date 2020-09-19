@@ -5,20 +5,20 @@ body, html {
 
 #loginsection{
     background-image: url("../images/LoginBackgroundv2-1920x1080.svg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #registrationsection{
     background-image:url("../images/RegistrationBackground.svg");
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
 }
 
 #about-slide1{
-  background-image:url("../images/RegistrationBackground.svg");
+  background-image:url("../images/AboutBackground.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
@@ -30,7 +30,7 @@ body, html {
 		height: 50px;
 		display:block;
 		width: 100%;
-		background: #fafafa;
+		background: transparent;
 		z-index:9;
 		color: #000;
 }

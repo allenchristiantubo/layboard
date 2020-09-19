@@ -2,7 +2,7 @@
 
 ?>
 <div id="header">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="myNav">
   <a class="navbar-brand" href="<?php echo base_url(); ?>"><div class="logo-word ml-3"></div></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,10 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-auto" id="menu">
       <li class="nav-item" data-menuanchor="aboutsection">
-        <a class="nav-link" href="#about">About Us</a>
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item" data-menuanchor="contactsection">
+          <a href="#contact" class="nav-link">Contact</a>
       </li>
     </ul>
   </div>
@@ -94,7 +97,8 @@
     <div class="section" id="aboutsection">
         <div class="slide" id="about-slide1">
             <div class="container">
-                Slide1
+                <h3>About Us</h3>
+                <h6>Layboard is an online freelance platform for the tech industry.</h6>
             </div>
         </div>
         <div class="slide" id="about-slide2">
@@ -118,7 +122,7 @@ $(document).ready(function() {
         navigationTooltips: ['Login', 'Registration', 'About Us'],
         css3:true,
         navigation:true,
-        menu:"#menu"
+        menu:"#menu",
         // continuousVertical: true,
 	});
 
