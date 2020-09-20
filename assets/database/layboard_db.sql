@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2020 at 01:34 PM
+-- Generation Time: Sep 20, 2020 at 02:28 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -80,7 +80,9 @@ CREATE TABLE `employers` (
 --
 
 INSERT INTO `employers` (`employer_id`, `email_address`, `employer_pass`, `employer_slug`, `employer_code`, `date_created`) VALUES
-(1, 'allentubo09@yahoo.com', 'b296ea317be4df34fdee0ef91b903f77', '4np8gh3hjqkxoyprluy9', 'tcas6cie', '2020-02-09');
+(1, 'allentubo09@yahoo.com', 'b296ea317be4df34fdee0ef91b903f77', '4np8gh3hjqkxoyprluy9', 'tcas6cie', '2020-02-09'),
+(2, 'aevinearl@gmail.com', 'ddc58e55e4ee672b73d9c1107cd927cc', 'clydhbbovbhl9yvhi2th', '781w89hr', '2020-09-19'),
+(3, 'aevinearl@gmail.com', 'ddc58e55e4ee672b73d9c1107cd927cc', '2jh1iuz5e7v12ejnqlq6', 'vvvb6oq4', '2020-09-19');
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,6 @@ CREATE TABLE `employers_info` (
   `employer_id` bigint(20) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
-  `country` varchar(255) NOT NULL,
   `contact_no` varchar(30) NOT NULL,
   `gender` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -123,8 +124,8 @@ CREATE TABLE `employers_info` (
 -- Dumping data for table `employers_info`
 --
 
-INSERT INTO `employers_info` (`employers_info_id`, `employer_id`, `firstname`, `lastname`, `country`, `contact_no`, `gender`) VALUES
-(1, 1, 'Allen Christian', 'Tubo', 'Philippines', '', '');
+INSERT INTO `employers_info` (`employers_info_id`, `employer_id`, `firstname`, `lastname`, `contact_no`, `gender`) VALUES
+(1, 1, 'Allen Christian', 'Tubo', '', '');
 
 -- --------------------------------------------------------
 
@@ -416,7 +417,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `employers`
 --
 ALTER TABLE `employers`
-  MODIFY `employer_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `employer_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employers_images`
