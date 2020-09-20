@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // -- link -- controller::function
 $routes->get('/', 'PagesController::view');
-$routes->get('/hello', 'Home::hello');
+$routes->get('/home', 'PagesController::view/home');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
