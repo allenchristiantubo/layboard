@@ -5,7 +5,7 @@ use App\Libraries\Common_utils;
 class Freelancers_model extends Model
 {
     
-    public function email_exists($email)
+    public function email_exists($email) : bool
     {
       $db = db_connect();
       $builder = $db->table('freelancers');
@@ -18,7 +18,7 @@ class Freelancers_model extends Model
       return false;
     }
 
-    public function login($email, $password)
+    public function login($email, $password) : bool
     {
         $db = db_connect();
         
@@ -42,7 +42,7 @@ class Freelancers_model extends Model
         }
     }
 
-    public function create_account($email, $password, $firstname, $lastname)
+    public function create_account($email, $password, $firstname, $lastname) : bool
     {
         $db = db_connect();
         $builder = $db->table('freelancers');
@@ -107,6 +107,27 @@ class Freelancers_model extends Model
         $builder->insert($newFreelancerStatusDataParams);
 
         return $db->affectedRows() > 0; 
+    }
+
+    public function get_info($slug) : array
+    {
+        $db = db_connect();
+        
+        $sql = "SELECT * FROM freelancers_info AS fi JOIN freelancers AS f ON  f.freelancer_id = fi.freelancer_id WHERE f.freelancer_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+        return $query->getRowArray();
+    }
+
+    public function get_image($slug) : array
+    {
+        $db = db_connect();
+
+        $sql = "SELECT * FROM freelancers_images AS fim JOIN freelancers as f ON f.freelancer_id = f.freelancer_id = fim.freelancer_id WHERE f.freelancer_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+
+        return $query->getRowArray();
     }
 }
 ?>

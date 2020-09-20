@@ -66,6 +66,15 @@ body, html {
     background:#FAFAFA;
 }
 
+.bg-bg
+{
+  background:#194055;
+}
+
+.bg-g
+{
+  background:#75BA40;
+}
 .logo-word
 {
     background-image: url("../images/Layboard Logo.png");
@@ -274,4 +283,21 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     margin-left: 17rem;
     width: calc(100% - 17rem);
   }
+}
+
+.p-pic{
+  height:150px;
+  width:150px;
+}
+
+.border-clg
+{
+  border-radius: 100px;
+  border:5px solid #72b944;
+}
+
+.bg-gr
+{
+  background: rgb(114,185,68);
+  background: linear-gradient(0deg, rgba(114,185,68,1) 0%, rgba(25,64,85,1) 100%);
 }
