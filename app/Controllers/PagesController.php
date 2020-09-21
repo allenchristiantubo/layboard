@@ -51,6 +51,7 @@ class PagesController extends BaseController
 			$data['freelancer_info'] = $freelancersModel->get_info($slug);
 			$data['freelancer_image'] = $freelancersModel->get_image($slug);
 			echo view('templates/header', $data);
+			echo view('templates/navbar');
 			echo view('profile/freelancer_profile', $data);
 			echo view('templates/footer', $data);
 		}else if($usertype == "employer")

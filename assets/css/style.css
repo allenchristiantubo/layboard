@@ -301,3 +301,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   background: rgb(114,185,68);
   background: linear-gradient(0deg, rgba(114,185,68,1) 0%, rgba(25,64,85,1) 100%);
 }
+
+.rounded-input
+{
+  border-radius:100px;
+}

@@ -65,12 +65,8 @@ $(document).ready(function() {
                                 }
                                 else
                                 {
-                                    Swal.fire({
-                                        title:"<h3 class='text-danger'><i class='fas fa-times-circle'></i> Error!</h3>",
-                                        text:"Email doesn't exists.",
-                                        showConfirmButton:false,
-                                        timer:2000
-                                    });
+                                    $("#txtLoginEmail").addClass("is-invalid");
+                                    $("#txtLoginEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email doesn't exists");
                                 }
                             }
                         });
