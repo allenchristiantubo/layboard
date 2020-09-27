@@ -3,6 +3,11 @@ body, html {
   width:100%;
 }
 
+.fixed-top-2
+{
+  margin-top:56px;
+}
+
 #loginsection{
     background-image: url("../images/LoginBackgroundDetailed.svg");
     background-size: cover;
@@ -60,6 +65,11 @@ body, html {
 	display:inline-block;
 	position:relative;
 } */
+
+.text-arial-rounded
+{
+  font-family:Arial Rounded MT;
+}
 
 .bg-main
 {
@@ -193,6 +203,44 @@ box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
   }
 
+
+  .btn-third {
+    color: #212529;
+    background-color: #E4E6EB;
+    border-color: #E4E6EB;
+  }
+  
+  .btn-third:hover {
+    color: #212529;
+    background-color: #D8DADF;
+    border-color: #dae0e5;
+  }
+  
+  .btn-third:focus, .btn-third.focus {
+    color: #212529;
+    background-color: #D8DADF;
+    border-color: #dae0e5;
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+  }
+  
+  .btn-third.disabled, .btn-third:disabled {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+  
+  .btn-third:not(:disabled):not(.disabled):active, .btn-third:not(:disabled):not(.disabled).active,
+  .show > .btn-third.dropdown-toggle {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+  }
+  
+  .btn-third:not(:disabled):not(.disabled):active:focus, .btn-third:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-third.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+  }
+
   .text-green{
     color:#75BA40;
   }
@@ -298,8 +346,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 .bg-gr
 {
-  background: rgb(114,185,68);
-  background: linear-gradient(0deg, rgba(114,185,68,1) 0%, rgba(25,64,85,1) 100%);
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(143,143,143,1) 100%);
 }
 
 .rounded-input

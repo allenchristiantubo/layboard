@@ -106,6 +106,24 @@ class Freelancers_model extends Model
         $builder = $db->table("freelancers_status");
         $builder->insert($newFreelancerStatusDataParams);
 
+        $validateImageFileSlug = 0;
+        $builder = $db->table("freelancers_images");
+        while($validateImageFileSlug <= 0)
+        {
+            $freelancerImageFileSlug = $common_utils->GenerateRandomString(24);
+            $builder->where(['file_slug' => $freelancerImageFileSlug]);
+            $count = $builder->countAllResults();
+            if($count == 0)
+            {
+                $validateImageFileSlug = 1;
+            }
+        }
+
+        $newFreelancerImageDataParams = array(
+            "freelancer_id" => $freelancerID,
+            "file_name" => "default.png"
+        );
+
         return $db->affectedRows() > 0; 
     }
 
