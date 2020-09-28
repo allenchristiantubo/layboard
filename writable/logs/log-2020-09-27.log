@@ -1,0 +1,14 @@
+CRITICAL - 2020-09-27 16:35:12 --> Return value of App\Models\Freelancers_model::get_info() must be of the type array, null returned
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(51): App\Models\Freelancers_model->get_info('ddc58e55e4ee672...')
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', 'ddc58e55e4ee672...')
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-27 17:30:27 --> Return value of App\Models\Freelancers_model::get_info() must be of the type array, null returned
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(51): App\Models\Freelancers_model->get_info('jk25fu22j3cekmd...')
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', 'jk25fu22j3cekmd...')
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

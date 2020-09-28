@@ -121,7 +121,9 @@ class Freelancers_model extends Model
 
         $newFreelancerImageDataParams = array(
             "freelancer_id" => $freelancerID,
-            "file_name" => "default.png"
+            "file_name" => "default.png",
+            "file_slug" => $freelancerImageFileSlug,
+            "image_status" => 0
         );
 
         return $db->affectedRows() > 0; 

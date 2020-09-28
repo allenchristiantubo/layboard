@@ -5,15 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="text-center pt-5">
-                <img class="p-pic" src="<?php echo base_url()."/assets/uploads/". $freelancer_image['file_name'];?>" alt="" srcset="">
-                <div class="h3 text-center"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?></div>
+                <img class="p-pic border-clg" src="<?php echo base_url()."/assets/uploads/". $freelancer_image['file_name'];?>" alt="" srcset="">
             </div>
+            <div class="h3 text-center"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?></div>
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container bg-main">
 <hr>
-            <nav class="navbar navbar-expand navbar-light text-arial-rounded bg-light" id="subNav">
+            <nav class="navbar navbar-expand navbar-dark text-arial-rounded bg-bg" id="subNav">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a href="" class="nav-link">Introduction</a>
@@ -36,6 +36,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item mx-3">
+                        <button class="btn btn-main"><i class="fas fa-pen    "></i> Edit</button>
+                    </li>
                     <li class="nav-item">
                         <button class="btn btn-third"><i class="fas fa-comments"></i> Message</button>
                     </li>

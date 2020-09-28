@@ -171,7 +171,7 @@ $(document).ready(function() {
         var lastname = $("#txtRegisterLastname").val();
         var usertype = $("#txtRegisterUserType").val();
         var url;
-        var emailValidated = false, passwordValidated = false, firstnameValidated = false, lastnameValidated = false, usertypeValidate = false;
+        var emailValidated = false, passwordValidated = false, firstnameValidated = false, lastnameValidated = false, usertypeValidated = false;
 
         if(email == "" || (!email.replace(/\s/g,'').length))
         {
@@ -180,7 +180,39 @@ $(document).ready(function() {
         }
         else
         {
-            emailValidated = true;
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/FreelancersController/email_exists",
+                data: {email:email},
+                dataType: "html",
+                success: function (response) {
+                    if(response)
+                    {
+                        $("#txtRegisterEmail").addClass("is-invalid");
+                        $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
+                    }
+                    else
+                    {
+                        $.ajax({
+                            type: "POST",
+                            url: baseURL + "/EmployersController/email_exists",
+                            data: {email:email},
+                            dataType: "html",
+                            success: function (response) {
+                                if(response)
+                                {
+                                    $("#txtRegisterEmail").addClass("is-invalid");
+                                    $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
+                                }
+                                else
+                                {
+                                    emailValidated = true;
+                                }
+                            }
+                        });
+                    }
+                }
+            });
         }
         
         if(password == "" || (!password.replace(/\s/g,'').length))
