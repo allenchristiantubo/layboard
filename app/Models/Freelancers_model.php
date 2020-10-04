@@ -31,7 +31,7 @@ class Freelancers_model extends Model
             if(md5($password) === $row['freelancer_pass'])
             {
                 $session = session();
-                $sessionData = ["freelancer_id" => $row->freelancer_id, "user_type" => "freelancer"];
+                $sessionData = ["user_id" => $row->freelancer_id, "user_slug" => $row->freelancer_slug, "user_type" => "freelancer"];
                 $session->set($sessionData);
                 return true;
             }

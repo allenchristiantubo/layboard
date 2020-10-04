@@ -39,21 +39,34 @@ class PagesController extends BaseController
 		echo view('templates/footer', $data);
 	}
 
-	public function profile($usertype,$slug)
+	public function profile($usertype,$userslug)
 	{
-		$data['user'] = array($usertype,$slug);
+		$data['user'] = array($usertype,$userslug);
 		$data['load_css'] = array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
 		$data['load_js'] = array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js");
 
 		if($usertype == "freelancer")
 		{
+			
 			$freelancersModel = new Freelancers_model();
-			$data['freelancer_info'] = $freelancersModel->get_info($slug);
-			$data['freelancer_image'] = $freelancersModel->get_image($slug);
-			echo view('templates/header', $data);
-			echo view('templates/navbar');
-			echo view('freelancers/freelancer_profile', $data);
-			echo view('templates/footer', $data);
+			$data['freelancer_info'] = $freelancersModel->get_info($userslug);
+			$data['freelancer_image'] = $freelancersModel->get_image($userslug);
+			$session = session();
+			$sessionUserSlug = $session->get("user_slug");
+			if($sessionUserSlug == $userslug)
+			{
+				echo view('templates/header', $data);
+				echo view('templates/navbar');
+				echo view('freelancers/current_freelancer_profile', $data);
+				echo view('templates/footer', $data);
+			}
+			else
+			{
+				echo view('templates/header', $data);
+				echo view('templates/navbar');
+				echo view('freelancers/freelancer_profile', $data);
+				echo view('templates/footer', $data);
+			}
 		}else if($usertype == "employer")
 		{
 			$employerID = $session->get("employer_id");
