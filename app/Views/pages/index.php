@@ -99,7 +99,7 @@
                                 <div class="invalid-feedback" id="txtRegisterUserTypeValidation"></div>
                             </div>
                             <hr>
-                            <small>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.</small>
+                            <small>By clicking Sign Up, you agree to our <a href="<?php echo base_url();?>/terms">Terms</a> and <a href="<?php echo base_url();?>/privacy">Data Policy</a>.</small>
                             <button class="btn btn-main btn-block mt-3" id="btnSignUp">Sign Up</button>
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 
 use CodeIgniter\Model;
 use App\Libraries\Common_utils;
+use App\Services\Session;
 class Freelancers_model extends Model
 {
     
@@ -21,7 +22,7 @@ class Freelancers_model extends Model
     public function login($email, $password) : bool
     {
         $db = db_connect();
-        
+        $session = session();
         $sql = "SELECT * FROM freelancers AS f JOIN freelancers_status AS fs ON  fs.freelancer_id = f.freelancer_id WHERE f.email_address = ? AND fs.activation_status = 1";
         
         $query = $db->query($sql, [$email]);
@@ -30,7 +31,7 @@ class Freelancers_model extends Model
         {
             if(md5($password) === $row['freelancer_pass'])
             {
-                $session = session();
+                
                 $sessionData = ["user_id" => $row->freelancer_id, "user_slug" => $row->freelancer_slug, "user_type" => "freelancer"];
                 $session->set($sessionData);
                 return true;

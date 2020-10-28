@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // -- link -- controller::function
 $routes->get('/', 'PagesController::index');
 $routes->get('/home', 'PagesController::home');
+$routes->get('/privacy', 'PagesController::privacy');
+$routes->get('/terms', 'PagesController::terms');
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
 /**
  * --------------------------------------------------------------------
