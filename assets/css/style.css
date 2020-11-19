@@ -8,6 +8,15 @@ body, html {
   margin-top:56px;
 }
 
+.error-404{
+    background-image: url("../images/Error404.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:600px;
+    width:600px;
+}
+
 #loginsection{
     background-image: url("../images/LoginBackgroundDetailed.svg");
     background-size: cover;

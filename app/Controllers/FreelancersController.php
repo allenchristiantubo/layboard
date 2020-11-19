@@ -17,13 +17,25 @@ class FreelancersController extends BaseController
     public function login()
     {
         $freelancersModel = new Freelancers_model();
+        $session = session();
 
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
         $loginResult = $freelancersModel->login($email, $password);
-
-        echo $loginResult;
+        if(is_array($loginResult))
+        {
+            $sessionData = ["user_id" => $loginResult['freelancer_id'], "user_slug" => $loginResult['freelancer_slug'], "user_type" => "freelancer"];
+            $session->set($sessionData);
+            // $_SESSION['user_id'] = $loginResult->freelancer_id;
+            // $_SESSION['user_slug'] = $loginResult->freelancer_slug;
+            // $_SESSION['user_type'] = "freelancer";
+            echo true;
+        }
+        else
+        {
+            echo false;
+        }
     }
 
     public function create_account()

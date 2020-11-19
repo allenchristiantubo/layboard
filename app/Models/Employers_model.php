@@ -17,7 +17,7 @@ class Employers_model extends Model
         return false;
     }
 
-    public function login($email, $password) : bool
+    public function login($email, $password)
     {
         $db = db_connect();
 
@@ -29,10 +29,7 @@ class Employers_model extends Model
         {
             if(md5($password) === $row['employer_pass'])
             {
-                $session = session();
-                $sessionData = ["employer_id" => $row->employer_id, "user_type" => "employer"];
-                $session->set($sessionData);
-                return true;
+                return $row;
             }
             else
             {

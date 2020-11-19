@@ -341,7 +341,7 @@ $(document).ready(function() {
                         showConfirmButton:false,
                         timer:3000
                     }).then(function(){
-                       
+                        window.location.href = baseURL + "/dashboard";
                     });
                 }
                 else

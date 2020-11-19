@@ -14,12 +14,22 @@ class EmployersController extends BaseController
     public function login()
     {
         $employersModel = new Employers_model();
+        $session = session();
+
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
         $loginResult = $employersModel->login($email, $password);
-
-        echo $loginResult;
+        if(is_array($loginResult))
+        {
+            $sessionData = ["user_id" => $loginResult['employer_id'], "user_slug" => $loginResult['employer_slug'] ,"user_type" => "employer"];
+            $session->set($sessionData);
+            echo true;
+        }
+        else
+        {
+            echo false;
+        }
     }
 
     public function create_account()

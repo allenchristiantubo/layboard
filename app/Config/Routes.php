@@ -19,7 +19,20 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('PagesController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override(function($message = null){
+	$data = array(
+		'title' => 'Error 404 - Page not found',
+		'message' => $message,
+		'load_css' => array("bootstrap/bootstrap.min.css", "style.css"),
+		'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js")
+	);
+
+	
+
+	echo view('templates/header', $data);
+	echo view('templates/error_404', $data);
+	echo view('templates/footer', $data);
+});
 $routes->setAutoRoute(true);
 
 /**
@@ -32,10 +45,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // -- link -- controller::function
 $routes->get('/', 'PagesController::index');
-$routes->get('/home', 'PagesController::home');
+$routes->get('/dashboard', 'PagesController::dashboard');
 $routes->get('/privacy', 'PagesController::privacy');
 $routes->get('/terms', 'PagesController::terms');
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

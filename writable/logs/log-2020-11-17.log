@@ -1,0 +1,20 @@
+CRITICAL - 2020-11-17 20:34:01 --> Return value of App\Models\Freelancers_model::get_info() must be of the type array, null returned
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(71): App\Models\Freelancers_model->get_info('3o1ctpw47o1ivro...')
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '3o1ctpw47o1ivro...')
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-11-17 20:35:42 --> Return value of App\Models\Freelancers_model::get_image() must be of the type array, null returned
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(72): App\Models\Freelancers_model->get_image('3o1ctpw47o1ivro...')
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '3o1ctpw47o1ivro...')
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-11-17 20:41:16 --> Call to undefined function App\Controllers\show_404()
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '3o1ctpw47o1ivro...')
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

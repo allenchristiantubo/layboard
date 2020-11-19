@@ -67,19 +67,14 @@
                 <div class="card-body">
                     <h5>Projects</h5>
                     <?php
-                    if(isset($_SESSION['']))
-                    {
-                        echo "meron";
-                    }
-                    else
-                    {
-                        echo "wala";
-                    }
-                        for($i = 0; $i < 50; $i++)
-                        {
-                        echo $user[0] . " ";
-                        echo $user[1] . "<br>";
-                        }
+                    echo $_SESSION['user_type'];
+                    echo $_SESSION['user_slug'];
+                    echo $_SESSION['user_id'];
+                        // for($i = 0; $i < 50; $i++)
+                        // {
+                        // echo $user[0] . " ok ";
+                        // echo $user[1] . "<br>";
+                        // }
                     ?>
                 </div>
             </div>

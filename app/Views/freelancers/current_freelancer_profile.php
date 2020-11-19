@@ -68,8 +68,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <h5>Projects</h5>
+                    <h5>Projects Current Profile</h5>
+                    
                     <?php
+                    echo $_SESSION['user_type']. " ";
+                    echo $_SESSION['user_slug']. " ";
+                    echo $_SESSION['user_id']. " <br>";
                         for($i = 0; $i < 50; $i++)
                         {
                         echo $user[0] . " ";
