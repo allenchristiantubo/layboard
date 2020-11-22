@@ -12,6 +12,9 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
+        <a href="<?php echo base_url(); ?>/profile/<?php echo $user_type .'/'. $user_slug; ?>" class="nav-link"><img src="<?php echo base_url();?>/assets/uploads/1581419559.png" alt="" width="25px" height="25px"> Allen Christian</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url();?>/dashboard" data-toggle="tooltip" title="Dashboard"><i class="fas fa-tachometer-alt"></i></a>
       </li>
       <li class="nav-item">
@@ -27,7 +30,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-          <a class="dropdown-item" href="#"><img src="<?php echo base_url();?>/assets/uploads/1581419559.png" alt="" width="25px" height="25px"> Allen Christian Tubo<br><small>See your profile</small></a>
+          <a class="dropdown-item" href="#"><img src="<?php echo base_url();?>/assets/uploads/1581419559.png" alt="" width="25px" height="25px"> Allen Christian Tubo<br></a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>

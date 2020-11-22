@@ -49,51 +49,64 @@ class PagesController extends BaseController
 	{
 		
 		$session = session();
-		$data['user'] = array($usertype,$userslug);
-		$data['load_css'] = array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
-		$data['load_js'] = array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js");
 
-		if($usertype == "freelancer")
+		if($session->has('user_slug'))
 		{
-			
-			$freelancersModel = new Freelancers_model();
-			
-			$accountExistsResult = $freelancersModel->profile_exists($userslug);
-			if($accountExistsResult)
+			$sessionUserType = $session->get('user_type');
+			$sessionUserSlug = $session->get('user_slug');
+
+			if($usertype == "freelancer")
 			{
-				$data['freelancer_info'] = $freelancersModel->get_info($userslug);
-				$data['freelancer_image'] = $freelancersModel->get_image($userslug);
-				
-				$sessionUserSlug = $_SESSION['user_slug'];
-				$data['session_slug'] = $sessionUserSlug;
-				if($userslug === $sessionUserSlug)
+				$freelancersModel = new Freelancers_model();
+
+				$accountExistsResult = $freelancersModel->profile_exists($userslug);
+				if($accountExistsResult)
 				{
-					echo view('templates/header', $data);
-					echo view('templates/navbar');
-					echo view('freelancers/current_freelancer_profile', $data);
-					echo view('templates/footer', $data);
+					$data = array(
+						'load_css' => array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+						'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js"),
+						'user_slug' => $sessionUserSlug,
+						'user_type' => $sessionUserType
+					);
+
+					if($userslug === $sessionUserSlug)
+					{
+						$data['freelancer_info'] = $freelancersModel->get_info($userslug);
+						$data['freelancer_image'] = $freelancersModel->get_image($userslug);
+	
+						echo view('templates/header', $data);
+						echo view('templates/navbar');
+						echo view('freelancers/current_freelancer_profile', $data);
+						echo view('templates/footer', $data);
+					}
+					else
+					{
+						echo view('templates/header', $data);
+						echo view('templates/navbar');
+						echo view('freelancers/freelancer_profile', $data);
+						echo view('templates/footer', $data);
+					}
 				}
 				else
 				{
-					echo view('templates/header', $data);
-					echo view('templates/navbar');
-					echo view('freelancers/freelancer_profile', $data);
-					echo view('templates/footer', $data);
+					throw new \CodeIgniter\Exceptions\PageNotFoundException('The page you requested cannot be found.');
 				}
 			}
-			else
+			else if($usertype == "employer")
 			{
-				throw new \CodeIgniter\Exceptions\PageNotFoundException('The page you requested cannot be found.');
-			}
-			
-		}else if($usertype == "employer")
-		{
 
 			$employerID = $session->get("employer_id");
 			echo view('templates/header', $data);
 			echo view('employers/employer_profile', $data);
 			echo view('templates/footer', $data);
+			}
 		}
+		else
+		{
+			return redirect()->to(base_url());
+		}
+
+		
 	}
 	
 	public function dashboard()
@@ -102,21 +115,22 @@ class PagesController extends BaseController
 
 		if($session->has('user_slug'))
 		{
+			$sessionUserType = $session->get("user_type");
+			$sessionUserSlug = $session->get("user_slug");
 			// css and js files to load...
 			$data = array(
 				'load_css' => array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js")
+				'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'user_type' => $sessionUserType,
+				'user_slug' => $sessionUserSlug
 			);
-
-			$sessionUserType = $session->get("user_type");
-			$sessionUserSlug = $session->get("user_slug");
 
 			if($sessionUserType == "freelancer")
 			{
 				$freelancersModel = new Freelancers_model();
 
 				echo view('templates/header',$data);
-				echo view('templates/navbar');
+				echo view('templates/navbar', $data);
 				echo view('freelancers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
