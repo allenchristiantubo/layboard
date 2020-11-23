@@ -1,13 +1,34 @@
 <?php
 
 ?>
+<div class="container bg-main" style="padding-top:80px;">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-center">
+            <?php
+                if(!empty($freelancer_image))
+                {
+                   echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] .">";
+                }
+                else
+                {
+                    echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/default.png" .">";
+                }
+            ?>
+                </div>
+                
+            </div>
+        <div class="col-md-9">
+            <div class="h3 pt-5"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?></div>
+        </div>
+    </div>
+</div>
+
 <div class="container-fluid bg-gr" style="padding-top:105px;">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="text-center pt-5">
-                <img class="p-pic border-clg" src="<?php echo base_url()."/assets/uploads/". $freelancer_image['file_name'];?>" alt="" srcset="">
-            </div>
-            <div class="h3 text-center"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?></div>
+            
+            
         </div>
     </div>
 </div>

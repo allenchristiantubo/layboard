@@ -54,6 +54,7 @@ class PagesController extends BaseController
 		{
 			$sessionUserType = $session->get('user_type');
 			$sessionUserSlug = $session->get('user_slug');
+			//$sessionUserId = $session->get('user_id');
 
 			if($usertype == "freelancer")
 			{
@@ -68,11 +69,13 @@ class PagesController extends BaseController
 						'user_slug' => $sessionUserSlug,
 						'user_type' => $sessionUserType
 					);
-
+					
+					$data['freelancer_info'] = $freelancersModel->get_info($userslug);
+					$data['freelancer_image'] = $freelancersModel->get_image($userslug);
+					$data['freelancer_skills'] = $freelancersModel->get_skills($userslug);
 					if($userslug === $sessionUserSlug)
 					{
-						$data['freelancer_info'] = $freelancersModel->get_info($userslug);
-						$data['freelancer_image'] = $freelancersModel->get_image($userslug);
+						
 	
 						echo view('templates/header', $data);
 						echo view('templates/navbar');
@@ -89,16 +92,20 @@ class PagesController extends BaseController
 				}
 				else
 				{
-					throw new \CodeIgniter\Exceptions\PageNotFoundException('The page you requested cannot be found.');
+					throw new \CodeIgniter\Exceptions\PageNotFoundException();
 				}
 			}
 			else if($usertype == "employer")
 			{
 
-			$employerID = $session->get("employer_id");
-			echo view('templates/header', $data);
-			echo view('employers/employer_profile', $data);
-			echo view('templates/footer', $data);
+				//$employerID = $session->get("employer_id");
+				echo view('templates/header', $data);
+				echo view('employers/employer_profile', $data);
+				echo view('templates/footer', $data);
+			}
+			else
+			{
+				throw new \CodeIgniter\Exceptions\PageNotFoundException();
 			}
 		}
 		else
