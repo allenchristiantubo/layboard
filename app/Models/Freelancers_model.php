@@ -158,5 +158,16 @@ class Freelancers_model extends Model
 
         return $query->getRowArray();
     }
+
+    public function get_skills($slug) : array
+    {
+        $db = db_connect();
+
+        $sql = "SELECT skill_name FROM freelancers_skills JOIN skills ON skills.skill_id = freelancers_skills.skill_id JOIN freelancers ON freelancers.freelancer_id = freelancers_skills.freelancer_id WHERE freelancers.freelancer_slug = ? AND freelancers_skills.freelancer_skill_status = 1 AND skills.skill_status = 1";
+
+        $query = $db->query($sql, [$slug]);
+
+        return $query->getResultArray();
+    }
 }
 ?>

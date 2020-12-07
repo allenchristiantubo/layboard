@@ -2,24 +2,42 @@
 
 ?>
 <div class="container bg-main" style="padding-top:80px;">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="text-center">
-            <?php
-                if(!empty($freelancer_image))
-                {
-                   echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] .">";
-                }
-                else
-                {
-                    echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/default.png" .">";
-                }
-            ?>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 pt-3 border-right">
+                    <div class="profile-pic text-center">
+                    <?php
+                        if(!empty($freelancer_image))
+                        {
+                        echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] .">";
+                        }
+                        else
+                        {
+                            echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/default.png" .">";
+                        }
+                    ?>
+                    </div>
+                    <div class="ratings pt-3" id="ratings_container">
+                        <h5>Ratings</h5>
+
+                    </div>       
                 </div>
-                
+                <div class="col-md-8 pt-3">
+                    <div class="pt-3">
+                        <div class="h3 pb-3 border-bottom"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?><button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i> Edit Profile</button></div> 
+                        <h5>Skills</h5>
+                        <div class="pb-3 border-bottom" id="skills_container">
+                            <?php
+                            foreach($freelancer_skills as $skills)
+                            {
+                                echo "<span class='badge badge-pill badge-dark px-2'>" .$skills['skill_name'] . "</span>&nbsp;";
+                            }
+                            ?>
+                        </div>             
+                    </div>
+                </div>
             </div>
-        <div class="col-md-9">
-            <div class="h3 pt-5"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?></div>
         </div>
     </div>
 </div>

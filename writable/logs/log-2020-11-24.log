@@ -1,0 +1,36 @@
+CRITICAL - 2020-11-24 21:45:37 --> You must set the database table to be used with your query.
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\Model.php(1237): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\Model.php(1816): CodeIgniter\Model->builder()
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(75): CodeIgniter\Model->__call('get_skills', Array)
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '29lcuhfr4pbtowi...')
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-11-24 22:18:22 --> Object of class stdClass could not be converted to string
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\View\View.php(246): include()
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('freelancers/cur...', Array, true)
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(82): view('freelancers/cur...', Array)
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '29lcuhfr4pbtowi...')
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-11-24 22:18:35 --> Cannot use object of type stdClass as array
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\View\View.php(246): include()
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('freelancers/cur...', Array, true)
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(82): view('freelancers/cur...', Array)
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '29lcuhfr4pbtowi...')
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-11-24 22:18:36 --> Cannot use object of type stdClass as array
+#0 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\View\View.php(246): include()
+#1 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('freelancers/cur...', Array, true)
+#2 D:\ALLEN\XAMPP\htdocs\layboard\layboard\app\Controllers\PagesController.php(82): view('freelancers/cur...', Array)
+#3 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('freelancer', '29lcuhfr4pbtowi...')
+#4 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 D:\ALLEN\XAMPP\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 D:\ALLEN\XAMPP\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

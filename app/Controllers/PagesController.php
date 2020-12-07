@@ -30,6 +30,14 @@ class PagesController extends BaseController
 		}
 	}
 
+	public function logout()
+	{
+		$session = session();
+		$session->destroy();
+		return redirect()->to(base_url());
+		
+	}
+
 	public function privacy()
 	{
 		$data['load_css'] = array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");

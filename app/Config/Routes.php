@@ -48,6 +48,7 @@ $routes->get('/', 'PagesController::index');
 $routes->get('/dashboard', 'PagesController::dashboard');
 $routes->get('/privacy', 'PagesController::privacy');
 $routes->get('/terms', 'PagesController::terms');
+$routes->get('/logout', 'PagesController::logout');
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
 
 /**

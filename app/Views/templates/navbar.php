@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" style="border-bottom:3px solid #242526;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-lg" style="border-bottom:3px solid #194055;">
   <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url();?>/assets/images/Layboard Logo.png" alt="" srcset="" style="height:auto;width:120px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
         </div>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
+      <li class="nav-item text-arial-rounded">
         <a href="<?php echo base_url(); ?>/profile/<?php echo $user_type .'/'. $user_slug; ?>" class="nav-link"><img src="<?php echo base_url();?>/assets/uploads/1581419559.png" alt="" width="25px" height="25px"> Allen Christian</a>
       </li>
       <li class="nav-item">
@@ -26,14 +26,12 @@
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           
-          <i class="fas fa-sort-down"></i>
+          <i class="fas fa-angle-down"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-          <a class="dropdown-item" href="#"><img src="<?php echo base_url();?>/assets/uploads/1581419559.png" alt="" width="25px" height="25px"> Allen Christian Tubo<br></a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item text-arial-rounded" href="#"><i class="fas fa-cogs    "></i> Settings</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item text-arial-rounded" href="<?php echo base_url();?>/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
       </li>
     </ul>
