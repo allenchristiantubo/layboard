@@ -88,7 +88,9 @@ class PagesController extends BaseController
 						echo view('templates/header', $data);
 						echo view('templates/navbar');
 						echo view('freelancers/current_freelancer_profile', $data);
+						echo view('freelancers/current_freelancer_profile_modal');
 						echo view('templates/footer', $data);
+						
 					}
 					else
 					{

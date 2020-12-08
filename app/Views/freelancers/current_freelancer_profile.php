@@ -10,7 +10,7 @@
                     <?php
                         if(!empty($freelancer_image))
                         {
-                        echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] .">";
+                        echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] ." style='height:175px;width:175px;'>";
                         }
                         else
                         {
@@ -25,13 +25,24 @@
                 </div>
                 <div class="col-md-8 pt-3">
                     <div class="pt-3">
-                        <div class="h3 pb-3 border-bottom"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?><button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i> Edit Profile</button></div> 
+                        <div class="h3 pb-3 border-bottom"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?><button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i> Edit Name</button></div> 
                         <h5>Skills</h5>
+                        
                         <div class="pb-3 border-bottom" id="skills_container">
+                            
                             <?php
-                            foreach($freelancer_skills as $skills)
+                            if(!empty($freelancer_skills))
                             {
-                                echo "<span class='badge badge-pill badge-dark px-2'>" .$skills['skill_name'] . "</span>&nbsp;";
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnEditFreelancerSkills"><i class="fas fa-pen"></i> Edit Skills</button>';
+                                foreach($freelancer_skills as $skills)
+                                {
+                                    echo "<span class='badge badge-pill badge-dark px-2 mx-1'>" .$skills['skill_name'] . "</span>";
+                                }
+                            }
+                            else
+                            {
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSkills"><i class="fas fa-plus"></i> Add Skills</button>';
+                                echo "<h6>No skills set yet.</h6>";
                             }
                             ?>
                         </div>             

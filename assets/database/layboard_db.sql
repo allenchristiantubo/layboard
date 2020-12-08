@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2020 at 02:28 PM
+-- Generation Time: Dec 08, 2020 at 08:22 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -170,10 +170,7 @@ CREATE TABLE `freelancers` (
 --
 
 INSERT INTO `freelancers` (`freelancer_id`, `email_address`, `freelancer_pass`, `freelancer_slug`, `freelancer_code`, `date_created`) VALUES
-(1, 'allentubo09@gmail.com', 'b296ea317be4df34fdee0ef91b903f77', '29lcuhfr4pbtowi8km1e', 'bhx1wdqq', '2020-02-08'),
-(2, 'xsad@gmail.com', 'b03481e80c60bbfca84269bfd7a4df27', '5vd1zs41a4adx7wpr34t', 'fx3i8xxw', '2020-02-09'),
-(3, 'tolosacarlo@gmail.com', 'e807f1fcf82d132f9bb018ca6738a19f', '2xona1ibx6kpppy3mb7o', 'bxz4hog9', '2020-02-13'),
-(4, 'aevinearlm@gmail.com', 'ddc58e55e4ee672b73d9c1107cd927cc', 'jk25fu22j3cekmdad97x', '9awrun4d', '2020-09-17');
+(1, 'allentubo09@gmail.com', 'b296ea317be4df34fdee0ef91b903f77', '29lcuhfr4pbtowi8km1e', 'bhx1wdqq', '2020-02-08');
 
 -- --------------------------------------------------------
 
@@ -233,8 +230,7 @@ CREATE TABLE `freelancers_images` (
 --
 
 INSERT INTO `freelancers_images` (`freelancer_image_id`, `freelancer_id`, `file_name`, `file_slug`, `image_status`) VALUES
-(1, 1, '1581419559.png', 'c3cz9ulirbpzgn5p76yp4zbb', 1),
-(2, 3, '1581557024.png', '00hr0oj7o4s5e1v2sf140uhf', 1);
+(1, 1, '1581419559.png', 'c3cz9ulirbpzgn5p76yp4zbb', 1);
 
 -- --------------------------------------------------------
 
@@ -256,10 +252,29 @@ CREATE TABLE `freelancers_info` (
 --
 
 INSERT INTO `freelancers_info` (`freelancers_info_id`, `freelancer_id`, `firstname`, `lastname`, `contact_no`, `gender`) VALUES
-(1, 1, 'Allen Christian', 'Tubo', '', ''),
-(2, 2, 'allenxx', 'tuboxx', '', ''),
-(3, 3, 'Joseph Carlo', 'Sacapaño', '', ''),
-(4, 4, 'Aevin Earl', 'Molina', '', '');
+(1, 1, 'Allen Christian', 'Tubo', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `freelancers_rating`
+--
+
+CREATE TABLE `freelancers_rating` (
+  `freelancer_rating_id` bigint(20) NOT NULL,
+  `freelancer_id` bigint(20) NOT NULL,
+  `rating` int(1) NOT NULL,
+  `rating_status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `freelancers_rating`
+--
+
+INSERT INTO `freelancers_rating` (`freelancer_rating_id`, `freelancer_id`, `rating`, `rating_status`) VALUES
+(1, 1, 5, 1),
+(2, 1, 3, 1),
+(3, 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -273,6 +288,14 @@ CREATE TABLE `freelancers_skills` (
   `skill_id` bigint(20) NOT NULL,
   `freelancer_skill_status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `freelancers_skills`
+--
+
+INSERT INTO `freelancers_skills` (`freelancer_skill_id`, `freelancer_id`, `skill_id`, `freelancer_skill_status`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -295,10 +318,7 @@ CREATE TABLE `freelancers_status` (
 --
 
 INSERT INTO `freelancers_status` (`freelancer_status_id`, `freelancer_id`, `verification_status`, `activation_status`, `online_status`, `profile_status`, `payment_status`) VALUES
-(1, 1, 0, 1, 0, 0, 0),
-(2, 2, 0, 1, 0, 0, 0),
-(3, 3, 0, 1, 0, 0, 0),
-(4, 4, 0, 1, 0, 0, 0);
+(1, 1, 0, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -318,7 +338,7 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`skill_id`, `category_id`, `skill_name`, `skill_status`) VALUES
-(1, 2, 'Android Studio', 1),
+(1, 2, 'Java', 1),
 (2, 2, 'Kotlin', 1);
 
 --
@@ -386,6 +406,12 @@ ALTER TABLE `freelancers_info`
   ADD PRIMARY KEY (`freelancers_info_id`);
 
 --
+-- Indexes for table `freelancers_rating`
+--
+ALTER TABLE `freelancers_rating`
+  ADD PRIMARY KEY (`freelancer_rating_id`);
+
+--
 -- Indexes for table `freelancers_skills`
 --
 ALTER TABLE `freelancers_skills`
@@ -441,7 +467,7 @@ ALTER TABLE `employers_status`
 -- AUTO_INCREMENT for table `freelancers`
 --
 ALTER TABLE `freelancers`
-  MODIFY `freelancer_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `freelancer_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `freelancers_education`
@@ -459,25 +485,31 @@ ALTER TABLE `freelancers_employment`
 -- AUTO_INCREMENT for table `freelancers_images`
 --
 ALTER TABLE `freelancers_images`
-  MODIFY `freelancer_image_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `freelancer_image_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `freelancers_info`
 --
 ALTER TABLE `freelancers_info`
-  MODIFY `freelancers_info_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `freelancers_info_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `freelancers_rating`
+--
+ALTER TABLE `freelancers_rating`
+  MODIFY `freelancer_rating_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `freelancers_skills`
 --
 ALTER TABLE `freelancers_skills`
-  MODIFY `freelancer_skill_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `freelancer_skill_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `freelancers_status`
 --
 ALTER TABLE `freelancers_status`
-  MODIFY `freelancer_status_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `freelancer_status_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `skills`

@@ -11,27 +11,22 @@
 </div>
 
 <div id="fullpage">
-<div class="section" id="introsection">
-        <div class="slide" id="about-slide1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="h1">Online freelance platform for the tech industry.</div>
-                        <div class="h6 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
-                        <div class="row mt-5">
-                            <div class="col-md-4">
-                                <button class="btn btn-main btn-block" id="btnGoToLogin">Login</button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-sub btn-block" id="btnGoToRegister">Join with us</button>
-                            </div>
+    <div class="section" id="introsection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="h1">Online freelance platform for the tech industry.</div>
+                    <div class="h6 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
+                    <div class="row mt-5">
+                        <div class="col-md-4">
+                            <button class="btn btn-main btn-block" id="btnGoToLogin">Login</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-sub btn-block" id="btnGoToRegister">Join with us</button>
                         </div>
                     </div>
-                </div>     
-            </div>
-        </div>
-        <div class="slide" id="about-slide2">
-
+                </div>
+            </div>     
         </div>
     </div>
     <div class="section" id="loginsection">

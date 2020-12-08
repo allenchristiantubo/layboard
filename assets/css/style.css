@@ -31,7 +31,7 @@ body, html {
     background-position:center;
 }
 
-#about-slide1{
+#introsection{
   background-image:url("../images/AboutBackground.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -362,4 +362,9 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 .rounded-input
 {
   border-radius:100px;
+}
+
+.skills-badge:hover
+{
+  cursor: pointer;
 }
