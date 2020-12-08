@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2020 at 08:22 AM
+-- Generation Time: Dec 08, 2020 at 06:39 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -289,14 +289,6 @@ CREATE TABLE `freelancers_skills` (
   `freelancer_skill_status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `freelancers_skills`
---
-
-INSERT INTO `freelancers_skills` (`freelancer_skill_id`, `freelancer_id`, `skill_id`, `freelancer_skill_status`) VALUES
-(1, 1, 1, 1),
-(2, 1, 2, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -339,7 +331,8 @@ CREATE TABLE `skills` (
 
 INSERT INTO `skills` (`skill_id`, `category_id`, `skill_name`, `skill_status`) VALUES
 (1, 2, 'Java', 1),
-(2, 2, 'Kotlin', 1);
+(2, 2, 'Kotlin', 1),
+(3, 3, 'JavaScript', 1);
 
 --
 -- Indexes for dumped tables
@@ -503,7 +496,7 @@ ALTER TABLE `freelancers_rating`
 -- AUTO_INCREMENT for table `freelancers_skills`
 --
 ALTER TABLE `freelancers_skills`
-  MODIFY `freelancer_skill_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `freelancer_skill_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `freelancers_status`
@@ -515,7 +508,7 @@ ALTER TABLE `freelancers_status`
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `skill_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `skill_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
