@@ -8,7 +8,13 @@ class EmployersController extends BaseController
         $employersModel = new Employers_model();
         $email = $this->request->getPost('email');
 
-        echo $employersModel->email_exists($email);
+        $emailExistsResult = $employersModel->email_exists($email);
+
+        if($emailExistsResult){
+            echo 1;
+        }else{
+            echo 0;
+        }
     }
 
     public function login()
@@ -24,11 +30,11 @@ class EmployersController extends BaseController
         {
             $sessionData = ["user_id" => $loginResult['employer_id'], "user_slug" => $loginResult['employer_slug'] ,"user_type" => "employer"];
             $session->set($sessionData);
-            echo true;
+            echo 1;
         }
         else
         {
-            echo false;
+            echo 0;
         }
     }
 
@@ -43,6 +49,13 @@ class EmployersController extends BaseController
 
         $createAccountResult = $employersModel->create_account($email,$password,$firstname,$lastname);
         
-        echo $createAccountResult;
+        if($createAccountResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
     }
 }

@@ -4,11 +4,11 @@ use CodeIgniter\Model;
 use App\Libraries\Common_utils;
 class Employers_model extends Model
 {
-    public function email_exists($email) : bool
+    public function email_exists($email)
     {
         $db = db_connect();
         $builder = $db->table('employers');
-        $builder->where(array("email_address" => $email));
+        $builder->where("email_address", $email);
         $count = $builder->countAllResults();
         if($count > 0)
         {
@@ -38,7 +38,7 @@ class Employers_model extends Model
         }
     }
 
-    public function create_account($email, $password, $firstname, $lastname) : bool
+    public function create_account($email, $password, $firstname, $lastname)
     {
         $db = db_connect();
 
@@ -49,7 +49,7 @@ class Employers_model extends Model
         while($validateEmployerSlug <= 0)
         {
             $employerSlug = $common_utils->GenerateRandomString(20);
-            $builder->where(['freelancer_slug' => $employerSlug]);
+            $builder->where(['employer_slug' => $employerSlug]);
             $count = $builder->countAllResults();
             if($count == 0)
             {
@@ -61,7 +61,7 @@ class Employers_model extends Model
         while($validateEmployerCode <= 0)
         {
             $employerCode = $common_utils->GenerateRandomString(8);
-            $builder->where(['freelancer_code' => $employerCode]);
+            $builder->where(['employer_code' => $employerCode]);
             $count = $builder->countAllResults();
             if($count == 0)
             {
@@ -84,11 +84,12 @@ class Employers_model extends Model
             "employer_id" => $employerID,
             "firstname" => $firstname,
             "lastname" => $lastname,
+            "contact_no" => "",
             "gender" => ""
         );
 
-        $builder = $db->table("freelancers_info");
-        $builder->insert($newFreelancerInfoDataParams);
+        $builder = $db->table("employers_info");
+        $builder->insert($newEmployerInfoDataParams);
 
         $newEmployerStatusDataParams = array(
             "employer_id" => $employerID,
@@ -99,8 +100,31 @@ class Employers_model extends Model
             "payment_status" => 0
         );
 
-        $builder = $db->table("employer_status");
-        $builder->insert($newFreelancerStatusDataParams);
+        $builder = $db->table("employers_status");
+        $builder->insert($newEmployerStatusDataParams);
+
+        $validateImageFileSlug = 0;
+
+        $builder = $db->table("employers_images");
+        while($validateImageFileSlug <= 0)
+        {
+            $employerImageFileSlug = $common_utils->GenerateRandomString(24);
+            $builder->where(['file_slug' => $employerImageFileSlug]);
+            $count = $builder->countAllResults();
+            if($count == 0)
+            {
+                $validateImageFileSlug = 1;
+            }
+        }
+
+        $newEmployerImageDataParams = array(
+            "employer_id" => $employerID,
+            "file_name" => "default.png",
+            "file_slug" => $employerImageFileSlug,
+            "image_status" => 1
+        );
+
+        $builder->insert($newEmployerImageDataParams);
 
         return $db->affectedRows() > 0; 
     }

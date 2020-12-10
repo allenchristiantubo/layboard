@@ -21,8 +21,8 @@ class PagesController extends BaseController
 		else
 		{
 			//css and js files to load...
-			$data['load_css'] = array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "fullpage/fullpage.css", "sweetalert/sweetalert2.min.css", "style.css");
-			$data['load_js'] = array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "fullpage/fullpage.js", "sweetalert/sweetalert2.min.js", "app/index.js");
+			$data['load_css'] = array("fontawesome/css/all.min.css", "fullpage/fullpage.css", "sweetalert/sweetalert2.min.css", "style.css");
+			$data['load_js'] = array("fullpage/fullpage.js", "sweetalert/sweetalert2.min.js", "app/index.js");
 			//views to load...
 			echo view('templates/header', $data);
 			echo view('pages/index');
@@ -40,8 +40,8 @@ class PagesController extends BaseController
 
 	public function privacy()
 	{
-		$data['load_css'] = array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
-		$data['load_js'] = array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js");
+		$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
+		$data['load_js'] = array("sweetalert/sweetalert2.min.js");
 
 		echo view('templates/header', $data);
 		echo view('pages/privacy', $data);
@@ -72,21 +72,21 @@ class PagesController extends BaseController
 				if($accountExistsResult)
 				{
 					$data = array(
-						'load_css' => array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-						'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js"),
+						'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+						'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
 						'user_slug' => $sessionUserSlug,
 						'user_type' => $sessionUserType
 					);
 					
-					$data['freelancer_info'] = $freelancersModel->get_info($userslug);
-					$data['freelancer_image'] = $freelancersModel->get_image($userslug);
+					$data['user_info'] = $freelancersModel->get_info($userslug);
+					$data['user_image'] = $freelancersModel->get_image($userslug);
 					$data['freelancer_skills'] = $freelancersModel->get_skills($userslug);
 					if($userslug === $sessionUserSlug)
 					{
 						
 	
 						echo view('templates/header', $data);
-						echo view('templates/navbar');
+						echo view('templates/navbar', $data);
 						echo view('freelancers/current_freelancer_profile', $data);
 						echo view('freelancers/current_freelancer_profile_modal');
 						echo view('templates/footer', $data);
@@ -136,8 +136,8 @@ class PagesController extends BaseController
 			$sessionUserSlug = $session->get("user_slug");
 			// css and js files to load...
 			$data = array(
-				'load_css' => array("bootstrap/bootstrap.min.css", "fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("jquery/jquery-3.5.1.min.js", "bootstrap/popper.min.js", "bootstrap/bootstrap.min.js", "sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
 				'user_type' => $sessionUserType,
 				'user_slug' => $sessionUserSlug
 			);
@@ -145,6 +145,9 @@ class PagesController extends BaseController
 			if($sessionUserType == "freelancer")
 			{
 				$freelancersModel = new Freelancers_model();
+
+				$data['user_info'] = $freelancersModel->get_info($sessionUserSlug);
+				$data['user_image'] = $freelancersModel->get_image($sessionUserSlug);
 
 				echo view('templates/header',$data);
 				echo view('templates/navbar', $data);
@@ -154,6 +157,10 @@ class PagesController extends BaseController
 			else if($sessionUserType == "employer")
 			{
 				$employersModel = new Employers_model();
+				echo view('templates/header',$data);
+				echo view('templates/navbar', $data);
+				echo view('employers/dashboard', $data);
+				echo view('templates/footer', $data);
 			}
 		}
 		else

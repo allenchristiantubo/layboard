@@ -5,12 +5,12 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4 pt-3 border-right">
-                    <div class="profile-pic text-center">
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="profile-pic text-center w-100">
                     <?php
-                        if(!empty($freelancer_image))
+                        if(!empty($user_image))
                         {
-                        echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $freelancer_image['file_name'] ." style='height:175px;width:175px;'>";
+                        echo "<img class='p-pic border-clg' src=". base_url() ."/assets/uploads/". $user_image['file_name'] ." style='height:175px;width:175px;'>";
                         }
                         else
                         {
@@ -18,125 +18,108 @@
                         }
                     ?>
                     </div>
-                    <div class="ratings pt-3" id="ratings_container">
-                        <h5>Ratings</h5>
-
-                    </div>       
+                           
                 </div>
-                <div class="col-md-8 pt-3">
-                    <div class="pt-3">
-                        <div class="h3 pb-3 border-bottom"><?php echo $freelancer_info['firstname'] . " " . $freelancer_info['lastname']; ?><button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i> Edit Name</button></div> 
-                        <h5>Skills</h5>
+                <div class="col-md-8 d-flex align-items-stretch">
+                    <div class="pt-3 w-100">
+                        
+                        <div class="pb-3 border-bottom">
+                        <button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i></button>
+                            <h3><?php echo $user_info['firstname'] . " " . $user_info['lastname']; ?></h3>
+                            <h6><i class="fas fa-map-marker-alt text-g"></i> Makati City</h6>
+                        </div>
+                        <h5 class="mt-3">Skills</h5>
                         
                         <div class="pb-3 border-bottom" id="skills_container">
                             
                             <?php
                             if(!empty($freelancer_skills))
                             {
-                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnEditFreelancerSkills"><i class="fas fa-pen"></i> Edit Skills</button>';
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnEditFreelancerSkills"><i class="fas fa-pen"></i></button>';
                                 foreach($freelancer_skills as $skills)
                                 {
-                                    echo "<span class='badge badge-pill badge-dark px-2 mx-1'>" .$skills['skill_name'] . "</span>";
+                                    echo "<span class='badge badge-pill bg-bg text-light px-2 mx-1'>" .$skills['skill_name'] . "</span>";
                                 }
                             }
                             else
                             {
-                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSkills"><i class="fas fa-plus"></i> Add Skills</button>';
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSkills"><i class="fas fa-plus"></i></button>';
                                 echo "<h6>No skills set yet.</h6>";
                             }
                             ?>
-                        </div>             
+                        </div>          
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid bg-gr" style="padding-top:105px;">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            
-            
-        </div>
-    </div>
-</div>
-<div class="container bg-main">
-<hr>
-            <nav class="navbar navbar-expand navbar-dark text-arial-rounded bg-bg" id="subNav">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Introduction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" id="btnProject" onclick="alert('Projects');">Projects</a>
-                    </li>
-                    <script>
-
-                    </script>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Feedbacks</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Report</a>
-                            <a class="dropdown-item" href="#">Invite to workgroup</a>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mt-3">Ratings</h5>
+                    <div class="pb-3 border-bottom" id="ratings_container">
+                        <div class="text-center" id="ratings_total">
+                        <h6 class="text-arial-rounded">4.5 <i class="fas fa-star text-g"></i></h6>
+                        <small class="text-arial-rounded">300 Reviews</small>
                         </div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item mx-3">
-                        <button class="btn btn-main"><i class="fas fa-pen    "></i> Edit</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-third"><i class="fas fa-comments"></i> Message</button>
-                    </li>
-                </ul>
-            </nav>
-    <div class="row mt-3">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Introduction</h5>
-                    <?php
-
-                    ?>
-                    <button class="btn btn-third btn-block">Add introduction</button>
+                        <div id="ratings_progressbars">
+                            <div class="row">
+                                <div class="col-md-1 offset-md-1">
+                                    <small class="text-arial-rounded">5</small>
+                                </div>
+                                <div class="col-md-9 pt-2">
+                                    <div class="progress" style="height:10px;">
+                                        <div class="progress-bar bg-g" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 offset-md-1">
+                                    <small class="text-arial-rounded">4</small>
+                                </div>
+                                <div class="col-md-9 pt-2">
+                                    <div class="progress" style="height:10px;">
+                                        <div class="progress-bar bg-g" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 offset-md-1">
+                                    <small class="text-arial-rounded">3</small>
+                                </div>
+                                <div class="col-md-9 pt-2">
+                                    <div class="progress" style="height:10px;">
+                                        <div class="progress-bar bg-g" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 offset-md-1">
+                                    <small class="text-arial-rounded">2</small>
+                                </div>
+                                <div class="col-md-9 pt-2">
+                                    <div class="progress" style="height:10px;">
+                                        <div class="progress-bar bg-g" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1 offset-md-1">
+                                    <small class="text-arial-rounded">1</small>
+                                </div>
+                                <div class="col-md-9 pt-2">
+                                    <div class="progress" style="height:10px;">
+                                        <div class="progress-bar bg-g" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                <h5 class="mt-3">Projects</h5>   
+                        <div class="pb-3 border-bottom" id="projects_container">
+                        
+                        </div>
                 </div>
             </div>
-            <div class="card mt-2">
-                <div class="card-body">
-                    <h5>Skills</h5>
-                    <button class="btn btn-third btn-block">Add skills</button>
-                    <?php
-                    
-                    ?>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Projects Current Profile</h5>
-                    
-                    <?php
-                    echo $_SESSION['user_type']. " ";
-                    echo $_SESSION['user_slug']. " ";
-                    echo $_SESSION['user_id']. " <br>";
-                        for($i = 0; $i < 50; $i++)
-                        {
-                        echo $user[0] . " ";
-                        echo $user[1] . "<br>";
-                        }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            
         </div>
     </div>
 </div>

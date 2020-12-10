@@ -47,7 +47,7 @@ $(document).ready(function() {
                 data: {email:email},
                 dataType: "html",
                 success: function (response) {
-                    if(response)
+                    if(response == 1)
                     {
                         login(email, password, "freelancer");
                     }
@@ -59,7 +59,7 @@ $(document).ready(function() {
                             data: {email:email},
                             dataType: "html",
                             success: function (response) {
-                                if(response)
+                                if(response == 1)
                                 {
                                     login(email,password,"employer");
                                 }
@@ -171,50 +171,8 @@ $(document).ready(function() {
         var lastname = $("#txtRegisterLastname").val();
         var usertype = $("#txtRegisterUserType").val();
         var url;
-        var emailValidated = false, passwordValidated = false, firstnameValidated = false, lastnameValidated = false, usertypeValidated = false;
+        var emailValidated = 0, passwordValidated = 0, firstnameValidated = 0, lastnameValidated = 0, usertypeValidated = 0;
 
-        if(email == "" || (!email.replace(/\s/g,'').length))
-        {
-            $("#txtRegisterEmail").addClass("is-invalid");
-            $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
-        }
-        else
-        {
-            $.ajax({
-                type: "POST",
-                url: baseURL + "/FreelancersController/email_exists",
-                data: {email:email},
-                dataType: "html",
-                success: function (response) {
-                    if(response)
-                    {
-                        $("#txtRegisterEmail").addClass("is-invalid");
-                        $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
-                    }
-                    else
-                    {
-                        $.ajax({
-                            type: "POST",
-                            url: baseURL + "/EmployersController/email_exists",
-                            data: {email:email},
-                            dataType: "html",
-                            success: function (response) {
-                                if(response)
-                                {
-                                    $("#txtRegisterEmail").addClass("is-invalid");
-                                    $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
-                                }
-                                else
-                                {
-                                    emailValidated = true;
-                                }
-                            }
-                        });
-                    }
-                }
-            });
-        }
-        
         if(password == "" || (!password.replace(/\s/g,'').length))
         {
             $("#txtRegisterPassword").addClass("is-invalid");
@@ -222,7 +180,7 @@ $(document).ready(function() {
         }
         else
         {
-            passwordValidated = true;
+            passwordValidated = 1;
         }
 
         if(firstname == "" || (!firstname.replace(/\s/g,'').length))
@@ -232,7 +190,7 @@ $(document).ready(function() {
         }
         else
         {
-            firstnameValidated = true;
+            firstnameValidated = 1;
         }
 
         if(lastname == "" || (!lastname.replace(/\s/g,'').length))
@@ -242,7 +200,7 @@ $(document).ready(function() {
         }
         else
         {
-            lastnameValidated = true;
+            lastnameValidated = 1;
         }
 
         if(usertype == "" || (!usertype.replace(/\s/g,'').length))
@@ -252,7 +210,7 @@ $(document).ready(function() {
         }
         else
         {
-            usertypeValidated = true;
+            usertypeValidated = 1;
             if(usertype == "freelancer")
             {
                 url = "/FreelancersController/create_account";
@@ -263,9 +221,49 @@ $(document).ready(function() {
             }
         }
 
-        if(emailValidated && passwordValidated && firstnameValidated && lastnameValidated && usertypeValidated)
+        if((passwordValidated == 1) && (firstnameValidated == 1) && (lastnameValidated == 1) && (usertypeValidated == 1))
         {
-            register(email, password, firstname, lastname, url);
+            if(email == "" || (!email.replace(/\s/g,'').length))
+            {
+                $("#txtRegisterEmail").addClass("is-invalid");
+                $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
+            }
+            else
+            {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "/FreelancersController/email_exists",
+                    data: {email:email},
+                    dataType: "html",
+                    success: function (response) {
+                        if(response == 1)
+                        {
+                            $("#txtRegisterEmail").addClass("is-invalid");
+                            $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
+                        }
+                        else
+                        {
+                            $.ajax({
+                                type: "POST",
+                                url: baseURL + "/EmployersController/email_exists",
+                                data: {email:email},
+                                dataType: "html",
+                                success: function (response) {
+                                    if(response == 1)
+                                    {
+                                        $("#txtRegisterEmail").addClass("is-invalid");
+                                        $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
+                                    }
+                                    else
+                                    {
+                                        register(email, password, firstname, lastname, url);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            }   
         }
     });
 
@@ -300,7 +298,7 @@ $(document).ready(function() {
                 data: {email:email,password:password,firstname:firstname,lastname:lastname},
                 dataType: "html",
                 success: function (response) {
-                    if(response)
+                    if(response == 1)
                     {
                         Swal.fire({
                             title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
@@ -308,7 +306,11 @@ $(document).ready(function() {
                             showConfirmButton:false,
                             timer:3000
                         }).then(function(){
-                            $.fn.fullpage.moveTo(2);
+                            $("#txtRegisterEmail").val("");
+                            $("#txtRegisterPassword").val("");
+                            $("#txtRegisterFirstname").val("");
+                            $("#txtRegisterLastname").val("");
+                            $("#txtRegisterUserType").val("");
                         });
                     }
                 }
@@ -327,13 +329,15 @@ $(document).ready(function() {
         {
             var url = "/EmployersController/login";
         }
+        //alert(email + " " + password + " " + usertype + " " + url);
         $.ajax({
             type: "POST",
             url: baseURL + url,
             data: {email:email, password:password},
             dataType: "html",
             success: function (response) {
-                if(response)
+                console.log(response);
+                if(response == 1)
                 {
                     Swal.fire({
                         title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",

@@ -11,7 +11,15 @@ class FreelancersController extends BaseController
 
         $emailExistsResult = $freelancersModel->email_exists($email);
 
-        echo $emailExistsResult;
+        if($emailExistsResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+        //echo $email;
     }
 
     public function login()
@@ -27,11 +35,11 @@ class FreelancersController extends BaseController
         {
             $sessionData = ["user_id" => $loginResult['freelancer_id'], "user_slug" => $loginResult['freelancer_slug'], "user_type" => "freelancer"];
             $session->set($sessionData);
-            echo true;
+            echo 1;
         }
         else
         {
-            echo false;
+            echo 0;
         }
     }
 
@@ -46,7 +54,78 @@ class FreelancersController extends BaseController
 
         $createAccountResult = $freelancersModel->create_account($email,$password,$firstname,$lastname);
 
-        echo $createAccountResult;
+        if($createAccountResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+
+    public function insert_skills()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+
+        $skillID = $this->request->getVar('skill_id');
+        $skillName = $this->request->getVar('skill_name');
+        $freelancerID = $session->get("user_id");
+
+        $insertSkillResult = $freelancersModel->insert_skills($skillID, $freelancerID);
+        if($insertSkillResult)
+        {
+            echo json_encode(array("skill_id" => $skillID , "skill_name" => $skillName));
+        }
+    }
+
+    public function update_skills()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+
+        $skillID = $this->request->getVar('skill_id');
+        $freelancerID = $session->get("user_id");
+
+        if(!empty($skillID))
+        {
+            foreach($skillID as $skill_id)
+            {
+                $updateSkillResult = $freelancersModel->update_skills($skill_id, $freelancerID);
+            }
+            echo $updateSkillResult;
+        }   
+    }
+
+    public function deactivate_skills()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+
+        $skillID = $this->request->getVar("skill_id");
+
+        $freelancerID = $session->get("user_id");
+        if(!empty($skillID))
+        {
+            foreach($skillID as $skill_id)
+            {
+                $deactivateSkillResult = $freelancersModel->deactivate_skill($skill_id, $freelancerID);
+            }
+            echo $deactivateSkillResult;
+        }
+    }
+
+    public function get_skills()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+
+        $freelancerSlug = $session->get("user_slug");
+        
+        $skillsResult = $freelancersModel->get_skills($freelancerSlug);
+
+        echo json_encode($skillsResult);
     }
 }
 ?>

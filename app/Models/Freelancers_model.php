@@ -5,17 +5,20 @@ use App\Libraries\Common_utils;
 class Freelancers_model extends Model
 {
     
-    public function email_exists($email) : bool
+    public function email_exists($email)
     {
       $db = db_connect();
       $builder = $db->table('freelancers');
-      $builder->where(array("email_address" => $email));
+      $builder->where("email_address", $email);
       $count = $builder->countAllResults();
       if($count > 0)
       {
           return true;
       }
-      return false;
+      else
+      {
+        return false;
+      }
     }
 
     public function profile_exists($slug)
@@ -51,7 +54,7 @@ class Freelancers_model extends Model
         }
     }
 
-    public function create_account($email, $password, $firstname, $lastname) : bool
+    public function create_account($email, $password, $firstname, $lastname)
     {
         $db = db_connect();
         $builder = $db->table('freelancers');
@@ -132,13 +135,16 @@ class Freelancers_model extends Model
             "freelancer_id" => $freelancerID,
             "file_name" => "default.png",
             "file_slug" => $freelancerImageFileSlug,
-            "image_status" => 0
+            "image_status" => 1
         );
+
+        
+        $builder->insert($newFreelancerImageDataParams);
 
         return $db->affectedRows() > 0; 
     }
 
-    public function get_info($slug) : array
+    public function get_info($slug)
     {
         $db = db_connect();
         
@@ -148,26 +154,109 @@ class Freelancers_model extends Model
         return $query->getRowArray();
     }
 
-    public function get_image($slug) : array
+    public function get_image($slug)
     {
         $db = db_connect();
 
-        $sql = "SELECT * FROM freelancers_images AS fim JOIN freelancers as f ON f.freelancer_id = f.freelancer_id = fim.freelancer_id WHERE f.freelancer_slug = ?";
+        $sql = "SELECT * FROM freelancers_images AS fim JOIN freelancers as f ON f.freelancer_id = fim.freelancer_id WHERE f.freelancer_slug = ?";
 
         $query = $db->query($sql, [$slug]);
 
         return $query->getRowArray();
     }
 
-    public function get_skills($slug) : array
+    public function get_skills($slug)
     {
         $db = db_connect();
 
-        $sql = "SELECT skill_name FROM freelancers_skills JOIN skills ON skills.skill_id = freelancers_skills.skill_id JOIN freelancers ON freelancers.freelancer_id = freelancers_skills.freelancer_id WHERE freelancers.freelancer_slug = ? AND freelancers_skills.freelancer_skill_status = 1 AND skills.skill_status = 1";
+        $sql = "SELECT fs.skill_id, s.skill_name FROM freelancers_skills AS fs JOIN skills AS s ON s.skill_id = fs.skill_id JOIN freelancers AS f ON f.freelancer_id = fs.freelancer_id WHERE f.freelancer_slug = ? AND fs.freelancer_skill_status = 1 AND s.skill_status = 1";
 
         $query = $db->query($sql, [$slug]);
 
         return $query->getResultArray();
+    }
+
+    public function insert_skills($skillID, $freelancerID)
+    {
+        $db = db_connect();
+
+        $newFreelancerSkillDataParams = array(
+            "freelancer_id" => $freelancerID,
+            "skill_id" => $skillID,
+            "freelancer_skill_status" => 1
+        );
+
+        $builder = $db->table("freelancers_skills");
+        $builder->insert($newFreelancerSkillDataParams);
+
+        return $db->affectedRows() > 0;
+    }
+
+    public function skills_exists($skillID, $freelancerID) : bool
+    {
+        $db = db_connect();
+        $builder = $db->table('freelancers_skills');
+        $builder->where(array("skill_id" => $skillID, "freelancer_id" => $freelancerID));
+        $count = $builder->countAllResults();
+        if($count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function deactivate_skill($skillID, $freelancerID) : bool
+    {
+        $db = db_connect();
+        $builder = $db->table("freelancers_skills");
+        
+        $newFreelancerSkillsResetDataParams = array(
+            "freelancer_skill_status" => 0
+        );
+
+        $deactivateSkillArrayCondition = array(
+            "skill_id" => $skillID,
+            "freelancer_id" => $freelancerID
+        );
+
+        $builder->where($deactivateSkillArrayCondition);
+        $builder->update($newFreelancerSkillsResetDataParams);
+
+        return $db->affectedRows() > 0;
+    }
+
+    public function update_skills($skillID, $freelancerID) : bool
+    {
+        $db = db_connect();
+
+        $updateSkillArrayCondition = array(
+            "skill_id" => $skillID,
+            "freelancer_id" => $freelancerID
+        );
+
+        $builder = $db->table("freelancers_skills");
+        $builder->where($updateSkillArrayCondition);
+        $count = $builder->countAllResults();
+        if($count > 0)
+        {
+            $newFreelancerSkillsUpdateDataParams = array(
+                "freelancer_skill_status" => 1
+            );
+    
+            $builder->where($updateSkillArrayCondition);
+            $builder->update($newFreelancerSkillsUpdateDataParams);   
+        }
+        else
+        {
+            $newFreelancerSkillsInsertDataParams = array(
+                "freelancer_id" => $freelancerID,
+                "skill_id" => $skillID,
+                "freelancer_skill_status" => 1
+            );
+
+            $builder->insert($newFreelancerSkillsInsertDataParams);
+        }
+        return $db->affectedRows() > 0; 
     }
 }
 ?>

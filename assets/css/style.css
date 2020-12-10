@@ -80,6 +80,16 @@ body, html {
   font-family:Arial Rounded MT;
 }
 
+.text-g
+{
+  color:#75BA40;
+}
+
+.text-bg
+{
+  color:#194055;
+}
+
 .bg-main
 {
     background: #E4E6EB;
@@ -364,7 +374,13 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   border-radius:100px;
 }
 
-.skills-badge:hover
+.skills-badge:hover, .selected-badge:hover, .edit-selected-badge:hover
 {
   cursor: pointer;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  background-color: #102A38;
+}
+
