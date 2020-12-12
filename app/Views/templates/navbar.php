@@ -22,7 +22,7 @@
         <a href="#" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Freelancers"><i class="fas fa-users"></i></a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Jobs"><i class="fas fa-briefcase"></i></a>
+        <a href="<?php echo base_url();?>/jobs" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Jobs"><i class="fas fa-briefcase"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="fas fa-comments"></i></a>

@@ -128,4 +128,25 @@ class Employers_model extends Model
 
         return $db->affectedRows() > 0; 
     }
+
+    public function get_info($slug)
+    {
+        $db = db_connect();
+        
+        $sql = "SELECT * FROM employers_info AS ei JOIN employers AS e ON  e.employer_id = ei.employer_id WHERE e.employer_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+        return $query->getRowArray();
+    }
+
+    public function get_image($slug)
+    {
+        $db = db_connect();
+
+        $sql = "SELECT * FROM employers_images AS eim JOIN employers as e ON e.employer_id = eim.employer_id WHERE e.employer_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+
+        return $query->getRowArray();
+    }
 }

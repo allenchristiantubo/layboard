@@ -46,6 +46,7 @@ $routes->setAutoRoute(true);
 // -- link -- controller::function
 $routes->get('/', 'PagesController::index');
 $routes->get('/dashboard', 'PagesController::dashboard');
+$routes->get('/jobs', 'PagesController::jobs');
 $routes->get('/privacy', 'PagesController::privacy');
 $routes->get('/terms', 'PagesController::terms');
 $routes->get('/logout', 'PagesController::logout');

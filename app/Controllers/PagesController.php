@@ -138,8 +138,6 @@ class PagesController extends BaseController
 			$data = array(
 				'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
 				'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
-				'user_type' => $sessionUserType,
-				'user_slug' => $sessionUserSlug
 			);
 
 			if($sessionUserType == "freelancer")
@@ -171,4 +169,40 @@ class PagesController extends BaseController
 
 	//--------------------------------------------------------------------
 
+	public function jobs()
+	{
+		$session = session();
+
+		$data = array(
+			'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+			'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
+		);
+
+		if($session->has('user_slug'))
+		{
+			$sessionUserType = $session->get("user_type");
+			$sessionUserSlug = $session->get("user_slug");
+
+			if($sessionUserType == "freelancer")
+			{
+				$freelancersModel = new Freelancers_model();
+			}
+			else if($sessionUserType == "employer")
+			{
+				$employersModel = new Employers_model();
+
+				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
+				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
+
+				echo view('templates/header', $data);
+				echo view('templates/navbar', $data);
+				echo view('employers/jobs', $data);
+				echo view('templates/footer', $data);
+			}
+		}
+		else
+		{
+			return redirect()->to(base_url());
+		}
+	}
 }
