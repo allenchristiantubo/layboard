@@ -1,0 +1,9 @@
+CRITICAL - 2020-12-15 06:14:09 --> Invalid file: tempaltes/sidebar.php
+#0 C:\xampp\htdocs\layboard\layboard\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tempaltes/sideb...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('tempaltes/sideb...', Array, true)
+#2 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(210): view('tempaltes/sideb...', Array)
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

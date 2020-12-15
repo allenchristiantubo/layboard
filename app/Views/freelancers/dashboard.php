@@ -1,4 +1,4 @@
-<div class="container-fluid bg-main" style="padding-top:80px;">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-2 d-flex align-items-stretch">
             <div class="card w-100">

@@ -64,6 +64,14 @@ class PagesController extends BaseController
 			$sessionUserSlug = $session->get('user_slug');
 			//$sessionUserId = $session->get('user_id');
 
+			$data = array(
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'current_page' => $currentPage,
+				'user_slug' => $sessionUserSlug,
+				'user_type' => $sessionUserType
+			);
+
 			if($usertype == "freelancer")
 			{
 				$freelancersModel = new Freelancers_model();
@@ -71,12 +79,6 @@ class PagesController extends BaseController
 				$accountExistsResult = $freelancersModel->profile_exists($userslug);
 				if($accountExistsResult)
 				{
-					$data = array(
-						'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-						'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
-						'user_slug' => $sessionUserSlug,
-						'user_type' => $sessionUserType
-					);
 					
 					$data['user_info'] = $freelancersModel->get_info($userslug);
 					$data['user_image'] = $freelancersModel->get_image($userslug);
@@ -129,15 +131,19 @@ class PagesController extends BaseController
 	public function dashboard()
 	{
 		$session = session();
-
+		$uri = service('uri');
 		if($session->has('user_slug'))
 		{
+			$currentPage = $uri->getSegment(1);
 			$sessionUserType = $session->get("user_type");
 			$sessionUserSlug = $session->get("user_slug");
 			// css and js files to load...
 			$data = array(
-				'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'current_page' => $currentPage,
+				'user_slug' => $sessionUserSlug,
+				'user_type' => $sessionUserType
 			);
 
 			if($sessionUserType == "freelancer")
@@ -148,15 +154,21 @@ class PagesController extends BaseController
 				$data['user_image'] = $freelancersModel->get_image($sessionUserSlug);
 
 				echo view('templates/header',$data);
-				echo view('templates/navbar', $data);
+				echo view('templates/sidebar', $data);
+				echo view('templates/topbar', $data);
 				echo view('freelancers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
 			else if($sessionUserType == "employer")
 			{
 				$employersModel = new Employers_model();
+				
+				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
+				$data['user_image'] = $employersModel->get_image($sessionUserSlug);
+
 				echo view('templates/header',$data);
-				echo view('templates/navbar', $data);
+				echo view('templates/sidebar', $data);
+				echo view('templates/topbar',$data);
 				echo view('employers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
@@ -174,8 +186,8 @@ class PagesController extends BaseController
 		$session = session();
 
 		$data = array(
-			'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-			'load_js' => array("sweetalert/sweetalert2.min.js", "app/profile.js"),
+			'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+			'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
 		);
 
 		if($session->has('user_slug'))
@@ -195,7 +207,8 @@ class PagesController extends BaseController
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
 
 				echo view('templates/header', $data);
-				echo view('templates/navbar', $data);
+				echo view('templates/sidebar', $data);
+				echo view('templates/topbar', $data);
 				echo view('employers/jobs', $data);
 				echo view('templates/footer', $data);
 			}

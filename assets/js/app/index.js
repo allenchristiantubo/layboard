@@ -173,6 +173,16 @@ $(document).ready(function() {
         var url;
         var emailValidated = 0, passwordValidated = 0, firstnameValidated = 0, lastnameValidated = 0, usertypeValidated = 0;
 
+        if(email == "" || (!email.replace(/\s/g,'').length))
+        {
+            $("#txtRegisterEmail").addClass("is-invalid");
+            $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
+        }
+        else
+        {
+            emailValidated = 1;
+        }
+
         if(password == "" || (!password.replace(/\s/g,'').length))
         {
             $("#txtRegisterPassword").addClass("is-invalid");
@@ -221,49 +231,41 @@ $(document).ready(function() {
             }
         }
 
-        if((passwordValidated == 1) && (firstnameValidated == 1) && (lastnameValidated == 1) && (usertypeValidated == 1))
-        {
-            if(email == "" || (!email.replace(/\s/g,'').length))
-            {
-                $("#txtRegisterEmail").addClass("is-invalid");
-                $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
-            }
-            else
-            {
-                $.ajax({
-                    type: "POST",
-                    url: baseURL + "/FreelancersController/email_exists",
-                    data: {email:email},
-                    dataType: "html",
-                    success: function (response) {
-                        if(response == 1)
-                        {
-                            $("#txtRegisterEmail").addClass("is-invalid");
-                            $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
-                        }
-                        else
-                        {
-                            $.ajax({
-                                type: "POST",
-                                url: baseURL + "/EmployersController/email_exists",
-                                data: {email:email},
-                                dataType: "html",
-                                success: function (response) {
-                                    if(response == 1)
-                                    {
-                                        $("#txtRegisterEmail").addClass("is-invalid");
-                                        $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
-                                    }
-                                    else
-                                    {
-                                        register(email, password, firstname, lastname, url);
-                                    }
-                                }
-                            });
-                        }
+        if((emailValidated == 1) &&(passwordValidated == 1) && (firstnameValidated == 1) && (lastnameValidated == 1) && (usertypeValidated == 1))
+        {          
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/FreelancersController/email_exists",
+                data: {email:email},
+                dataType: "html",
+                success: function (response) {
+                    if(response == 1)
+                    {
+                        $("#txtRegisterEmail").addClass("is-invalid");
+                        $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
                     }
-                });
-            }   
+                    else
+                    {
+                        $.ajax({
+                            type: "POST",
+                            url: baseURL + "/EmployersController/email_exists",
+                            data: {email:email},
+                            dataType: "html",
+                            success: function (response) {
+                                if(response == 1)
+                                {
+                                    $("#txtRegisterEmail").addClass("is-invalid");
+                                    $("#txtRegisterEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email already exists");
+                                }
+                                else
+                                {
+                                    register(email, password, firstname, lastname, url);
+                                }
+                            }
+                        });
+                    }
+                }
+            });   
         }
     });
 
