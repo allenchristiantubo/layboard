@@ -2,7 +2,7 @@
  <div id="content-wrapper" class="d-flex flex-column">
 
 <!-- Main Content -->
-<div id="content">
+<div id="content" class="bg-main">
 
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="border-bottom:5px solid #75BA40;">

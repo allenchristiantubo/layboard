@@ -184,16 +184,21 @@ class PagesController extends BaseController
 	public function jobs()
 	{
 		$session = session();
-
-		$data = array(
-			'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-			'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
-		);
+		$uri = service('uri');
 
 		if($session->has('user_slug'))
 		{
+			$currentPage = $uri->getSegment(1);
 			$sessionUserType = $session->get("user_type");
 			$sessionUserSlug = $session->get("user_slug");
+
+			$data = array(
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/jobs_employer.js"),
+				'current_page' => $currentPage,
+				'user_slug' => $sessionUserSlug,
+				'user_type' => $sessionUserType
+			);
 
 			if($sessionUserType == "freelancer")
 			{
@@ -210,6 +215,7 @@ class PagesController extends BaseController
 				echo view('templates/sidebar', $data);
 				echo view('templates/topbar', $data);
 				echo view('employers/jobs', $data);
+				echo view('employers/jobs_modal', $data);
 				echo view('templates/footer', $data);
 			}
 		}
