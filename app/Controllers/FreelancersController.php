@@ -26,7 +26,7 @@ class FreelancersController extends BaseController
     {
         $freelancersModel = new Freelancers_model();
         $session = session();
-
+        $sendEmail = service('email');
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
@@ -35,6 +35,17 @@ class FreelancersController extends BaseController
         {
             $sessionData = ["user_id" => $loginResult['freelancer_id'], "user_slug" => $loginResult['freelancer_slug'], "user_type" => "freelancer"];
             $session->set($sessionData);
+
+            // $sendEmail->setFrom("allentubo.layboard@gmail.com", "Allen Christian Tubo - Layboard Developer");
+            // $sendEmail->setTo("allentubo09@gmail.com");
+            // $sendEmail->setSubject("Account Logged In");
+            // $sendEmail->setMessage("Your account was logged in");
+
+            // $sendEmail->send();
+
+            // if($sendEmail->send(false)){
+                
+            // }
             echo 1;
         }
         else

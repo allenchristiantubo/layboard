@@ -4,21 +4,20 @@ use CodeIgniter\Model;
 use App\Libraries\Common_utils;
 class Freelancers_model extends Model
 {
-    
     public function email_exists($email)
     {
-      $db = db_connect();
-      $builder = $db->table('freelancers');
-      $builder->where("email_address", $email);
-      $count = $builder->countAllResults();
-      if($count > 0)
-      {
-          return true;
-      }
-      else
-      {
-        return false;
-      }
+        $db = db_connect();
+        $builder = $db->table('freelancers');
+        $builder->where("email_address", $email);
+        $count = $builder->countAllResults();
+        if($count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public function profile_exists($slug)

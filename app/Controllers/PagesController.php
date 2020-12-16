@@ -1,8 +1,10 @@
 <?php namespace App\Controllers;
-
-
+date_default_timezone_set("Asia/Manila");
 use App\Models\Freelancers_model;
 use App\Models\Employers_model;
+use App\Models\Categories_model;
+use App\Models\Jobs_model;
+use App\Libraries\Common_utils;
 class PagesController extends BaseController
 {
 	//view function for viewing of main pages
@@ -191,6 +193,7 @@ class PagesController extends BaseController
 			$currentPage = $uri->getSegment(1);
 			$sessionUserType = $session->get("user_type");
 			$sessionUserSlug = $session->get("user_slug");
+			$sessionUserId = $session->get("user_id");
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
@@ -207,10 +210,22 @@ class PagesController extends BaseController
 			else if($sessionUserType == "employer")
 			{
 				$employersModel = new Employers_model();
+				$categoriesModel = new Categories_model();
+				$jobsModel = new Jobs_model();
+				$common_utils = new Common_utils();
 
 				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
-
+				$data['categories'] = $categoriesModel->get_categories();
+				$draft_jobs = $jobsModel->get_draft_jobs($sessionUserId);
+				$draft_date_elapsed = array();
+				foreach($draft_jobs as $draft)
+				{
+					$val = $common_utils->time_elapsed_string($draft['date_created']);
+					array_push($draft_date_elapsed, $val);
+				}
+				$data['draft_jobs'] = $draft_jobs;
+				$data['draft_elapsed'] = $draft_date_elapsed;
 				echo view('templates/header', $data);
 				echo view('templates/sidebar', $data);
 				echo view('templates/topbar', $data);
