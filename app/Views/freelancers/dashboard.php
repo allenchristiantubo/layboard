@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2 d-flex align-items-stretch">
+        <div class="col-md-3 col-lg-2">
             <div class="card w-100">
                 <div class="card-body">
                     <h5>Android Development</h5>
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 d-flex align-items-stretch">
+        <div class="col-md-3 col-lg-2">
             <div class="card w-100">
                 <div class="card-body">
                     <h5>Artificial Intelligence</h5>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 d-flex align-items-stretch">
+        <div class="col-md-3 col-lg-2">
             <div class="card w-100">
                 <div class="card-body">
                     <h5>Web Application</h5>

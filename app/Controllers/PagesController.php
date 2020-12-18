@@ -1,10 +1,12 @@
 <?php namespace App\Controllers;
-date_default_timezone_set("Asia/Manila");
+
+use \DateTime;
 use App\Models\Freelancers_model;
 use App\Models\Employers_model;
 use App\Models\Categories_model;
 use App\Models\Jobs_model;
 use App\Libraries\Common_utils;
+
 class PagesController extends BaseController
 {
 	//view function for viewing of main pages
@@ -213,19 +215,16 @@ class PagesController extends BaseController
 				$categoriesModel = new Categories_model();
 				$jobsModel = new Jobs_model();
 				$common_utils = new Common_utils();
-
+				
 				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
 				$data['categories'] = $categoriesModel->get_categories();
-				$draft_jobs = $jobsModel->get_draft_jobs($sessionUserId);
-				$draft_date_elapsed = array();
-				foreach($draft_jobs as $draft)
+				$data['draft_jobs'] = $jobsModel->get_draft_jobs($sessionUserId);
+				$data['draft_elapsed'] = array();
+				for($i = 0; $i < count($data['draft_jobs']); $i++)
 				{
-					$val = $common_utils->time_elapsed_string($draft['date_created']);
-					array_push($draft_date_elapsed, $val);
+					array_push($data['draft_elapsed'], $common_utils->time_elapsed_string($data['draft_jobs'][$i]["date_created"]));
 				}
-				$data['draft_jobs'] = $draft_jobs;
-				$data['draft_elapsed'] = $draft_date_elapsed;
 				echo view('templates/header', $data);
 				echo view('templates/sidebar', $data);
 				echo view('templates/topbar', $data);

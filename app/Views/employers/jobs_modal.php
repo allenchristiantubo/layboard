@@ -80,6 +80,10 @@
             <div class="form-group">
                 <textarea type="text" name="" id="txtJobDescription" class="form-control" placeholder="Description of job post" rows="3"></textarea>
             </div>
+            <h6>Attachments <small> (Optional)</small></h6>
+            <div class="form-group">
+              <input type="file" class="form-control-file" id="txtJobAttachments" multiple>
+            </div>
         </div>
       </div>
       <div class="modal-footer">

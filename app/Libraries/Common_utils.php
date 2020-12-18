@@ -1,5 +1,5 @@
 <?php namespace App\Libraries;
-date_default_timezone_set("Asia/Manila");
+
 use \DateTime;
 class Common_utils
 {

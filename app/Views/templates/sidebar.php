@@ -5,7 +5,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>">
     <div class="sidebar-brand-icon">
-        <img src="<?php echo base_url();?>/assets/images/layboard-board-white.png" alt="" style="height:40px;width:40px;">
+        <img src="<?php echo base_url();?>/assets/images/layboard-board-white.png" alt="" style="height:30px;">
     </div>
     <div class="sidebar-brand-text mx-3"><img src="<?php echo base_url();?>/assets/images/layboard-word-white.png" alt="" style="height:20px;"> <sup></sup></div>
 </a>

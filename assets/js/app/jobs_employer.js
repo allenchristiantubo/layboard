@@ -1,4 +1,6 @@
 $(function(){
+    var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0;
+
     $(document).on("click","#btnAddJob",function(e){
         e.preventDefault();
         $("#employersAddJobTitle").modal({
@@ -7,8 +9,6 @@ $(function(){
             show:true,
         });
     });
-
-
 
     $(document).on("change", "#selectJobCategory", function (e){
         e.preventDefault();
@@ -66,6 +66,7 @@ $(function(){
         var title = $("#txtJobTitle").val();
         if(title == "" || (!title.replace(/\s/g,'').length))
         {
+            titleValidated = 0;
             $("#txtJobTitle").addClass("is-invalid");
             $("#txtJobTitleValidation").html('<i class="fas fa-exclamation-circle"></i> Title is required.');
         }
@@ -77,6 +78,7 @@ $(function(){
     //cancel the add modal and add to drafts
     $(document).on("click", "#btnCancel", function(e){
         e.preventDefault();
+        $("#employersAddJobTitle").modal("hide.");
     });
 
     //go next to second modal
@@ -85,8 +87,7 @@ $(function(){
         var title = $("#txtJobTitle").val();
         var category = $("#selectJobCategory").val();
         var specialty = $("#selectJobSpecialty").val();
-        
-        var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0;
+
         if(title == "" || (!title.replace(/\s/g, '').length))
         {
             $("#txtJobTitle").addClass("is-invalid");
@@ -125,23 +126,23 @@ $(function(){
 
         if(titleValidated == 1 && categoryValidated == 1 && specialtyValidated == 1)
         {
-            $.ajax({
-                type: "POST",
-                url: baseURL + "/JobsController/insert_job_title_category",
-                data: {title:title, category:category, specialty:specialty},
-                dataType: "html",
-                success: function (response) {
-                    if(response == 1)
-                    {
+            // $.ajax({
+            //     type: "POST",
+            //     url: baseURL + "/JobsController/insert_job_title_category",
+            //     data: {title:title, category:category, specialty:specialty},
+            //     dataType: "html",
+            //     success: function (response) {
+            //         if(response == 1)
+            //         {
                         $("#employersAddJobTitle").modal("hide");
                         $("#employersAddJobDescription").modal({
                             backdrop:'static',
                             keyboard:false,
                             show:true,
                         });
-                    }
-                }
-            });
+            //         }
+            //     }
+            // });
         }
     });
 

@@ -1,5 +1,5 @@
 <?php namespace App\Models;
-date_default_timezone_set("Asia/Manila");
+
 use CodeIgniter\Model;
 use App\Libraries\Common_utils;
 class Jobs_model extends Model
