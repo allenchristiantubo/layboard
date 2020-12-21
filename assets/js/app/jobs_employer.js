@@ -156,4 +156,27 @@ $(function(){
             show:true,
         });
     });
+
+    $(document).on("keydown", "#txtJobDescription", function (e){
+        var limitLength = 20;
+        var jobDesc = $("#txtJobDescription").val();
+        var jobDescLen = jobDesc.length;
+        if(e.which < 0x20)
+        {
+            return;
+        }
+        if(jobDescLen == limitLength)
+        {
+            e.preventDefault();
+        }
+        else if(jobDescLen > limitLength)
+        {
+            $("#txtJobDescription").val().substring(0, limitLength);
+        }
+        else if(jobDescLen < limitLength)
+        {
+            $("#txtDescriptionLimit").html("You can still use upto " + (limitLength - jobDescLen) + " characters");
+        }
+        
+    });
 });

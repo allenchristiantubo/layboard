@@ -178,9 +178,14 @@ $(document).ready(function() {
             $("#txtRegisterEmail").addClass("is-invalid");
             $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Email address is required.');
         }
-        else
+        else if(validateEmail(email))
         {
             emailValidated = 1;
+        }
+        else
+        {
+            $("#txtRegisterEmail").addClass("is-invalid");
+            $("#txtRegisterEmailValidation").html('<i class="fas fa-exclamation-circle"></i> Please enter a valid email.');
         }
 
         if(password == "" || (!password.replace(/\s/g,'').length))
@@ -371,5 +376,11 @@ $(document).ready(function() {
                 }
             }
         });
+    }
+
+    function validateEmail(email)
+    {
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 });

@@ -76,14 +76,11 @@
       </div>
       <div class="modal-body">
         <div id="jobSecondContainer">
-            <h6>Description</h6>
+            <h6>Description<small> (50 - 10000 characters)</small></h6>
             <div class="form-group">
-                <textarea type="text" name="" id="txtJobDescription" class="form-control" placeholder="Description of job post" rows="3"></textarea>
+                <textarea type="text" name="" id="txtJobDescription" class="form-control" placeholder="Description of job post" rows="20"></textarea>
             </div>
-            <h6>Attachments <small> (Optional)</small></h6>
-            <div class="form-group">
-              <input type="file" class="form-control-file" id="txtJobAttachments" multiple>
-            </div>
+            <small id="txtDescriptionLimit">You can still use upto 10,000 characters</small>
         </div>
       </div>
       <div class="modal-footer">
