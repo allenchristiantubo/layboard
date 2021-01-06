@@ -365,8 +365,10 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 .bg-gradient-main
 {
-  background: rgb(34,116,195);
-  background: linear-gradient(0deg, rgba(34,116,195,1) 0%, rgba(41,201,81,1) 100%);
+  /* background: rgb(34,116,195);
+  background: linear-gradient(0deg, rgba(34,116,195,1) 0%, rgba(41,201,81,1) 100%); */
+  background: rgb(117,186,64);
+  background: linear-gradient(0deg, rgba(117,186,64,1) 0%, rgba(40,167,69,1) 100%);
   background-size: cover;
 }
 

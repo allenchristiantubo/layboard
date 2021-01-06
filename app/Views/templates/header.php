@@ -15,4 +15,4 @@
     <script> var baseURL = "<?php echo base_url();?>";</script>
     
 </head>
-<body class="bg-main">
+<body class="bg-main sidebar-toggled">

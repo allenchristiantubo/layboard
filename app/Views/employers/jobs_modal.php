@@ -8,7 +8,9 @@
       </div>
       <div class="modal-body">
         <div id="jobFirstContainer">
-            
+            <div class="form-group">
+              <input type="text" id="txtJobID" class="form-control d-none" placeholder="Job ID">
+            </div>
             <div class="form-group">
                 <label class="text-arial-rounded" for="txtJobTitle">Title</label>
                 <input type="text" id="txtJobTitle" class="form-control" placeholder="Name of job post">
@@ -72,20 +74,51 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h5 class="modal-title w-100 text-arial-rounded" id="addJob">Description</h5>
+        <h5 class="modal-title w-100 text-arial-rounded" id="addDescription">Description</h5>
       </div>
       <div class="modal-body">
         <div id="jobSecondContainer">
-            <h6>Description<small> (50 - 10000 characters)</small></h6>
+            <small>(50 - 10000 characters)</small>
             <div class="form-group">
-                <textarea type="text" name="" id="txtJobDescription" class="form-control" placeholder="Description of job post" rows="20"></textarea>
+                <textarea type="text" id="txtJobDescription" class="form-control" placeholder="Description of job post" rows="10"></textarea>
+                <div class="invalid-feedback" id="txtJobDescriptionValidation"></div>
             </div>
-            <small id="txtDescriptionLimit">You can still use upto 10,000 characters</small>
+            <small id="txtDescriptionLimit">You can still use 10,000 characters</small>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sub" id="btnSecondBack"><i class="fas fa-angle-double-left"></i> Back</button>
         <button type="button" class="btn btn-main" id="btnSecondNext"><i class="fas fa-angle-double-right"></i> Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="employersAddJobExpertise" tabindex="-1" role="dialog" aria-labelledby="addExpertise" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100 text-arial-rounded" id="addExpertise">Expertise</h5>
+      </div>
+      <div class="modal-body">
+        <div id="jobExpertiseContainer">
+          <h6>Expertise are based from the category and specialty you set to this job.</h6>
+          <div class="form-group">
+            <input type="text" class="form-control" id="txtAddSkills" placeholder="What skills do you need?">
+          </div>
+          <hr>
+          <div class="container-fluid border mb-2" id="addSelectedSkills" style="height:150px;">
+          
+          </div>
+          <div class="container-fluid" id="addResultSkills" style="height:150px;">
+            <h6 class='mb-2'>No results yet.</h6>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sub" id="btnThirdBack"><i class="fas fa-angle-double-left"></i> Back</button>
+        <button type="button" class="btn btn-main" id="btnThirdNext"><i class="fas fa-angle-double-right"></i> Next</button>
       </div>
     </div>
   </div>

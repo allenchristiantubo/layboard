@@ -9756,7 +9756,7 @@ a:focus {
 }
 
 #wrapper {
-  display: flex;
+  display:block;
 }
 
 #wrapper #content-wrapper {

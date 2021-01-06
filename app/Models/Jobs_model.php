@@ -85,14 +85,36 @@ class Jobs_model extends Model
         $builder = $db->table("jobs_status");
         $builder->insert($newJobStatusDataParams);
 
-        return $db->affectedRows() > 0;
+        if($db->affectedRows() > 0)
+        {
+            return $job_id;
+        }
+    }
+
+    public function update_job_description($description, $job_id)
+    {
+        $db = db_connect();
+
+        $builder = $db->table("jobs_info");
+
+        $newDescriptionDataParams = array(
+            "job_description" => $description
+        );
+
+        $builder->where("job_id", $job_id);
+        $builder->update($newDescriptionDataParams);
+
+        if($db->affectedRows() > 0)
+        {
+            return true;
+        }
     }
 
     public function get_draft_jobs($employer_id)
     {
         $db = db_connect();
 
-        $sql = "SELECT ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id JOIN jobs_status AS js ON js.job_id = j.job_id WHERE js.job_status = ? AND j.employer_id = ? ORDER BY j.date_created";
+        $sql = "SELECT j.job_id, ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id JOIN jobs_status AS js ON js.job_id = j.job_id WHERE js.job_status = ? AND j.employer_id = ? ORDER BY j.date_created";
 
         $query = $db->query($sql,[2, $employer_id]);
 

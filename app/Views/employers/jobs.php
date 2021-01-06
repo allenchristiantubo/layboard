@@ -25,7 +25,7 @@
                     <h5 class="text-arial-rounded">Drafts</h5>
                     <button class="btn btn-main btn-sm" data-toggle="tooltip" data-placement="auto" title="View All Drafts"><i class="fas fa-list-ul"></i></button>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body">
                     <?php
                         if(empty($draft_jobs))
                         {
@@ -38,7 +38,12 @@
                                 <div class="card rounded-0">
                                     <div class="card-body">
                                         <div class="">
-                                            <button class="btn btn-circle btn-sm float-right"><i class="fas fa-ellipsis-v"></i></button>
+                                            <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnDraftDropdown<?php echo $draft_jobs[$i]["job_id"]; ?>"><i class="fas fa-ellipsis-v"></i></button>
+                                            <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnDraftDropdown<?php echo $draft_jobs[$i]["job_id"]; ?>">
+                                                <h6 class="dropdown-header">Actions</h6>
+                                                <a class="dropdown-item" href="#"><i class="fas fa-pen"></i> Edit</a>
+                                                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Delete</a>
+                                            </div>
                                             <h6 class="mx-3"><?php echo $draft_jobs[$i]["job_title"]; ?></h6>
                                         </div>
                                         

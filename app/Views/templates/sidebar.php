@@ -1,6 +1,6 @@
 <div id="wrapper">
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-main sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-main sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url();?>">
@@ -64,11 +64,9 @@
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Actions</h6>
-            <a class="collapse-item" href="<?php echo base_url();?>/jobs">My Jobs</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Sections</h6>
+            <a class="collapse-item" href="<?php echo base_url();?>/jobs">Job Posts</a>
+            <a class="collapse-item" href="<?php echo base_url();?>/job_catalog">Job Catalog</a>
         </div>
     </div>
 </li>
