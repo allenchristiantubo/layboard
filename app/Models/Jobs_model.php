@@ -110,6 +110,23 @@ class Jobs_model extends Model
         }
     }
 
+    public function insert_job_expertise($skill_id, $job_id)
+    {
+        $db = db_connect();
+
+        $builder = $db->table("jobs_skills");
+
+        $newSkillDataParams = array(
+            "job_id" => $job_id,
+            "skill_id" => $skill_id,
+            "job_skill_status" => 1
+        );
+
+        $builder->insert($newSkillDataParams);
+
+        return $db->affectedRows() > 0;
+    }
+
     public function get_draft_jobs($employer_id)
     {
         $db = db_connect();

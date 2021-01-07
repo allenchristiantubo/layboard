@@ -93,7 +93,7 @@
     </div>
   </div>
 </div>
-
+<!-- 3rd Modal -->
 <div class="modal fade" id="employersAddJobExpertise" tabindex="-1" role="dialog" aria-labelledby="addExpertise" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -105,6 +105,7 @@
           <h6>Expertise are based from the category and specialty you set to this job.</h6>
           <div class="form-group">
             <input type="text" class="form-control" id="txtAddSkills" placeholder="What skills do you need?">
+            <div class="invalid-feedback" id="txtJobExpertiseValidation"></div>
           </div>
           <hr>
           <div class="container-fluid border mb-2" id="addSelectedSkills" style="height:150px;">
@@ -119,6 +120,31 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-sub" id="btnThirdBack"><i class="fas fa-angle-double-left"></i> Back</button>
         <button type="button" class="btn btn-main" id="btnThirdNext"><i class="fas fa-angle-double-right"></i> Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 4th Modal -->
+<div class="modal fade" id="employersAddJobPricing" tabindex="-1" role="dialog" aria-labelledby="addPricing" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100 text-arial-rounded" id="addPricing">Pricing</h5>
+      </div>
+      <div class="modal-body">
+        <div id="jobPricingContainer">
+          <h6>Pay only for fixed price to the whole output.</h6>
+          <div class="form-group">
+              <div class="input-group">
+                  
+              </div>
+              <input type="number" class="form-control" id="txtJobPricing">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sub" id="btnFourthBack"><i class="fas fa-angle-double-left"></i> Back</button>
+        <button type="button" class="btn btn-main" id="btnFourthNext"><i class="fas fa-angle-double-right"></i> Next</button>
       </div>
     </div>
   </div>

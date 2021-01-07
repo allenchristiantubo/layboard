@@ -113,6 +113,26 @@ body, html {
     height:40px;
 }
 
+.btn-link-main {
+  font-weight: 400;
+  color: #75BA40;
+  text-decoration: none;
+}
+
+.btn-link-main:hover {
+  color:#5E9736;
+  text-decoration: underline;
+}
+
+.btn-link-main:focus, .btn-link-main.focus {
+  text-decoration: underline;
+}
+
+.btn-link-main:disabled, .btn-link-main.disabled {
+  color: #6c757d;
+  pointer-events: none;
+}
+
 .btn-main {
     color: #fff;
     background-color: #75BA40;

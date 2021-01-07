@@ -44,8 +44,8 @@ class PagesController extends BaseController
 
 	public function privacy()
 	{
-		$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
-		$data['load_js'] = array("sweetalert/sweetalert2.min.js");
+		$data['load_css'] = array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
+		$data['load_js'] = array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/privacyterms.js");
 
 		echo view('templates/header', $data);
 		echo view('pages/privacy', $data);
@@ -54,7 +54,11 @@ class PagesController extends BaseController
 
 	public function terms()
 	{
-		
+		$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
+		$data['load_js'] = array("sweetalert/sweetalert2.min.js","app/privacyterms.js");
+		echo view('templates/header', $data);
+		echo view('pages/terms', $data);
+		echo view('templates/footer', $data);
 	}
 
 	public function profile($usertype,$userslug)

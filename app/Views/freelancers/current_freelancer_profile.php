@@ -18,7 +18,6 @@
                         }
                     ?>
                     </div>
-                           
                 </div>
                 <div class="col-md-8 d-flex align-items-stretch">
                     <div class="pt-3 w-100">

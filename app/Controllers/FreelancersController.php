@@ -79,7 +79,7 @@ class FreelancersController extends BaseController
     {
         $freelancersModel = new Freelancers_model();
         $session = session();
-
+        
         $skillID = $this->request->getVar('skill_id');
         $skillName = $this->request->getVar('skill_name');
         $freelancerID = $session->get("user_id");

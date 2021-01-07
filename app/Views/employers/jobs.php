@@ -10,9 +10,12 @@
                     <h5 class="text-arial-rounded">Postings</h5>
                     <button class="btn btn-main btn-sm" data-toggle="tooltip" data-placement="auto" title="View All Postings"><i class="fas fa-list-ul"></i></button>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-main p-0">
                     <div id="postingsContainer">
                         <h6 class="text-center">No jobs yet.</h6>
+                        <div class="card-body bg-white rounded">
+                            <h6>Hello</h6>
+                        </div>
                     </div>
                     
                 </div>

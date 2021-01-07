@@ -1,0 +1,52 @@
+CRITICAL - 2021-01-07 01:55:09 --> syntax error, unexpected '"job_skill_status"' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Jobs...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Jobs...')
+#3 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(216): spl_autoload_call('App\\Models\\Jobs...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-07 02:04:38 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:04:38 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:04:45 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:06:18 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:06:53 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:25:47 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-07 02:25:52 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_expertise()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

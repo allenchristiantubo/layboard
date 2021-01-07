@@ -40,5 +40,25 @@ class JobsController extends BaseController
             echo 0;
         }
     }
+
+    public function insert_job_expertise()
+    {
+        $jobsModel = new Jobs_model();
+        $session = session();
+
+        $job_id = $this->request->getVar("job_id");
+        $skill_id = $this->request->getVar("skill_id");
+
+        $updateJobExpertiseResult = $jobsModel->insert_job_expertise($skill_id, $job_id);
+
+        if($updateJobDescResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
 }
 ?>

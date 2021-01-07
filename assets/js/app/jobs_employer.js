@@ -126,21 +126,21 @@ $(function(){
 
         if(titleValidated == 1 && categoryValidated == 1 && specialtyValidated == 1)
         {
-        //     $.ajax({
-        //         type: "POST",
-        //         url: baseURL + "/JobsController/insert_job_title_category",
-        //         data: {title:title, category:category, specialty:specialty},
-        //         dataType: "json",
-        //         success: function (response) {
-        //             $("#txtJobID").val(response.job_id);
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/JobsController/insert_job_title_category",
+                data: {title:title, category:category, specialty:specialty},
+                dataType: "json",
+                success: function (response) {
+                    $("#txtJobID").val(response.job_id);
                     $("#employersAddJobTitle").modal("hide");
                     $("#employersAddJobDescription").modal({
                         backdrop:'static',
                         keyboard:false,
                         show:true,
                     });
-            //     }
-            // });
+                }
+            });
         }
     });
 
@@ -198,23 +198,23 @@ $(function(){
 
         if(descriptionValidated == 1)
         {
-            // $.ajax({
-            //     type: "POST",
-            //     url: baseURL + "/JobsController/update_job_description",
-            //     data: {description:description, job_id:job_id},
-            //     dataType: "html",
-            //     success: function (response) {
-            //         if(response == 1)
-            //         {
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/JobsController/update_job_description",
+                data: {description:description, job_id:job_id},
+                dataType: "html",
+                success: function (response) {
+                    if(response == 1)
+                    {
                         $("#employersAddJobDescription").modal("hide");
                         $("#employersAddJobExpertise").modal({
                             backdrop:'static',
                             keyboard:false,
                             show:true
                         });
-            //         }
-            //     }
-            // });
+                    }
+                }
+            });
         }
     });
 
@@ -256,7 +256,6 @@ $(function(){
             });
         } 
     });
-
       //ADD SKILLS TO SELECTED CONTAINER
     $(document).on("click", ".skills-badge", function(e){
         e.preventDefault();
@@ -268,8 +267,56 @@ $(function(){
         $(this).remove();
     });
 
-    //DESCRIPTION TEXT LIMITER
+    //REMOVE SKILLS SELECTED
+    $(document).on("click", ".selected-badge", function (e){
+        e.preventDefault();
+        var id = $(this).data("id");
+        //var name = $(this).data("name");
+        var selectedIndex = skillsSelected.indexOf(id);
+        skillsSelected.splice(selectedIndex, 1);
+        skills.splice(selectedIndex, 1);
+        $(this).remove();
+    });
+    
 
+    //BTNTHIRD NEXT or save skills
+    $(document).on("click", "#btnThirdNext", function(e){
+        e.preventDefault();
+        var job_id = $("#txtJobID").val();
+        console.log(skillsSelected);
+        if(skillsSelected.length > 0)
+        {
+            for(var i = 0; i < skillsSelected.length; i++)
+            {
+                $.ajax({
+                    type: "POST", 
+                    url: baseURL + "/JobsController/insert_job_expertise",
+                    data: {skill_id:skillsSelected[i], job_id:job_id},
+                    dataType: "html",
+                    success: function (response) {
+                        if(response == 1)
+                        {
+                            $("#addSelectedSkills").html("");
+                            $("#employersAddJobExpertise").modal("hide");
+                            $("#employerAddJobPricing").modal({
+                                backdrop:'static',
+                                keyboard:false,
+                                show:true
+                            });
+                            skills = [];
+                            skillsSelected = [];
+                        }
+                    }
+                });
+            }
+        }
+        else
+        {
+            $("#txtJobExpertiseValidation").html("You should select expertise that suits to your job post");
+        }
+    });
+
+    //DESCRIPTION TEXT LIMITER
     $(document).on("keydown", "#txtJobDescription", function (e){
         var limitLength = 10000;
         var jobDesc = $("#txtJobDescription").val();

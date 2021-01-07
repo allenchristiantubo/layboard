@@ -1,7 +1,7 @@
 <style>
 .btn:focus,.btn:active {
-   outline: none !important;
-   box-shadow: none;
+    outline: none !important;
+    box-shadow: none;
 }
 </style>
 <div id="header">
@@ -13,41 +13,276 @@
     </nav>
 </div>
 
-<div class="container-fluid" style="padding-top:70px;">
-    <div class="row">
-        <div class="col-lg-3 offset-1">
-            <div id="accordion">
-                <div class="card border-0">
-                    <div class="card-header">
-                            <button class="btn btn-block text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <i class="fas fa-angle-right"></i> Data Collected</button>
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body bg-main">
-                            <ul class="list-group list-group-flush border-right border-bottom">
-                                <a href="#data-collected" class="list-group-item list-group-item-action list-group-item-light bg-main"><i class="fas fa-dot-circle"></i> Data you provide</a>
-                                <a href="#data-shared" class="list-group-item list-group-item-action list-group-item-light bg-main"><i class="fas fa-dot-circle"></i> Data Shared</a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-0">
-                    <div class="card-header">
-                    
-                    </div>
+<div class="container" style="padding-top:70px;">
+    <div class="accordion" id="accordionPolicy">
+        <h1 class="text-arial-rounded text-dark text-center">DATA POLICY</h1>
+        <div class="text-monospace">This policy describes the information we process to support our product Layboard.<br>Effective date: 2021-01-07</div>
+        <!-- FIRST COLLAPSE -->
+        <div class="card">
+            <div class="card-header" id="headingIntroduction">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseIntroduction" aria-expanded="true" aria-controls="collapseIntroduction"><i class="fas fa-chevron-right"></i> Introduction</button>
+                </h2>
+            </div>
+
+            <div id="collapseIntroduction" class="collapse" aria-labelledby="headingIntroduction" data-parent="#accordionPolicy">
+                <div class="card-body">
+                    <h6>Welcome to <span class="text-arial-rounded text-bold">Layboard</span></h6>
+
+                    <p>Layboard provides this Privacy Policy to let you know our policies and procedures regarding the collection, use and disclosure of information through our product and as well as any information Layboard collects in connection with the Service. It also describes the choices available to you regarding the use of, your access to, and how to update and correct your personal information. This Privacy Policy incorporates by reference the Layboard Data Processing Agreement. Note that we combine the information we collect from you from the Site, through the Service generally.</p>
+                    We’ve provided short summaries in this Privacy Policy to help you understand what information we collect, how we use it, and what choices or rights you may have. While these summaries help explain some of these concepts in a simple and clear way, we encourage you to read the entire Privacy Policy to understand our data practices. 
                 </div>
             </div>
         </div>
-        <div class="col-md-7">
-            <div id="data-policy">
-                <div class="h1 text-monospace">Data Policy</div>
-                <div class="text-monospace">This policy describes the information we process to support our product Layboard.</div>
+        <!-- SECOND COLLAPSE -->
+        <div class="card">
+            <div class="card-header" id="headingDefinitions">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseDefinitions" aria-expanded="true" aria-controls="collapseDefinitions"><i class="fas fa-chevron-right"></i> Definitions</button>
+                </h2>
             </div>
-            <div id="data-collected" class="mt-5">
-                <div class="h2 text-monospace">What kinds of data do we collect?</div>
-                <div class="text-monospace">We must process the data or information about you. The information we collect depends on how you use our product.</div>
-
-
+            <div id="collapseDefinitions" class="collapse" aria-labelledby="headingDefinitions" data-parent="#accordionPolicy">
+                <div class="card-body">
+                    <p><b>SERVICE</b> means the www.layboard.ph website operated by Layboard.</p>
+                    <p><b>PERSONAL DATA</b> means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).</p>
+                    <p><b>USAGE DATA</b> is data collected automatically either generated by the use of Service or from Service infrastructure itself (for example, the duration of a page visit).</p>
+                    <p><b>COOKIES</b> are small files stored on your device (computer or mobile device).</p>
+                    <p><b>DATA CONTROLLER</b> means a natural or legal person who (either alone or jointly or in common with other persons) determines the purposes for which and the manner in which any personal data are, or are to be, processed. For the purpose of this Privacy Policy, we are a Data Controller of your data.</p>
+                    <p><b>DATA PROCESSORS (OR SERVICE PROVIDERS)</b> means any natural or legal person who processes the data on behalf of the Data Controller. We may use the services of various Service Providers in order to process your data more effectively.</p> <p><b>DATA SUBJECT</b> is any living individual who is the subject of Personal Data.</p>
+                    <p><b>THE USER</b> is the individual using our Service. The User corresponds to the Data Subject, who is the subject of Personal Data.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingInformationCollection">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseInformationCollection" aria-expanded="true" aria-controls="collapseInformationCollection"><i class="fas fa-chevron-right"></i> Information Collection and Use</button>
+                </h2>
+            </div>
+            <div id="collapseInformationCollection" class="collapse" aria-labelledby="headingInformationCollection" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We collect several different types of data for different purposes to provide a better service.</p>
+                <p>Data collected also help us to improve our service offered to you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingDataCollected">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseDataCollected" aria-expanded="true" aria-controls="collapseDataCollected"><i class="fas fa-chevron-right"></i> Data Collected</button>
+                </h2>
+            </div>
+            <div id="collapseDataCollected" class="collapse" aria-labelledby="headingDataCollected" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p><b>Personal Data</b></p>
+                <p>While using Layboard, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (<b>“Personal Data”</b>). Personally identifiable information may include, but is not limited to:</p>
+                <ul>
+                    <li>Email Address</li>
+                    <li>Fullname</li>
+                    <li>Phone Number</li>
+                    <li>Address</li>
+                    <li>Sessions</li>
+                </ul>
+                <p>We may use your Personal Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you. You may opt out of receiving any, or all, of these communications from us by following the unsubscribe link.</p>
+                <div class="font-weight-bold h6 text-arial-rounded">Usage Data</div>
+                <p>We may also collect information that your browser sends whenever you visit our Service or when you access Service by or through any device.</p>
+                <p>This Usage Data may include information such as your computer’s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+                <p>When you access Service with a device, this Usage Data may include information such as the type of device you use, your device unique ID, the IP address of your device, your device operating system, the type of Internet browser you use, unique device identifiers and other diagnostic data.</p>
+                <p><b>Location Data</b></p><p>We may use and store information about your location if you give us permission to do so (<b>“Location Data”</b>). We use this data to provide features of our Service, to improve and customize our Service.</p><p>You can enable or disable location services when you use our Service at any time by way of your device settings.</p>
+                <p><b>Tracking Cookies Data</b></p>
+                <p>We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information.</p>
+                <p>Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyze our Service.</p>
+                <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+                <p>Examples of Cookies we use:</p>
+                    <ul>
+                        <li>Session Cookies:</b> We use Session Cookies to operate our Service.</li>
+                    </ul>
+                <p><b>Other Data</b></p>
+                <p>While using our Service, we may also collect the following information: sex, age, date of birth, place of birth, passport details, citizenship, registration at place of residence and actual address, telephone number (work, mobile), details of documents on education, qualification, professional training, employment agreements, NDA agreements</a>, information on bonuses and compensation, information on marital status, family members, social security (or other taxpayer identification) number, office location and other data.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingUseOfData">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseUseOfData" aria-expanded="true" aria-controls="collapseUseOfData"><i class="fas fa-chevron-right"></i> Use of Data</button>
+                </h2>
+            </div>
+            <div id="collapseUseOfData" class="collapse" aria-labelledby="headingUseOfData" data-parent="#accordionPolicy">
+                <div class="card-body">
+                    <p>Layboard uses the collected data for various purposes:</p>
+                    <ul>
+                        <li>to provide and maintain our Service;</li>
+                        <li>to notify you about changes to our Service;</li>
+                        <li>to allow you to participate in interactive features of our Service when you choose to do so;</li>
+                        <li>to provide customer support;</li>
+                        <li>to gather analysis or valuable information so that we can improve our Service;</li>
+                        <li>to monitor the usage of our Service;</li>
+                        <li>to detect, prevent and address technical issues;</li>
+                        <li>to fulfil any other purpose for which you provide it;</li>
+                        <li>to carry out our obligations and enforce our rights arising from any contracts entered into between you and us, including for billing and collection;</li>
+                        <li>to provide you with notices about your account and/or subscription, including expiration and renewal notices, email-instructions, etc.;</li>
+                        <li>to provide you with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless you have opted not to receive such information;</li>
+                        <li>in any other way we may describe when you provide the information;</li>
+                        <li>for any other purpose with your consent.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingRetentionOfData">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseRetentionOfData" aria-expanded="true" aria-controls="collapseRetentionOfData"><i class="fas fa-chevron-right"></i> Retention of Data</button>
+                </h2>
+            </div>
+            <div id="collapseRetentionOfData" class="collapse" aria-labelledby="headingRetentionOfData" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+                <p>We will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period, except when this data is used to strengthen the security or to improve the functionality of our Service, or we are legally obligated to retain this data for longer time periods.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTransferOfData">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseTransferOfData" aria-expanded="true" aria-controls="collapseTransferOfData"><i class="fas fa-chevron-right"></i> Transfer of Data</button>
+                </h2>
+            </div>
+            <div id="collapseTransferOfData" class="collapse" aria-labelledby="headingTransferOfData" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>Your information, including Personal Data, may be transferred to – and maintained on – computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+                <p>If you are located outside Philippines and choose to provide information to us, please note that we transfer the data, including Personal Data, to Philippines and process it there.</p>
+                <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+                <p>Layboard will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingDisclosureOfData">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseDisclosureOfData" aria-expanded="true" aria-controls="collapseDisclosureOfData"><i class="fas fa-chevron-right"></i> Disclosure of Data</button>
+                </h2>
+            </div>
+            <div id="collapseDisclosureOfData" class="collapse" aria-labelledby="headingDisclosureOfData" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may disclose personal information that we collect, or you provide:</p>
+                <ul>
+                <li><b>Disclosure for Law Enforcement.</b></li><p>Under certain circumstances, we may be required to disclose your Personal Data if required to do so by law or in response to valid requests by public authorities.</p><li><b>Business Transaction.</b></li><p>If we or our subsidiaries are involved in a merger, acquisition or asset sale, your Personal Data may be transferred.</p><li><b>Other cases. We may disclose your information also:</b></li><ul><li> to our subsidiaries and affiliates;</li><li>to contractors, service providers, and other third parties we use to support our business;</li><li>to fulfill the purpose for which you provide it;</li><li>for the purpose of including your company’s logo on our website;</li><li>for any other purpose disclosed by us when you provide the information;</li><li>with your consent in any other cases;</li><li>if we believe disclosure is necessary or appropriate to protect the rights, property, or safety of the Company, our customers, or others.</li></ul>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingSecurityOfData">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseSecurityOfData" aria-expanded="true" aria-controls="collapseSecurityOfData"><i class="fas fa-chevron-right"></i> Security of Data</button>
+                </h2>
+            </div>
+            <div id="collapseSecurityOfData" class="collapse" aria-labelledby="headingSecurityOfData" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingServiceProviders">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseServiceProviders" aria-expanded="true" aria-controls="collapseServiceProviders"><i class="fas fa-chevron-right"></i> Service Providers</button>
+                </h2>
+            </div>
+            <div id="collapseServiceProviders" class="collapse" aria-labelledby="headingServiceProviders" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may employ third party companies and individuals to facilitate our Service (<b>“Service Providers”</b>), provide Service on our behalf, perform Service-related services or assist us in analysing how our Service is used.</p>
+                <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingAnalytics">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseAnalytics" aria-expanded="true" aria-controls="collapseAnalytics"><i class="fas fa-chevron-right"></i> Analytics</button>
+                </h2>
+            </div>
+            <div id="collapseAnalytics" class="collapse" aria-labelledby="headingAnalytics" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may use third-party Service Providers to monitor and analyze the use of our Service.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingCICDTools">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseCICDTools" aria-expanded="true" aria-controls="collapseCICDTools"><i class="fas fa-chevron-right"></i> CI/CD(Continuous Integrations / Continuous Delivery) Tools</button>
+                </h2>
+            </div>
+            <div id="collapseCICDTools" class="collapse" aria-labelledby="headingCICDTools" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may use third-party Service Providers to monitor and analyze the use of our Service.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingPayments">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapsePayments" aria-expanded="true" aria-controls="collapsePayments"><i class="fas fa-chevron-right"></i> Payments</button>
+                </h2>
+            </div>
+            <div id="collapsePayments" class="collapse" aria-labelledby="headingPayments" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may provide paid products and/or services within Service. In that case, we use third-party services for payment processing (e.g. payment processors).</p><p>We will not store or collect your payment card details. That information is provided directly to our third-party payment processors whose use of your personal information is governed by their Privacy Policy. These payment processors adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, Mastercard, American Express and Discover. PCI-DSS requirements help ensure the secure handling of payment information.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingLinksOtherSites">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseLinksOtherSites" aria-expanded="true" aria-controls="collapseLinksOtherSites"><i class="fas fa-chevron-right"></i> Links to Other Sites</button>
+                </h2>
+            </div>
+            <div id="collapseLinksOtherSites" class="collapse" aria-labelledby="headingLinksOtherSites" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+                <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingChildrensPrivacy">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseChildrensPrivacy" aria-expanded="true" aria-controls="collapseChildrensPrivacy"><i class="fas fa-chevron-right"></i> Childer's Privacy</button>
+                </h2>
+            </div>
+            <div id="collapseChildrensPrivacy" class="collapse" aria-labelledby="headingChildrensPrivacy" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>Our Services are not intended for use by children under the age of 18 (<b>“Child”</b> or <b>“Children”</b>).</p>
+                <p>We do not knowingly collect personally identifiable information from Children under 18. If you become aware that a Child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from Children without verification of parental consent, we take steps to remove that information from our servers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingChangesPrivacyPolicy">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseChangesPrivacyPolicy" aria-expanded="true" aria-controls="collapseChangesPrivacyPolicy"><i class="fas fa-chevron-right"></i> Changes to This Privacy Policy</button>
+                </h2>
+            </div>
+            <div id="collapseChangesPrivacyPolicy" class="collapse" aria-labelledby="headingChangesPrivacyPolicy" data-parent="#accordionPolicy">
+                <div class="card-body">
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+                <p>We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update “effective date” at the top of this Privacy Policy.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingContactUs">
+                <h2 class="mb-0">
+                    <button class="btn btn-link-main text-arial-rounded" data-toggle="collapse" data-target="#collapseContactUs" aria-expanded="true" aria-controls="collapseContactUs"><i class="fas fa-chevron-right"></i> Contact Us</button>
+                </h2>
+            </div>
+            <div id="collapseContactUs" class="collapse" aria-labelledby="headingContactUs" data-parent="#accordionPolicy">
+                <div class="card-body">
+                    <p>If you have any questions about this Privacy Policy, please contact us by email: <b>customersupport@layboard.ph</b>.</p>
+                </div>
             </div>
         </div>
     </div>
