@@ -4,9 +4,6 @@
 <div id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="myNav">
     <a class="navbar-brand" href="<?php echo base_url(); ?>"><div class="logo-word ml-3"></div></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     </nav>
 </div>
 
@@ -16,13 +13,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="h1">Online freelance platform for the tech industry.</div>
-                    <div class="h6 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
+                    <div class="h5 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
                     <div class="row mt-5">
                         <div class="col-md-4">
-                            <button class="btn btn-main btn-block" id="btnGoToLogin">Login</button>
+                            <button class="btn btn-main btn-block btn-lg" id="btnGoToLogin">Login</button>
                         </div>
                         <div class="col-md-4">
-                            <button class="btn btn-sub btn-block" id="btnGoToRegister">Join with us</button>
+                            <button class="btn btn-sub btn-block btn-lg" id="btnGoToRegister">Join with us</button>
                         </div>
                     </div>
                 </div>
@@ -32,22 +29,22 @@
     <div class="section" id="loginsection">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 ml-auto">
+                <div class="col-md-4 col-lg-5 ml-auto">
                     <div class="card shadow">
                         <div class="card-body">
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" placeholder="Email Address" id="txtLoginEmail">
+                                <input type="text" class="form-control form-control-lg" placeholder="Email Address" id="txtLoginEmail">
                                 <div class="invalid-feedback" id="txtLoginEmailValidation"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="txtLoginPassword">
+                                <input type="password" class="form-control form-control-lg" placeholder="Password" id="txtLoginPassword">
                                 <div class="invalid-feedback" id="txtLoginPasswordValidation"></div>
                             </div>
-                            <button class="btn btn-sub btn-block" id="btnLogin">Log In</button>
+                            <button class="btn btn-sub btn-block btn-lg" id="btnLogin">Log In</button>
                             <a href="" class="btn btn-link btn-block">Forgot Password?</a>
                             <hr>
-                            <div class="row justify-content-center">
-                                <button class="btn btn-main" id="btnCreateAccount">Create New Account</button>
+                            <div class="row justify-content-center btn-lg">
+                                <button class="btn btn-main btn-lg" id="btnCreateAccount">Create New Account</button>
                             </div>                                
                         </div>
                     </div> 
@@ -58,8 +55,8 @@
     <div class="section" id="registrationsection">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card shadow">
+                <div class="col-md-4 col-lg-5">
+                    <div class="card shadow w-100">
                         <div class="card-body">
                             <h5 class="text-center">Join us on Layboard</h5>
                             <div class="form-group">

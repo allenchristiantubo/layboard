@@ -11,6 +11,9 @@
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
         </button>
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"><i class="fas fa-bars    "></i></button>
+        </div>
 
         <!-- Topbar Search -->
         <form

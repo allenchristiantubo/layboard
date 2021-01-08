@@ -1,9 +1,9 @@
 $(function(){
-    var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0, descriptionValidated = 0, skills = [], skillsSelected = [], skillsDeleted = [];
+    var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0, descriptionValidated = 0, priceValidated = 0, skillsValidated = 0, jobDone = 0, jobInfoDone = 0, skills = [], skillsSelected = [], skillsDeleted = [];
 
     $(document).on("click","#btnAddJob",function(e){
         e.preventDefault();
-        $("#employersAddJobTitle").modal({
+        $("#employersAddJob").modal({
             backdrop:'static',
             keyboard:false,
             show:true,
@@ -70,6 +70,10 @@ $(function(){
             $("#txtJobTitle").addClass("is-invalid");
             $("#txtJobTitleValidation").html('<i class="fas fa-exclamation-circle"></i> Title is required.');
         }
+        else
+        {
+            titleValidated = 1;     
+        }
     }).focus(function(){
         $("#txtJobTitle").removeClass("is-invalid");
         $("#txtJobTitleValidation").html('');
@@ -78,32 +82,35 @@ $(function(){
     //cancel the add modal and add to drafts
     $(document).on("click", "#btnCancel", function(e){
         e.preventDefault();
-        $("#employersAddJobTitle").modal("hide.");
-    });
-
-    //go next to second modal
-    $(document).on("click", "#btnFirstNext", function (e){
-        e.preventDefault();
-        var title = $("#txtJobTitle").val();
-        var category = $("#selectJobCategory").val();
-        var specialty = $("#selectJobSpecialty").val();
-
-        if(title == "" || (!title.replace(/\s/g, '').length))
+        var job_id = $("#txtJobID").val();
+        if(job_id.length > 0)
         {
-            $("#txtJobTitle").addClass("is-invalid");
-            $("#txtJobTitleValidation").html('<i class="fas fa-exclamation-circle"></i> Title is required.');
+            Swal.fire({
+                title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
+                text:"Your draft was saved.",
+                showConfirmButton:false,
+                timer:3000
+            }).then(function(){
+                $("#employersAddJob").modal("hide");
+            });
         }
         else
         {
-            $("#txtJobTitle").removeClass("is-invalid");
-            $("#txtJobTitleValidation").html('');
-            titleValidated = 1;
+            $("#employersAddJob").modal("hide");   
         }
+    });
 
+    //go next to second modal and insert to job
+    $(document).on("click", "#btnFirstNext", function (e){
+        e.preventDefault();
+        var category = $("#selectJobCategory").val();
+        var specialty = $("#selectJobSpecialty").val();
+        var job_id = $("#txtJobID").val();
         if(category == null)
         {
             $("#selectJobCategory").addClass("is-invalid");
             $("#txtJobCategoryValidation").html('<i class="fas fa-exclamation-circle"></i> Category is required.');
+            categoryValidated = 0
         }
         else
         {
@@ -116,6 +123,7 @@ $(function(){
         {
             $("#selectJobSpecialty").addClass("is-invalid");
             $("#txtJobSpecialtyValidation").html('<i class="fas fa-exclamation-circle"></i> Specialty is required.')
+            categoryValidated = 0
         }
         else
         {
@@ -124,31 +132,54 @@ $(function(){
             specialtyValidated = 1;
         }
 
-        if(titleValidated == 1 && categoryValidated == 1 && specialtyValidated == 1)
+        if(categoryValidated == 1 && specialtyValidated == 1)
         {
-            $.ajax({
-                type: "POST",
-                url: baseURL + "/JobsController/insert_job_title_category",
-                data: {title:title, category:category, specialty:specialty},
-                dataType: "json",
-                success: function (response) {
-                    $("#txtJobID").val(response.job_id);
-                    $("#employersAddJobTitle").modal("hide");
-                    $("#employersAddJobDescription").modal({
-                        backdrop:'static',
-                        keyboard:false,
-                        show:true,
-                    });
-                }
-            });
+            if(job_id.length > 0 || job_id != "")
+            {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "/JobsController/update_job",
+                    data: {category:category, specialty:specialty, job_id:job_id},
+                    dataType: "html",
+                    success: function (response) {
+                        if(response == 1)
+                        {
+                            $("#employersAddJob").modal("hide");
+                            $("#employersAddJobInfo").modal({
+                                backdrop:'static',
+                                keyboard:false,
+                                show:true,
+                            });
+                        }
+                    }
+                });
+            }
+            else
+            {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "/JobsController/insert_job",
+                    data: {category:category, specialty:specialty},
+                    dataType: "json",
+                    success: function (response) {
+                        $("#txtJobID").val(response.job_id);
+                        $("#employersAddJob").modal("hide");
+                        $("#employersAddJobInfo").modal({
+                            backdrop:'static',
+                            keyboard:false,
+                            show:true,
+                        });
+                    }
+                });
+            }
         }
     });
 
     //go back to first modal
     $(document).on("click", "#btnSecondBack", function (e){
         e.preventDefault();
-        $("#employersAddJobDescription").modal("hide");
-        $("#employersAddJobTitle").modal({
+        $("#employersAddJobInfo").modal("hide");
+        $("#employersAddJob").modal({
             backdrop:'static',
             keyboard:false,
             show:true
@@ -177,17 +208,33 @@ $(function(){
     //go to third modal
     $(document).on("click", "#btnSecondNext", function (e){
         e.preventDefault();
+        var title = $("#txtJobTitle").val();
         var description = $("#txtJobDescription").val();
         var job_id = $("#txtJobID").val();
+        if(title == "" || (!title.replace(/\s/g, '').length))
+        {
+            $("#txtJobTitle").addClass("is-invalid");
+            $("#txtJobTitleValidation").html('<i class="fas fa-exclamation-circle"></i> Title is required.');
+            titleValidated = 0;
+        }
+        else
+        {
+            $("#txtJobTitle").removeClass("is-invalid");
+            $("#txtJobTitleValidation").html('');
+            titleValidated = 1;
+        }
+
         if(description == "" || (!description.replace(/\s/g, '').length))
         {
             $("#txtJobDescription").addClass("is-invalid");
             $("#txtJobDescriptionValidation").html('<i class="fas fa-exclamation-circle"></i> Description is required.');
+            descriptionValidated = 0;
         }
         else if(description.length < 50)
         {
             $("#txtJobDescription").addClass("is-invalid");
             $("#txtJobDescriptionValidation").html('<i class="fas fa-exclamation-circle"></i> Description must be atleast 50 characters.');
+            descriptionValidated = 0;
         }
         else
         {
@@ -196,17 +243,17 @@ $(function(){
             descriptionValidated = 1;
         }
 
-        if(descriptionValidated == 1)
+        if(titleValidated == 1 && descriptionValidated == 1)
         {
             $.ajax({
                 type: "POST",
-                url: baseURL + "/JobsController/update_job_description",
-                data: {description:description, job_id:job_id},
+                url: baseURL + "/JobsController/insert_job_info",
+                data: {title:title,description:description, job_id:job_id},
                 dataType: "html",
                 success: function (response) {
                     if(response == 1)
                     {
-                        $("#employersAddJobDescription").modal("hide");
+                        $("#employersAddJobInfo").modal("hide");
                         $("#employersAddJobExpertise").modal({
                             backdrop:'static',
                             keyboard:false,
@@ -218,9 +265,12 @@ $(function(){
         }
     });
 
+    
+
     $("#txtAddSkills").on("keyup", function (e) { 
         e.preventDefault();
         var skill_name = $("#txtAddSkills").val();
+        var specialty_id = $("#selectJobSpecialty").val();
         if(skill_name == "" || (!skill_name.replace(/\s/g, '').length))
         {
             $("#addResultSkills").html("<h6 class='mb-2'>No results yet.</h6>");
@@ -229,8 +279,8 @@ $(function(){
         {
             $.ajax({
             type: "POST",
-            url: baseURL + "/SkillsController/search_skills",
-            data: {skill_name:skill_name},
+            url: baseURL + "/SkillsController/search_skills_by_specialty",
+            data: {skill_name:skill_name, specialty_id:specialty_id},
             dataType: "json",
             success: function (response) {
                 if(response.length > 0)
@@ -283,8 +333,22 @@ $(function(){
     $(document).on("click", "#btnThirdNext", function(e){
         e.preventDefault();
         var job_id = $("#txtJobID").val();
-        console.log(skillsSelected);
-        if(skillsSelected.length > 0)
+
+        if(skillsSelected.length == 0)
+        {
+            $("#txtAddSkills").addClass("is-invalid");
+            $("#txtJobExpertiseValidation").html("You should select expertise that matches your job post");
+            skillsValidated = 0;
+        }
+        else
+        {
+            $("#txtAddSkills").removeClass("is-invalid");
+            $("#txtJobExpertiseValidation").html("");
+            skillsValidated = 1;
+        }
+
+
+        if(skillsValidated == 1)
         {
             for(var i = 0; i < skillsSelected.length; i++)
             {
@@ -298,7 +362,7 @@ $(function(){
                         {
                             $("#addSelectedSkills").html("");
                             $("#employersAddJobExpertise").modal("hide");
-                            $("#employerAddJobPricing").modal({
+                            $("#employersAddJobPricing").modal({
                                 backdrop:'static',
                                 keyboard:false,
                                 show:true
@@ -310,10 +374,16 @@ $(function(){
                 });
             }
         }
-        else
-        {
-            $("#txtJobExpertiseValidation").html("You should select expertise that suits to your job post");
-        }
+    });
+
+    $(document).on("click", "#btnThirdBack", function (e){
+        e.preventDefault();
+        $("#employersAddJobExpertise").modal("hide");
+        $("#employersAddJobInfo").modal({
+            backdrop:'static',
+            keyboard:false,
+            show:true
+        });
     });
 
     //DESCRIPTION TEXT LIMITER
@@ -361,5 +431,51 @@ $(function(){
         {
             $("#txtDescriptionLimit").html("You reached the limit length");
         }
+    });
+
+    $(document).on("click", "#btnFourthNext", function(e){
+        e.preventDefault();
+        var price = $("#txtJobPricing").val();
+        var job_id = $("#txtJobID").va();
+
+        var intRegex = /^\d+$/;
+        var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
+        if(price ==  "" || (!price.replace(/\s/g, '').length))
+        {
+            $("#txtJobPricingValidation").html("Job price should not be empty");
+            priceValidated = 0;
+        }
+        else if(!intRegex.test(price) || !floatRegex.test(price))
+        {
+            $("#txtJobPricingValidation").html("Job price should be a numerical value");
+            priceValidated = 0;
+        }
+        else
+        {
+            priceValidated = 1;
+        }
+
+        if(priceValidated == 1)
+        {
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/JobsController/",
+                data: "data",
+                dataType: "dataType",
+                success: function (response) {
+                    
+                }
+            });
+        }
+    });
+
+    $(document).on("click", "#btnFourthBack", function (e){
+        e.preventDefault();
+        $("#employersAddJobPricing").modal("hide");
+        $("#employersAddJob").modal({
+            backdrop:'static',
+            keyboard:false,
+            show:true
+        });
     });
 });

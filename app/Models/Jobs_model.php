@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 use App\Libraries\Common_utils;
 class Jobs_model extends Model
 {
-    public function insert_job_title_category($title, $employer_id, $category_id, $specialty_id)
+    public function insert_job($employer_id, $category_id, $specialty_id)
     {
         $db = db_connect();
         $builder = $db->table("jobs");
@@ -40,50 +40,13 @@ class Jobs_model extends Model
             "specialty_id" => $specialty_id,
             "job_slug" => $jobSlug,
             "job_code" => $jobCode,
-            "date_created" => date("Y-m-d H:i:s")
+            "date_created" => "",
+            "date_updated" => "",
+            "job_status" => 2
         );
 
         $builder->insert($newJobDataParams);
         $job_id = $db->insertID();
-
-        $newJobInfoDataParams = array(
-            "job_id" => $job_id,
-            "job_title" => $title,
-            "job_description" => "",
-            "job_price" => 0,
-        );
-
-        $builder = $db->table("jobs_info");
-        $builder->insert($newJobInfoDataParams);
-
-        /*
-            JOB STATUS...
-            0 = archived or inactive
-            1 = posted
-            2 = draft
-            3 = active
-            4 = done
-
-            ACTIVATION STATUS FOR FREELANCERS...
-            0 = inactive
-            1 = active
-
-            PAYMENT STATUS
-            0 = NO PAYMENT
-            1 = ON HOLD
-            2 = PAID
-        */
-        $newJobStatusDataParams = array(
-            "job_id" => $job_id,
-            "employer_id" => $employer_id,
-            "freelancer_id" => 0,
-            "job_status" => 0,
-            "activation_status" => 0,
-            "payment_status" => 0
-        );
-        
-        $builder = $db->table("jobs_status");
-        $builder->insert($newJobStatusDataParams);
 
         if($db->affectedRows() > 0)
         {
@@ -91,18 +54,20 @@ class Jobs_model extends Model
         }
     }
 
-    public function update_job_description($description, $job_id)
+    public function insert_job_info($title, $description, $job_id)
     {
         $db = db_connect();
 
         $builder = $db->table("jobs_info");
 
-        $newDescriptionDataParams = array(
-            "job_description" => $description
+        $newInfoDataParams = array(
+            "job_id" => $job_id,
+            "job_title" => $title,
+            "job_description" => $description,
+            "job_info_status" => 0
         );
 
-        $builder->where("job_id", $job_id);
-        $builder->update($newDescriptionDataParams);
+        $builder->insert($newInfoDataParams);
 
         if($db->affectedRows() > 0)
         {
@@ -125,6 +90,16 @@ class Jobs_model extends Model
         $builder->insert($newSkillDataParams);
 
         return $db->affectedRows() > 0;
+    }
+
+    public function insert_job_pricing($skill_id, $price)
+    {
+        
+    }
+
+    public function update_job($employer_id, $job_id, $category, $specialty)
+    {
+        
     }
 
     public function get_draft_jobs($employer_id)

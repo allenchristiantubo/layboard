@@ -3,35 +3,36 @@
 use App\Models\Jobs_model;
 class JobsController extends BaseController
 {
-    public function insert_job_title_category()
+    public function insert_job()
     {   
         $jobsModel = new Jobs_model();
         $session = session();
 
-        $title = $this->request->getVar("title");
+        
         $category = $this->request->getVar("category");
         $specialty = $this->request->getVar("specialty");
         $employer_id = $session->get("user_id");
 
-        $addTitleCategoryResult = $jobsModel->insert_job_title_category($title, $employer_id, $category, $specialty);
+        $insertJobResult = $jobsModel->insert_job($employer_id, $category, $specialty);
 
-        if(!empty($addTitleCategoryResult))
+        if(!empty($insertJobResult))
         {
-            echo json_encode(array("job_id" => $addTitleCategoryResult));
+            echo json_encode(array("job_id" => $insertJobInfoResult));
         }
     }
 
-    public function update_job_description()
+    public function insert_job_info()
     {
         $jobsModel = new Jobs_model();
         $session = session();
 
+        $title = $this->request->getVar("title");
         $description = $this->request->getVar("description");
         $job_id = $this->request->getVar("job_id");
 
-        $updateJobDescResult = $jobsModel->update_job_description($description, $job_id);
+        $insertJobInfoResult = $jobsModel->insert_job_info($title,$description, $job_id);
         
-        if($updateJobDescResult)
+        if($insertJobInfoResult)
         {
             echo 1;
         }
@@ -49,9 +50,9 @@ class JobsController extends BaseController
         $job_id = $this->request->getVar("job_id");
         $skill_id = $this->request->getVar("skill_id");
 
-        $updateJobExpertiseResult = $jobsModel->insert_job_expertise($skill_id, $job_id);
+        $insertJobExpertiseResult = $jobsModel->insert_job_expertise($skill_id, $job_id);
 
-        if($updateJobDescResult)
+        if($insertJobExpertiseResult)
         {
             echo 1;
         }
@@ -60,5 +61,75 @@ class JobsController extends BaseController
             echo 0;
         }
     }
+
+    public function insert_job_pricing()
+    {
+        $jobsModel = new Jobs_model();
+
+        $job_id = $this->request->getVar("job_id");
+        $price = $this->request->getVar("price");
+
+        $insertJobPricingResult = $jobsModel->insert_job_pricing($price, $job_id);
+
+        if($insertJobPricingResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+
+    public function publish_job()
+    {
+        $jobsModel = new Job_model();
+
+        $job_id = $this->request->getVar("job_id");
+
+        $publishJobResult;
+    }
+
+    public function update_job()
+    {
+        $jobsModel = new Job_model();
+
+        $job_id = $this->request->getVar("job_id");
+        $category = $this->request->getVar("category");
+        $specialty = $this->request->getVar("specialty");
+        $employer_id = $session->get("user_id");
+
+        $updateJobResult = $jobsModel->update_job($employer_id, $job_id, $category, $specialty);
+
+        if($updateJobResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+
+    // public function update_job_info()
+    // {
+    //     $jobsModel = new Jobs_model();
+    //     $session = session();
+
+    //     $title = $this->request->getVar("title");
+    //     $description = $this->request->getVar("description");
+    //     $job_id = $this->request->getVar("job_id");
+
+    //     $updateJobInfoResult = $jobsModel->update_job_info($title,$description, $job_id);
+        
+    //     if($updateJobInfoResult)
+    //     {
+    //         echo 1;
+    //     }
+    //     else
+    //     {
+    //         echo 0;
+    //     }
+    // }
 }
 ?>
