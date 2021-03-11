@@ -1,5 +1,5 @@
 $(function(){
-    var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0, descriptionValidated = 0, priceValidated = 0, skillsValidated = 0, jobDone = 0, jobInfoDone = 0, skills = [], skillsSelected = [], skillsDeleted = [];
+    var titleValidated = 0, categoryValidated = 0; specialtyValidated = 0, descriptionValidated = 0, priceValidated = 0, skillsValidated = 0, skills = [], skillsSelected = [], skillsDeleted = [];
 
     $(document).on("click","#btnAddJob",function(e){
         e.preventDefault();
@@ -83,15 +83,27 @@ $(function(){
     $(document).on("click", "#btnCancel", function(e){
         e.preventDefault();
         var job_id = $("#txtJobID").val();
-        if(job_id.length > 0)
+        var job_done = $("#txtJobInfoDone").val();
+        if(job_id.length > 0 && job_done == 1)
         {
-            Swal.fire({
-                title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
-                text:"Your draft was saved.",
-                showConfirmButton:false,
-                timer:3000
-            }).then(function(){
-                $("#employersAddJob").modal("hide");
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/JobsController/update_job_draft",
+                data: {job_id, job_id},
+                dataType: "html",
+                success: function (response) {
+                    if(response == 1)
+                    {
+                        Swal.fire({
+                            title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
+                            text:"Your draft was saved.",
+                            showConfirmButton:false,
+                            timer:3000
+                        }).then(function(){
+                            window.location.reload();
+                        });
+                    }
+                }
             });
         }
         else
@@ -106,6 +118,7 @@ $(function(){
         var category = $("#selectJobCategory").val();
         var specialty = $("#selectJobSpecialty").val();
         var job_id = $("#txtJobID").val();
+        var job_done = $("#txtJobDone").val();
         if(category == null)
         {
             $("#selectJobCategory").addClass("is-invalid");
@@ -134,7 +147,7 @@ $(function(){
 
         if(categoryValidated == 1 && specialtyValidated == 1)
         {
-            if(job_id.length > 0 || job_id != "")
+            if(job_id.length > 0  && job_done == 1)
             {
                 $.ajax({
                     type: "POST",
@@ -142,15 +155,12 @@ $(function(){
                     data: {category:category, specialty:specialty, job_id:job_id},
                     dataType: "html",
                     success: function (response) {
-                        if(response == 1)
-                        {
-                            $("#employersAddJob").modal("hide");
-                            $("#employersAddJobInfo").modal({
-                                backdrop:'static',
-                                keyboard:false,
-                                show:true,
-                            });
-                        }
+                        $("#employersAddJob").modal("hide");
+                        $("#employersAddJobInfo").modal({
+                            backdrop:'static',
+                            keyboard:false,
+                            show:true,
+                        });
                     }
                 });
             }
@@ -163,6 +173,7 @@ $(function(){
                     dataType: "json",
                     success: function (response) {
                         $("#txtJobID").val(response.job_id);
+                        $("#txtJobDone").val(1);
                         $("#employersAddJob").modal("hide");
                         $("#employersAddJobInfo").modal({
                             backdrop:'static',
@@ -211,6 +222,7 @@ $(function(){
         var title = $("#txtJobTitle").val();
         var description = $("#txtJobDescription").val();
         var job_id = $("#txtJobID").val();
+        var job_done = $("#txtJobInfoDone").val();
         if(title == "" || (!title.replace(/\s/g, '').length))
         {
             $("#txtJobTitle").addClass("is-invalid");
@@ -245,23 +257,47 @@ $(function(){
 
         if(titleValidated == 1 && descriptionValidated == 1)
         {
-            $.ajax({
-                type: "POST",
-                url: baseURL + "/JobsController/insert_job_info",
-                data: {title:title,description:description, job_id:job_id},
-                dataType: "html",
-                success: function (response) {
-                    if(response == 1)
-                    {
-                        $("#employersAddJobInfo").modal("hide");
-                        $("#employersAddJobExpertise").modal({
-                            backdrop:'static',
-                            keyboard:false,
-                            show:true
-                        });
+            if(job_id.length > 0 && job_done == 1)
+            {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "/JobsController/update_job_info",
+                    data: {title:title,description:description, job_id:job_id},
+                    dataType: "html",
+                    success: function (response) {
+                        if(response == 1)
+                        {
+                            $("#employersAddJobInfo").modal("hide");
+                            $("#employersAddJobExpertise").modal({
+                                backdrop:'static',
+                                keyboard:false,
+                                show:true
+                            });
+                        }
                     }
-                }
-            });
+                });
+            }
+            else
+            {
+                $.ajax({
+                    type: "POST",
+                    url: baseURL + "/JobsController/insert_job_info",
+                    data: {title:title,description:description, job_id:job_id},
+                    dataType: "html",
+                    success: function (response) {
+                        if(response == 1)
+                        {
+                            $("#txtJobInfoDone").val(response);
+                            $("#employersAddJobInfo").modal("hide");
+                            $("#employersAddJobExpertise").modal({
+                                backdrop:'static',
+                                keyboard:false,
+                                show:true
+                            });
+                        }
+                    }
+                });
+            }
         }
     });
 
@@ -436,7 +472,7 @@ $(function(){
     $(document).on("click", "#btnFourthNext", function(e){
         e.preventDefault();
         var price = $("#txtJobPricing").val();
-        var job_id = $("#txtJobID").va();
+        var job_id = $("#txtJobID").val();
 
         var intRegex = /^\d+$/;
         var floatRegex = /^((\d+(\.\d *)?)|((\d*\.)?\d+))$/;
@@ -459,11 +495,21 @@ $(function(){
         {
             $.ajax({
                 type: "POST",
-                url: baseURL + "/JobsController/",
-                data: "data",
-                dataType: "dataType",
+                url: baseURL + "/JobsController/insert_job_pricing",
+                data: {price:price, job_id:job_id},
+                dataType: "html",
                 success: function (response) {
-                    
+                    if(response == 1)
+                    {
+                        Swal.fire({
+                            title:"<h3 class='text-green'><i class='fas fa-check-circle'></i> Success!</h3>",
+                            text:"Your job has been published.",
+                            showConfirmButton:false,
+                            timer:3000
+                        }).then(function(){
+                            window.location.reload();
+                        });
+                    }
                 }
             });
         }

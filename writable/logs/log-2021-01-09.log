@@ -1,0 +1,200 @@
+CRITICAL - 2021-01-09 14:13:49 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 14:14:23 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 14:14:35 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 14:15:12 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 14:15:12 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 14:15:19 --> Class 'app\Controllers\BaseController' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#4 [internal function]: spl_autoload_call('App\\Controllers...')
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#7 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 17:56:40 --> syntax error, unexpected ';', expecting ')'
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Jobs...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Jobs...')
+#3 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(220): spl_autoload_call('App\\Models\\Jobs...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-09 17:56:54 --> syntax error, unexpected '=', expecting ')'
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Jobs...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Jobs...')
+#3 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(220): spl_autoload_call('App\\Models\\Jobs...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-09 18:13:02 --> Class 'App\Controllers\Job_model' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->update_job()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-09 18:13:04 --> Class 'App\Controllers\Job_model' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->update_job()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-09 18:13:08 --> Class 'App\Controllers\Job_model' not found
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->update_job()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-09 18:13:28 --> Call to a member function get() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->update_job()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-09 18:13:40 --> Call to a member function getVar() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->update_job()
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-09 18:23:11 --> syntax error, unexpected '$builder' (T_VARIABLE)
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Jobs...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Jobs...')
+#3 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(220): spl_autoload_call('App\\Models\\Jobs...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-09 18:28:32 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::insert() must be of the type array or null, string given, called in C:\xampp\htdocs\layboard\layboard\app\Models\Jobs_model.php on line 108
+#0 C:\xampp\htdocs\layboard\layboard\app\Models\Jobs_model.php(108): CodeIgniter\Database\BaseBuilder->insert('Array')
+#1 C:\xampp\htdocs\layboard\layboard\app\Controllers\JobsController.php(72): App\Models\Jobs_model->insert_job_pricing('10000', '2')
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_pricing()
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-01-09 18:28:38 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::insert() must be of the type array or null, string given, called in C:\xampp\htdocs\layboard\layboard\app\Models\Jobs_model.php on line 108
+#0 C:\xampp\htdocs\layboard\layboard\app\Models\Jobs_model.php(108): CodeIgniter\Database\BaseBuilder->insert('Array')
+#1 C:\xampp\htdocs\layboard\layboard\app\Controllers\JobsController.php(72): App\Models\Jobs_model->insert_job_pricing(NULL, NULL)
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\JobsController->insert_job_pricing()
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JobsController))
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-01-09 18:37:06 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('employers/jobs', Array, true)
+#1 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(241): view('employers/jobs', Array)
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-01-09 18:37:46 --> syntax error, unexpected end of file
+#0 C:\xampp\htdocs\layboard\layboard\system\Common.php(1119): CodeIgniter\View\View->render('employers/jobs', Array, true)
+#1 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(241): view('employers/jobs', Array)
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->jobs()
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-01-09 18:39:18 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:39:26 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:39:33 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:39:40 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:39:47 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:39:54 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:40:01 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:40:34 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:40:40 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:40:47 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:40:54 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 268451840 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:41:00 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:41:30 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-09 18:41:37 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 266354688 bytes)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

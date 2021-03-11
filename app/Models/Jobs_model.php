@@ -40,9 +40,10 @@ class Jobs_model extends Model
             "specialty_id" => $specialty_id,
             "job_slug" => $jobSlug,
             "job_code" => $jobCode,
-            "date_created" => "",
+            "date_created" => date("Y:m:d H:i:s"),
             "date_updated" => "",
-            "job_status" => 2
+            "date_published" => "",
+            "job_status" => 0
         );
 
         $builder->insert($newJobDataParams);
@@ -64,7 +65,7 @@ class Jobs_model extends Model
             "job_id" => $job_id,
             "job_title" => $title,
             "job_description" => $description,
-            "job_info_status" => 0
+            "job_info_status" => 1
         );
 
         $builder->insert($newInfoDataParams);
@@ -92,23 +93,99 @@ class Jobs_model extends Model
         return $db->affectedRows() > 0;
     }
 
-    public function insert_job_pricing($skill_id, $price)
+    public function insert_job_pricing($price, $job_id)
     {
-        
+        $db = db_connect();
+
+        $builder = $db->table("jobs_pricing");
+
+        $newPriceDataParams = array(
+            "job_id" => $job_id,
+            "job_price" => $price,
+            "job_pricing_status" => 1
+        );
+
+        $builder->insert($newPriceDataParams);
+
+        $updatePublishedDataParams = array(
+            "date_published" => date("Y:m:d H:i:s"),
+            "job_status" => 1
+        );
+
+        $whereJobDataParams = array(
+            "job_id" => $job_id
+        );
+
+        $builder = $db->table("jobs");
+        $builder->where($whereJobDataParams);
+        $builder->update($updatePublishedDataParams);
+
+        return $db->affectedRows() > 0;
     }
 
-    public function update_job($employer_id, $job_id, $category, $specialty)
+    public function update_job_draft($job_id)
     {
-        
+        $db = db_connect();
+
+        $builder = $db->table("jobs");
+
+        $updateJobDraftDataParams = array(
+            "job_status" => 2
+        );
+
+        $whereJobDraftDataParams = array(
+            "job_id" => $job_id
+        );
+
+        $builder->where($whereJobDraftDataParams);
+        $builder->update($updateJobDraftDataParams);
+
+        return $db->affectedRows() > 0;
+    }
+
+    public function update_publish_job($employer_id, $job_id)
+    {
+
+    }
+
+    public function update_job($employer_id, $job_id, $category_id, $specialty_id)
+    {
+        $db = db_connect();
+
+        $updateJobDataParams = array(
+            "category_id" => $category_id,
+            "specialty_id" => $specialty_id
+        );
+
+        $whereJobDataParams = array(
+            "job_id" => $job_id,
+            "employer_id" => $employer_id
+        );
+
+        $builder = $db->table("jobs");
+        $builder->where($whereJobDataParams);
+        $builder->update($updateJobDataParams);
+
+        return $db->affectedRows() > 0;
     }
 
     public function get_draft_jobs($employer_id)
     {
         $db = db_connect();
 
-        $sql = "SELECT j.job_id, ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id JOIN jobs_status AS js ON js.job_id = j.job_id WHERE js.job_status = ? AND j.employer_id = ? ORDER BY j.date_created";
+        $sql = "SELECT j.job_id, ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? ORDER BY j.date_created";
 
         $query = $db->query($sql,[2, $employer_id]);
+
+        return $query->getResultArray();
+    }
+
+    public function get_jobs($employer_id)
+    {
+        $db = db_connect();
+        $sql = "SELECT j.job_id, ji.job_title, ji.job_description, j.date_published FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? AND ji.job_info_status = 1 ORDER BY j.date_published";
+        
+        $query = $db->query($sql,[1, $employer_id]);
 
         return $query->getResultArray();
     }

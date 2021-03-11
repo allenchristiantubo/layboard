@@ -10,6 +10,7 @@
         <div id="jobFirstContainer">
           <div class="form-group">
             <input type="text" id="txtJobID" class="form-control d-none" placeholder="Job ID">
+            <input type="text" class="form-control d-none" id="txtJobDone" placeholder="Job Done">
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -65,6 +66,9 @@
       </div>
       <div class="modal-body">
         <div id="jobSecondContainer">
+        <div class="form-group">
+            <input type="text" class="form-control d-none" id="txtJobInfoDone" placeholder="Job Done">
+          </div>
           <div class="form-group">
             <label class="text-arial-rounded" for="txtJobTitle">Title</label>
             <input type="text" id="txtJobTitle" class="form-control" placeholder="Name of job post">
@@ -146,7 +150,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sub" id="btnFourthBack"><i class="fas fa-angle-double-left"></i> Back</button>
-        <button type="button" class="btn btn-main" id="btnFourthNext"><i class="fas fa-angle-double-right"></i> Next</button>
+        <button type="button" class="btn btn-main" id="btnFourthNext"> Publish</button>
       </div>
     </div>
   </div>

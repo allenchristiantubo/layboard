@@ -17,7 +17,7 @@ class JobsController extends BaseController
 
         if(!empty($insertJobResult))
         {
-            echo json_encode(array("job_id" => $insertJobInfoResult));
+            echo json_encode(array("job_id" => $insertJobResult));
         }
     }
 
@@ -83,16 +83,17 @@ class JobsController extends BaseController
 
     public function publish_job()
     {
-        $jobsModel = new Job_model();
+        // $jobsModel = new Job_model();
 
-        $job_id = $this->request->getVar("job_id");
+        // $job_id = $this->request->getVar("job_id");
 
-        $publishJobResult;
+        // $publishJobResult;
     }
 
     public function update_job()
     {
-        $jobsModel = new Job_model();
+        $session = session();
+        $jobsModel = new Jobs_model();
 
         $job_id = $this->request->getVar("job_id");
         $category = $this->request->getVar("category");
@@ -102,6 +103,24 @@ class JobsController extends BaseController
         $updateJobResult = $jobsModel->update_job($employer_id, $job_id, $category, $specialty);
 
         if($updateJobResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+
+    public function update_job_draft()
+    {
+        $jobsModel = new Jobs_model();
+        
+        $job_id = $this->request->getVar("job_id");
+
+        $updateJobDraftResult = $jobsModel->update_job_draft($job_id);
+
+        if($updateJobDraftResult)
         {
             echo 1;
         }

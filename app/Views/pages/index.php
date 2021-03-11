@@ -4,6 +4,7 @@
 <div id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="myNav">
     <a class="navbar-brand" href="<?php echo base_url(); ?>"><div class="logo-word ml-3"></div></a>
+    
     </nav>
 </div>
 
@@ -15,10 +16,10 @@
                     <div class="h1">Online freelance platform for the tech industry.</div>
                     <div class="h5 mt-3">Lay your tasks on the board, let the freelancers do the work</div>
                     <div class="row mt-5">
-                        <div class="col-md-4">
+                        <div class="col-md-6 col-lg-4">
                             <button class="btn btn-main btn-block btn-lg" id="btnGoToLogin">Login</button>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6 col-lg-4">
                             <button class="btn btn-sub btn-block btn-lg" id="btnGoToRegister">Join with us</button>
                         </div>
                     </div>
@@ -60,30 +61,30 @@
                         <div class="card-body">
                             <h5 class="text-center">Join us on Layboard</h5>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email address" id="txtRegisterEmail">
+                                <input type="text" class="form-control form-control-lg" placeholder="Email address" id="txtRegisterEmail">
                                 <div class="invalid-feedback" id="txtRegisterEmailValidation"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="txtRegisterPassword">
+                                <input type="password" class="form-control form-control-lg" placeholder="Password" id="txtRegisterPassword">
                                 <div class="invalid-feedback" id="txtRegisterPasswordValidation"></div>
                             </div>
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <input type="text" class="form-control" placeholder="Firstname" id="txtRegisterFirstname">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Firstname" id="txtRegisterFirstname">
                                     <div class="invalid-feedback" id="txtRegisterFirstnameValidation"></div>
                                 </div>
                                 <div class="col form-group">
-                                    <input type="text" class="form-control" placeholder="Lastname" id="txtRegisterLastname">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Lastname" id="txtRegisterLastname">
                                     <div class="invalid-feedback" id="txtRegisterLastnameValidation"></div>
                                 </div>
                             </div>
                             <div class="h6">Choose your account type</div>
                             <div class="form-row">
                                 <div class="col">
-                                    <button class="btn btn-outline-sub btn-block" id="btnFreelancer">Freelancer</button>
+                                    <button class="btn btn-lg btn-outline-sub btn-block" id="btnFreelancer">Freelancer</button>
                                 </div>
                                 <div class="col">
-                                    <button class="btn btn-outline-sub btn-block" id="btnEmployer">Employer</button>
+                                    <button class="btn btn-lg btn-outline-sub btn-block" id="btnEmployer">Employer</button>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -92,7 +93,7 @@
                             </div>
                             <hr>
                             <small>By clicking Sign Up, you agree to our <a href="<?php echo base_url();?>/terms" target="_blank" rel="noopener noreferrer">Terms</a> and <a href="<?php echo base_url();?>/privacy" target="_blank" rel="noopener noreferrer">Data Policy</a>.</small>
-                            <button class="btn btn-main btn-block mt-3" id="btnSignUp">Sign Up</button>
+                            <button class="btn btn-main btn-lg btn-block mt-3" id="btnSignUp">Sign Up</button>
                         </div>
                     </div>
                 </div>
