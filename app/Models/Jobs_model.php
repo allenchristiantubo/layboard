@@ -189,5 +189,48 @@ class Jobs_model extends Model
 
         return $query->getResultArray();
     }
+
+    public function delete_draft_jobs($job_id)
+    {
+
+    }
+
+    public function delete_job_post($job_id)
+    {
+        $db = db_connect(); 
+
+        $whereJobDataParams = array(
+            "job_id" => $job_id
+        );
+
+        $this->db->transBegin();
+
+        $builder = $db->table("jobs");
+        $builder->where($whereJobDataParams);
+        $builder->delete();
+
+        $builder = $db->table("jobs_info");
+        $builder->where($whereJobDataParams);
+        $builder->delete();
+
+        $builder = $db->table("jobs_pricing");
+        $builder->where($whereJobDataParams);
+        $builder->delete();
+
+        $builder = $db->table("jobs_skills");
+        $builder->where($whereJobDataParams);
+        $builder->delete();
+
+        if($this->db->transStatus() === FALSE)
+        {
+            $this->db->transRollback();
+            return FALSE;
+        }
+        else
+        {
+            $this->db->transCommit();
+            return TRUE;
+        }
+    }
 }
 ?>

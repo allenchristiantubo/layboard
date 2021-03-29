@@ -18,7 +18,7 @@
                     }
                     else
                     {
-                        echo '<div class="card-body p-0">';
+                        echo '<div class="card-body p-0 pb-3">';
                         for($j = 0; $j < count($jobs); $j++)
                         {?>
                         <div class="card rounded-0 border-0">
@@ -26,8 +26,7 @@
                                 <div class="">
                                     <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>">
-                                        <a class="dropdown-item" href="#"><i class="fas fa-pen"></i> Edit</a>
-                                        <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Delete</a>
+                                        <a class="dropdown-item delete-job-posting" href="#" data-id="<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-trash"></i> Delete</a>
                                     </div>
                                     <h6 class="mx-3"><?php echo $jobs[$j]["job_title"]; ?></h6>
                                     <small class="mx-3"><?php echo $jobs_elapsed[$j]; ?></small>
@@ -56,7 +55,7 @@
                         }
                         else
                         {
-                            echo '<div class="card-body p-0">';
+                            echo '<div class="card-body p-0 pb-3">';
                             for($i = 0; $i < count($draft_jobs); $i++)
                             {?>
                                 <div class="card rounded-0 border-0">
@@ -65,7 +64,7 @@
                                             <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnDraftDropdown<?php echo $draft_jobs[$i]["job_id"]; ?>"><i class="fas fa-ellipsis-v"></i></button>
                                             <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnDraftDropdown<?php echo $draft_jobs[$i]["job_id"]; ?>">
                                                 <a class="dropdown-item" href="#"><i class="fas fa-pen"></i> Edit</a>
-                                                <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Delete</a>
+                                                <a class="dropdown-item delete-job-draft" href="#" data-id="<?php echo $draft_jobs[$i]["job_id"]; ?>"><i class="fas fa-trash"></i> Delete</a>
                                             </div>
                                             <h6 class="mx-3"><?php echo $draft_jobs[$i]["job_title"]; ?></h6>
                                         </div>

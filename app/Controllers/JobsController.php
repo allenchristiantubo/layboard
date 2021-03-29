@@ -130,6 +130,23 @@ class JobsController extends BaseController
         }
     }
 
+    public function delete_job_post()
+    {
+        $jobsModel = new Jobs_model();
+
+        $job_id = $this->request->getVar("job_id");
+
+        $deleteJobPostResult = $jobsModel->delete_job_post($job_id);
+
+        if($deleteJobPostResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
     // public function update_job_info()
     // {
     //     $jobsModel = new Jobs_model();

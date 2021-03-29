@@ -11,9 +11,9 @@
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
         </button>
-        <div class="text-center d-none d-md-inline">
+        <!-- <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"><i class="fas fa-bars    "></i></button>
-        </div>
+        </div> -->
 
         <!-- Topbar Search -->
         <form
@@ -57,6 +57,14 @@
             </li>
 
             <!-- Nav Item - Alerts -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" role="button">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                </a>
+            </li>
+
+
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
