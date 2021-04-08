@@ -162,8 +162,7 @@ class PagesController extends BaseController
 				$data['user_image'] = $freelancersModel->get_image($sessionUserSlug);
 
 				echo view('templates/header',$data);
-				echo view('templates/sidebar', $data);
-				echo view('templates/topbar', $data);
+				echo view('templates/navbar', $data);
 				echo view('freelancers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
@@ -175,8 +174,7 @@ class PagesController extends BaseController
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);
 
 				echo view('templates/header',$data);
-				echo view('templates/sidebar', $data);
-				echo view('templates/topbar',$data);
+				echo view('templates/navbar', $data);
 				echo view('employers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
@@ -236,8 +234,7 @@ class PagesController extends BaseController
 					array_push($data['jobs_elapsed'], $common_utils->time_elapsed_string($data['jobs'][$j]["date_published"]));
 				}
 				echo view('templates/header', $data);
-				echo view('templates/sidebar', $data);
-				echo view('templates/topbar', $data);
+				echo view('templates/navbar', $data);
 				echo view('employers/jobs', $data);
 				echo view('employers/jobs_modal', $data);
 				echo view('templates/footer', $data);

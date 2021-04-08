@@ -1,11 +1,24 @@
-<div class="container-fluid">
+<div class="container-fluid bg-main" style="padding-top:80px;">
+<div class="card w-100 mb-3">
+    <div class="card-body">
+        <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle text-arial-rounded" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dashboard
+            </button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" type="button">On-going Jobs</button>
+                <button class="dropdown-item" type="button">Completed Jobs</button>
+                <button class="dropdown-item" type="button">Earnings</button>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="row">
         <div class="col-md-3 col-lg-2">
             <div class="card w-100">
                 <div class="card-body">
-                    <h5>Android Development</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Joseph Carlo Sacapaño</h6>
-                    <p>Create an android application that connects to web application</p>
+                    <h6>Android Development</h6 >
+                    
                 </div>
                 <div class="card-footer">
                     <div class="row justify-content-end">

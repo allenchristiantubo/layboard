@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="padding-top:80px;">
     <div class="d-flex justify-content-end">
         <button class="btn btn-main" id="btnAddJob">Post a Job</button>
     </div>
