@@ -45,14 +45,52 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // -- link -- controller::function
 $routes->get('/', 'PagesController::index');
+
 $routes->get('/dashboard', 'PagesController::dashboard');
+
 $routes->get('/jobs', 'PagesController::jobs');
+
 $routes->get('/privacy', 'PagesController::privacy');
+
 $routes->get('/terms', 'PagesController::terms');
+
 $routes->get('/logout', 'PagesController::logout');
+
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
+
 $routes->get('/admin', 'AdminPagesController::index');
+
 $routes->get('/admin/dashboard', 'AdminPagesController::dashboard');
+
+$routes->get('/admin/dashboard/dashboard_widget', 'AdminPagesController::dashboard_widget');
+
+$routes->get('/admin/dashboard/dashboard_simptables', 'AdminPagesController::dashboard_simptables');
+
+$routes->get('/admin/dashboard/dashboard_datatables', 'AdminPagesController::dashboard_datatables');
+
+$routes->get('/admin/dashboard/dashboard_jsgridtables', 'AdminPagesController::dashboard_jsgridtables');
+
+$routes->get('/admin/dashboard/dashboard_calendar', 'AdminPagesController::dashboard_calendar');
+
+$routes->get('/admin/dashboard/dashboard_inbox', 'AdminPagesController::dashboard_inbox');
+
+$routes->get('/admin/dashboard/dashboard_compose', 'AdminPagesController::dashboard_compose');
+
+$routes->get('/admin/dashboard/dashboard_read', 'AdminPagesController::dashboard_read');
+
+$routes->get('/admin/dashboard/dashboard_projects', 'AdminPagesController::dashboard_projects');
+
+$routes->get('/admin/dashboard/dashboard_projectadd', 'AdminPagesController::dashboard_projectadd');
+
+$routes->get('/admin/dashboard/dashboard_projectedit', 'AdminPagesController::dashboard_projectedit');
+
+$routes->get('/admin/dashboard/dashboard_projectdetail', 'AdminPagesController::dashboard_projectdetail');
+
+$routes->get('/admin/dashboard/dashboard_projectcontact', 'AdminPagesController::dashboard_projectcontact');
+
+$routes->get('/admin/dashboard/dashboard_projectsimpsearch', 'AdminPagesController::dashboard_projectsimpsearch');
+
+$routes->get('/admin/dashboard/dashboard_projectensearch', 'AdminPagesController::dashboard_projectensearch');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
