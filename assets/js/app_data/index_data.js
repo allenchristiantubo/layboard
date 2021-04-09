@@ -40,23 +40,40 @@ $(document).ready(function(){
                     {
                         login(email, password, "freelancer");
                     }
-                    else
+            else if(emailValidation && passwordValidation){
+
+            $.ajax({
+            type: "POST",
+            url: baseURL + "/EmployersController/email_exists",
+            data: {email:email},
+            dataType: "html",
+            success: function (response) {
+                    if(response == 1)
                     {
-                        $.ajax({
-                            type: "POST",
-                            url: baseURL + "/EmployersController/email_exists",
-                            data: {email:email},
-                            dataType: "html",
-                            success: function (response) {
-                                if(response == 1)
-                                {
-                                    login(email,password,"employer");
+                        login(email,password,"employer");
+                    }
+           
+            else if(emailValidation && passwordValidation){
+
+            $.ajax({
+            type: "POST",
+            url: baseURL + "/AdminsController/email_exists",
+            data: {email:email},
+            dataType: "html",
+            success: function (response) {
+                    if(response == 1){
+                        login(email,password,"admin");
+                    }
+            
+            else
+                    {
+                            $("#txtLoginEmail").addClass("is-invalid");
+                            $("#txtLoginEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email doesn't exists");
+                    }
+                                        }
+                                    });
                                 }
-                                else
-                                {
-                                    $("#txtLoginEmail").addClass("is-invalid");
-                                    $("#txtLoginEmailValidation").html("<i class='fas fa-exclamation-circle'></i> Email doesn't exists");
-                                }
+
                             }
                         });
                     }
@@ -212,6 +229,10 @@ $(document).ready(function(){
         else if(usertype == "employer")
         {
             var url = "/EmployersController/login";
+        }
+         else if(usertype == "admin")
+        {
+            var url = "/AdminsController/login";
         }
         //alert(email + " " + password + " " + usertype + " " + url);
         $.ajax({
