@@ -106,7 +106,7 @@ body, html {
 }
 .logo-word
 {
-    background-image: url("../images/Layboard Logo.png");
+    background-image: url("../images/LayboardLogo.png");
     background-size: 100% 100%;
     background-position:center;
     width:160px;
@@ -405,6 +405,10 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   background-color: #102A38;
+}
+
+.font-small{
+  font-size: 15px;
 }
 
 /* .inputDnD .form-control-file {

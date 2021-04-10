@@ -190,6 +190,25 @@ class Jobs_model extends Model
         return $query->getResultArray();
     }
 
+    public function get_jobs_row_count()
+    {
+        $db = db_connect();
+        $builder = $db->table("jobs");
+        $count = $builder->countAll();
+
+        return $count;
+    }
+
+    public function get_jobs_by_page($pagenum, $perPageCount)
+    {
+        $db = db_connect();
+        $lowerlimit = ($pagenum - 1) * $perPageCount;
+        $sql = "SELECT j.job_id, j.employer_id, j.job_slug, j.date_published, ji.job_title, ji.job_description, jp.job_price,e.employer_slug, ei.firstname, ei.lastname, eim.file_name FROM jobs as j JOIN jobs_info as ji ON ji.job_id = j.job_id JOIN jobs_pricing as jp ON jp.job_id = j.job_id JOIN employers as e ON e.employer_id = j.employer_id JOIN employers_info as ei ON ei.employer_id = e.employer_id JOIN employers_images as eim ON eim.employer_id = e.employer_id JOIN employers_status as es ON es.employer_id = e.employer_id WHERE j.job_status = 1 AND es.activation_status = 1 AND eim.image_status = 1 GROUP BY j.job_id ORDER BY j.date_published DESC LIMIT ?,?";
+        $query = $db->query($sql,[$lowerlimit, $perPageCount]);
+
+        return $query->getResultArray();
+    }
+
     public function delete_draft_jobs($job_id)
     {
 
