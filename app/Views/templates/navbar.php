@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-lg" style="border-bottom:5px solid #75BA40;">
   
-  <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url();?>/assets/images/Layboard Logo.png" alt="" srcset="" style="height:auto;width:120px;"></a>
+  <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url();?>/assets/images/LayboardLogo.png" alt="" srcset="" style="height:auto;width:120px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

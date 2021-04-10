@@ -1,4 +1,4 @@
-<div class="container-fluid" style="padding-top:80px;">
+<div class="container" style="padding-top:80px;">
     <div class="d-flex justify-content-end">
         <button class="btn btn-main" id="btnAddJob">Post a Job</button>
     </div>
@@ -24,7 +24,7 @@
                         <div class="card rounded-0 border-0">
                             <div class="card-body border-0">
                                 <div class="">
-                                    <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-ellipsis-v"></i></button>
+                                    <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-ellipsis-h"></i></button>
                                     <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>">
                                         <a class="dropdown-item delete-job-posting" href="#" data-id="<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-trash"></i> Delete</a>
                                     </div>
