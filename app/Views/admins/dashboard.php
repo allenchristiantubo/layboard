@@ -149,9 +149,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
+        <a class="nav-link" href="<?php echo base_url();?>/logout">
+          <i class="fas fa-sign-out-alt"></i>
+          </a>
       </li>
     </ul>
   </nav>
@@ -197,11 +197,11 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="dashboard/dashboard_widget" class="nav-link">
+            <a href="<?php echo base_url();?>/admin/dashboard_widget" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Widgets
-                <span class="right badge badge-danger">New</span>
+                
               </p>
             </a>
           </li>
@@ -217,19 +217,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard/dashboard_simptables" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_simptables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Simple Tables</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_datatables" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_datatables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>DataTables</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_jsgridtables" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_jsgridtables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>jsGrid</p>
                 </a>
@@ -238,11 +238,11 @@
           </li>
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
-            <a href="dashboard/dashboard_calendar" class="nav-link">
+            <a href="<?php echo base_url();?>/admin/dashboard_calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
-                <span class="badge badge-info right">2</span>
+                
               </p>
             </a>
           </li>
@@ -257,19 +257,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard/dashboard_inbox" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_inbox" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inbox</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_compose" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_compose" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Compose</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_read" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_read" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Read</p>
                 </a>
@@ -286,31 +286,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard/dashboard_projects" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projects" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Projects</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectadd" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectadd" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectedit" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectedit" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Edit</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectdetail" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectdetail" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project Detail</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectcontact" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectcontact" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contacts</p>
                 </a>
@@ -328,13 +328,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectsimpsearch" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectsimpsearch" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Simple Search</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard/dashboard_projectensearch" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_projectensearch" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Enhanced</p>
                 </a>

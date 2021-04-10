@@ -37,3 +37,25 @@ class AdminsController extends BaseController
             echo 0;
         }
     }
+    
+    public function create_account()
+    {
+        $adminsModel = new Admins_model();
+
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+        $firstname = $this->request->getVar('firstname');
+        $lastname = $this->request->getVar('lastname');
+
+        $createAccountResult = $adminsModel->create_account($email,$password,$firstname,$lastname);
+        
+        if($createAccountResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+}

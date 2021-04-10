@@ -38,4 +38,25 @@ class Admins_model extends Model
         }
     }
 
+    public function get_info($slug)
+    {
+        $db = db_connect();
+        
+        $sql = "SELECT * FROM admins_info AS ei JOIN admins AS e ON  e.admin_id = ei.admin_id WHERE e.admin_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+        return $query->getRowArray();
+    }
+
+    public function get_image($slug)
+    {
+        $db = db_connect();
+
+        $sql = "SELECT * FROM admins_images AS eim JOIN admins as e ON e.admin_id = eim.admin_id WHERE e.admin_slug = ?";
+
+        $query = $db->query($sql, [$slug]);
+
+        return $query->getRowArray();
+    }
+
 }

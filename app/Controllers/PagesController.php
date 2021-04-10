@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use \DateTime;
+use App\Models\Admins_model;
 use App\Models\Freelancers_model;
 use App\Models\Employers_model;
 use App\Models\Categories_model;
@@ -178,6 +179,18 @@ class PagesController extends BaseController
 				echo view('employers/dashboard', $data);
 				echo view('templates/footer', $data);
 			}
+			else if($sessionUserType == "admin")
+			{
+				$adminsModel = new Admins_model();
+				
+				$data['user_info'] = $adminsModel->get_info($sessionUserSlug);
+				$data['user_image'] = $adminsModel->get_image($sessionUserSlug);
+				$data['load_css'] = array("fontawesome/css/all.min.css");
+
+				echo view('templates/header',$data);
+				echo view('admins/dashboard', $data);
+				echo view('templates/footer', $data);
+			}
 		}
 		else
 		{
@@ -245,4 +258,136 @@ class PagesController extends BaseController
 			return redirect()->to(base_url());
 		}
 	}
+
+	/* Admin */
+
+
+	public function dashboard_widget()
+	{	
+		
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_widget');
+			echo view('templates/footer', $data);
+			
+	}	
+
+	public function dashboard_simptables()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_simptables');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_datatables()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_datatables');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_jsgridtables()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_jsgridtables');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_calendar()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_calendar');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_inbox()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_inbox');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_compose()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_compose');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_read()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_read');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projects()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projects');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectadd()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectadd');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectedit()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectedit');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectdetail()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectdetail');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectcontact()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectcontact');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectsimpsearch()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectsimpsearch');
+			echo view('templates/footer', $data);
+	}	
+	public function dashboard_projectensearch()
+	{	
+			$data['load_css'] = array("fontawesome/css/all.min.css");
+			//views to load...
+			echo view('templates/header', $data);
+			echo view('admins/dashboard_projectensearch');
+			echo view('templates/footer', $data);
+	}	
+
+
+
+
+
 }

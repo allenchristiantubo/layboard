@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('PagesController');
+$routes->setDefaultController('PagesController',);
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override(function($message = null){
@@ -58,39 +58,35 @@ $routes->get('/logout', 'PagesController::logout');
 
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
 
-$routes->get('/admin', 'AdminPagesController::index');
+$routes->get('/admin/dashboard_widget/', 'PagesController::dashboard_widget');
 
-$routes->get('/admin/dashboard', 'AdminPagesController::dashboard');
+$routes->get('/admin/dashboard_simptables', 'PagesController::dashboard_simptables');
 
-$routes->get('/admin/dashboard/dashboard_widget', 'AdminPagesController::dashboard_widget');
+$routes->get('/admin/dashboard_datatables', 'PagesController::dashboard_datatables');
 
-$routes->get('/admin/dashboard/dashboard_simptables', 'AdminPagesController::dashboard_simptables');
+$routes->get('/admin/dashboard_jsgridtables', 'PagesController::dashboard_jsgridtables');
 
-$routes->get('/admin/dashboard/dashboard_datatables', 'AdminPagesController::dashboard_datatables');
+$routes->get('/admin/dashboard_calendar', 'PagesController::dashboard_calendar');
 
-$routes->get('/admin/dashboard/dashboard_jsgridtables', 'AdminPagesController::dashboard_jsgridtables');
+$routes->get('/admin/dashboard_inbox', 'PagesController::dashboard_inbox');
 
-$routes->get('/admin/dashboard/dashboard_calendar', 'AdminPagesController::dashboard_calendar');
+$routes->get('/admin/dashboard_compose', 'PagesController::dashboard_compose');
 
-$routes->get('/admin/dashboard/dashboard_inbox', 'AdminPagesController::dashboard_inbox');
+$routes->get('/admin/dashboard_read', 'PagesController::dashboard_read');
 
-$routes->get('/admin/dashboard/dashboard_compose', 'AdminPagesController::dashboard_compose');
+$routes->get('/admin/dashboard_projects', 'PagesController::dashboard_projects');
 
-$routes->get('/admin/dashboard/dashboard_read', 'AdminPagesController::dashboard_read');
+$routes->get('/admin/dashboard_projectadd', 'PagesController::dashboard_projectadd');
 
-$routes->get('/admin/dashboard/dashboard_projects', 'AdminPagesController::dashboard_projects');
+$routes->get('/admin/dashboard_projectedit', 'PagesController::dashboard_projectedit');
 
-$routes->get('/admin/dashboard/dashboard_projectadd', 'AdminPagesController::dashboard_projectadd');
+$routes->get('/admin/dashboard_projectdetail', 'PagesController::dashboard_projectdetail');
 
-$routes->get('/admin/dashboard/dashboard_projectedit', 'AdminPagesController::dashboard_projectedit');
+$routes->get('/admin/dashboard_projectcontact', 'PagesController::dashboard_projectcontact');
 
-$routes->get('/admin/dashboard/dashboard_projectdetail', 'AdminPagesController::dashboard_projectdetail');
+$routes->get('/admin/dashboard_projectsimpsearch', 'PagesController::dashboard_projectsimpsearch');
 
-$routes->get('/admin/dashboard/dashboard_projectcontact', 'AdminPagesController::dashboard_projectcontact');
-
-$routes->get('/admin/dashboard/dashboard_projectsimpsearch', 'AdminPagesController::dashboard_projectsimpsearch');
-
-$routes->get('/admin/dashboard/dashboard_projectensearch', 'AdminPagesController::dashboard_projectensearch');
+$routes->get('/admin/dashboard_projectensearch', 'PagesController::dashboard_projectensearch');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
