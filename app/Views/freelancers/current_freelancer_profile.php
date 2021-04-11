@@ -6,7 +6,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="profile-pic text-center w-100">
+                    <div class="profile-pic text-center w-100 mt-4">
                     <?php
                         if(!empty($user_image))
                         {
@@ -23,9 +23,16 @@
                     <div class="pt-3 w-100">
                         
                         <div class="pb-3 border-bottom">
-                        <button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i></button>
+                            <button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i></button>
                             <h3><?php echo $user_info['firstname'] . " " . $user_info['lastname']; ?></h3>
                             <h6><i class="fas fa-map-marker-alt text-g"></i> Makati City</h6>
+                        </div>
+                        <h5 class="mt-3">Category</h5>
+                        <div class="pb-3 border-bottom" id="categories_container">
+                            <?php
+                            echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerCategory"><i class="fas fa-plus"></i></button>';
+                            echo "<h6>Category has not been set up for this account.</h6>";
+                            ?>
                         </div>
                         <h5 class="mt-3">Skills</h5>
                         
@@ -43,7 +50,7 @@
                             else
                             {
                                 echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSkills"><i class="fas fa-plus"></i></button>';
-                                echo "<h6>No skills set yet.</h6>";
+                                echo "<h6>Skills has not been set up for this account.</h6>";
                             }
                             ?>
                         </div>          
@@ -114,9 +121,9 @@
                 </div>
                 <div class="col-md-8">
                 <h5 class="mt-3">Projects</h5>   
-                        <div class="pb-3 border-bottom" id="projects_container">
+                    <div class="pb-3 border-bottom" id="projects_container">
                         
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>

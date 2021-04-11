@@ -13,5 +13,19 @@ class CategoryController extends BaseController
 
         echo json_encode($categoryDescriptionResult);
     }
+
+    public function get_categories()
+    {
+        $categoriesModel = new Categories_model();
+        
+        if($category_id === FALSE)
+        {
+            
+        }
+        else
+        {
+
+        }
+    }
 }
 ?>

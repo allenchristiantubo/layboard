@@ -28,7 +28,7 @@ $(function(){
       var skill_name = $("#txtEditSkills").val();
       if(skill_name == "" || (!skill_name.replace(/\s/g, '').length))
       {
-        $("#editResultSkills").html("<h6 class='mb-2'>No results yet.</h6>");
+        $("#editResultSkills").html("");
       }
       else
       {
@@ -38,16 +38,12 @@ $(function(){
           data: {skill_name:skill_name},
           dataType: "json",
           success: function (response) {
-            $("#editResultSkills").html("<h6 class='mb-2'>Results:</h6>");
+            $("#editResultSkills").html("");
             for(var i = 0; i < response.length; i++)
             {
               if($("#skills_badge" + response[i].skill_id).length == 0)
               {
                 $("#editResultSkills").append("<span class='badge badge-pill badge-dark px-2 mx-1 edit-skills-badge' data-id='"+ response[i].skill_id +"' data-name='" + response[i].skill_name + "'><i class='fas fa-plus'></i> " + response[i].skill_name + "</span>");
-              }
-              else
-              {
-                $("#editResultSkills").html("<h6 class='mb-2'>No results yet.</h6>");
               }
             }
           }
@@ -137,7 +133,7 @@ $(function(){
       var skill_name = $("#txtAddSkills").val();
       if(skill_name == "" || (!skill_name.replace(/\s/g, '').length))
       {
-        $("#addResultSkills").html("<h6 class='mb-2'>No results yet.</h6>");
+        $("#addResultSkills").html("");
       }
       else
       {
@@ -147,16 +143,12 @@ $(function(){
           data: {skill_name:skill_name},
           dataType: "json",
           success: function (response) {
-            $("#addResultSkills").html("<h6 class='mb-2'>Results:</h6>");
+            $("#addResultSkills").html("");
             for(var i = 0; i < response.length; i++)
             {
               if($("#skills_badge" + response[i].skill_id).length == 0)
               {
                 $("#addResultSkills").append("<span class='badge badge-pill badge-dark px-2 mx-1 skills-badge' data-id='"+ response[i].skill_id +"' data-name='" + response[i].skill_name + "'><i class='fas fa-plus'></i> " + response[i].skill_name + "</span>");
-              }
-              else
-              {
-                $("#addResultSkills").html("<h6 class='mb-2'>No results yet.</h6>");
               }
             }
           }
