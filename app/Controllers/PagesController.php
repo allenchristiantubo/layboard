@@ -27,7 +27,7 @@ class PagesController extends BaseController
 		{
 			//css and js files to load...
 			$data['load_css'] = array("fontawesome/css/all.min.css", "fullpage/fullpage.css", "sweetalert/sweetalert2.min.css", "style.css");
-			$data['load_js'] = array("fullpage/fullpage.js", "sweetalert/sweetalert2.min.js", "app_uiux/index_uiux.js", "app_data/index_data.js");
+			$data['load_js'] = array("fullpage/fullpage.js", "sweetalert/sweetalert2.min.js", "app/index_uiux.js", "app/index_data.js");
 			//views to load...
 			echo view('templates/header', $data);
 			echo view('pages/index');
@@ -46,7 +46,7 @@ class PagesController extends BaseController
 	public function privacy()
 	{
 		$data['load_css'] = array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
-		$data['load_js'] = array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/privacyterms.js");
+		$data['load_js'] = array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/privacyterms.js");
 
 		echo view('templates/header', $data);
 		echo view('pages/privacy', $data);
@@ -56,7 +56,7 @@ class PagesController extends BaseController
 	public function terms()
 	{
 		$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweeatlert2.min.css", "style.css");
-		$data['load_js'] = array("sweetalert/sweetalert2.min.js","app_uiux/privacyterms.js");
+		$data['load_js'] = array("sweetalert/sweetalert2.min.js","app/privacyterms.js");
 		echo view('templates/header', $data);
 		echo view('pages/terms', $data);
 		echo view('templates/footer', $data);
@@ -75,7 +75,7 @@ class PagesController extends BaseController
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/profile.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -149,7 +149,7 @@ class PagesController extends BaseController
 			// css and js files to load...
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/profile.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -214,7 +214,7 @@ class PagesController extends BaseController
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/jobs_employer.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/jobs_employer.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
