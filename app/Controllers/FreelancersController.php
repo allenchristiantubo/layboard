@@ -138,5 +138,33 @@ class FreelancersController extends BaseController
 
         echo json_encode($skillsResult);
     }
+
+    public function insert_categories()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+        
+        $categoryID = $this->request->getVar('category_id');
+        $categoryName = $this->request->getVar('category_name');
+        $freelancerID = $session->get("user_id");
+
+        $insertCategoryResult = $freelancersModel->insert_categories($categoryID, $freelancerID);
+        if($insertCategoryResult)
+        {
+            echo json_encode(array("category_id" => $categoryID , "category_name" => $categoryName));
+        }
+    }
+
+    public function get_categories()
+    {
+        $freelancersModel = new Freelancers_model();
+        $session = session();
+
+        $freelancerSlug = $session->get("user_slug");
+
+        $categoriesResult = $freelancersModel->get_categories($freelancerSlug);
+
+        echo json_encode($categoriesResult);
+    }
 }
 ?>

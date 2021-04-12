@@ -257,5 +257,32 @@ class Freelancers_model extends Model
         }
         return $db->affectedRows() > 0; 
     }
+
+    public function insert_categories($categoryID, $freelancerID)
+    {
+        $db = db_connect();
+
+        $newFreelancerCategoryDataParams = array(
+            "freelancer_id" => $freelancerID,
+            "category_id" => $categoryID,
+            "freelancer_category_status" => 1
+        );
+
+        $builder = $db->table("freelancers_categories");
+        $builder->insert($newFreelancerCategoryDataParams);
+
+        return $db->affectedRows() > 0;
+    }
+
+    public function get_categories($slug)
+    {
+        $db = db_connect();
+
+        $sql = "SELECT fc.category_id, c.category_name FROM freelancers_categories AS fc JOIN categories AS c ON c.category_id = fc.category_id JOIN freelancers AS f ON f.freelancer_id = fc.freelancer_id WHERE f.freelancer_slug = ? AND fc.freelancer_category_status = 1 AND c.category_status = 1";
+
+        $query = $db->query($sql, [$slug]);
+
+        return $query->getResultArray();
+    }
 }
 ?>

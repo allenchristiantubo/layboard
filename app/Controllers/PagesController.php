@@ -75,7 +75,7 @@ class PagesController extends BaseController
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/profile.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/freelancer_profile.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -91,6 +91,7 @@ class PagesController extends BaseController
 					
 					$data['user_info'] = $freelancersModel->get_info($userslug);
 					$data['user_image'] = $freelancersModel->get_image($userslug);
+					$data['freelancer_categories'] = $freelancersModel->get_categories($userslug);
 					$data['freelancer_skills'] = $freelancersModel->get_skills($userslug);
 					if($userslug === $sessionUserSlug)
 					{
@@ -214,7 +215,7 @@ class PagesController extends BaseController
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/jobs_employer.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/employer_jobs.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType

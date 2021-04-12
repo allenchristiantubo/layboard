@@ -17,15 +17,10 @@ class CategoryController extends BaseController
     public function get_categories()
     {
         $categoriesModel = new Categories_model();
-        
-        if($category_id === FALSE)
-        {
-            
-        }
-        else
-        {
 
-        }
+        $categoriesResult = $categoriesModel->get_categories();
+
+        echo json_encode($categoriesResult);
     }
 }
 ?>
