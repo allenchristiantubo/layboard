@@ -58,4 +58,23 @@ class AdminsController extends BaseController
             echo 0;
         }
     }
+
+    public function delete_job_post()
+    {
+        $adminsModel = new Admins_model();
+
+        $job_id = $this->request->getVar("job_id");
+
+        $deleteJobPostResult = $adminsModel->delete_job_post($job_id);
+
+        if($deleteJobPostResult)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
 }
+?>

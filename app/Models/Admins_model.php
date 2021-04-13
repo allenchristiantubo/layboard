@@ -59,4 +59,66 @@ class Admins_model extends Model
         return $query->getRowArray();
     }
 
+    /* DASHBOARD PROJECT */  /* DASHBOARD PROJECT */  /* DASHBOARD PROJECT */  /* DASHBOARD PROJECT */
+
+    public function get_jobs($employer_id)
+    {
+        $db = db_connect();
+        $sql = "SELECT j.job_id, ji.job_title, ji.job_description, j.date_published FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? AND ji.job_info_status = 1 ORDER BY j.date_published";
+        
+        $query = $db->query($sql,[1, $employer_id]);
+
+        return $query->getResultArray();
+    }
+
+    public function get_jobs_row_count()
+    {
+        $db = db_connect();
+        $builder = $db->table("jobs");
+        $count = $builder->countAll();
+
+        return $count;
+    }
+
+    public function get_jobs_by_page($pagenum, $perPageCount)
+    {
+        $db = db_connect();
+        $lowerlimit = ($pagenum - 1) * $perPageCount;
+        $sql = "SELECT j.job_id, j.employer_id, j.job_slug, j.date_published, ji.job_title, ji.job_description, jp.job_price,e.employer_slug, ei.firstname, ei.lastname, eim.file_name FROM jobs as j JOIN jobs_info as ji ON ji.job_id = j.job_id JOIN jobs_pricing as jp ON jp.job_id = j.job_id JOIN employers as e ON e.employer_id = j.employer_id JOIN employers_info as ei ON ei.employer_id = e.employer_id JOIN employers_images as eim ON eim.employer_id = e.employer_id JOIN employers_status as es ON es.employer_id = e.employer_id WHERE j.job_status = 1 AND es.activation_status = 1 AND eim.image_status = 1 GROUP BY j.job_id ORDER BY j.date_published DESC LIMIT ?,?";
+        $query = $db->query($sql,[$lowerlimit, $perPageCount]);
+
+        return $query->getResultArray();
+    }
+
+    /* DASHBOARD EMPLOYERS LIST */  /* DASHBOARD EMPLOYERS LIST */  /* DASHBOARD EMPLOYERS LIST */  
+
+    public function get_employerslist($employer_id)
+    {
+        $db = db_connect();
+        $sql = "SELECT e.employer_id, ei.firstname, ei.lastname, e.date_created FROM employers AS e JOIN employers_info AS ei ON ei.employer_id = e.employer_id WHERE e.employer_pass = ? AND e.employer_id = ? AND ji.job_info_status = 1 ORDER BY j.date_published";
+        
+        $query = $db->query($sql,[1, $employer_id]);
+
+        return $query->getResultArray();
+    }
+
+    public function get_employerslist_row_count()
+    {
+        $db = db_connect();
+        $builder = $db->table("admins");
+        $count = $builder->countAll();
+
+        return $count;
+    }
+
+    public function get_employerslist_by_page($pagenum, $perPageCount)
+    {
+        $db = db_connect();
+        $lowerlimit = ($pagenum - 1) * $perPageCount;
+        $sql = "SELECT j.job_id, j.employer_id, j.job_slug, j.date_published, ji.job_title, ji.job_description, jp.job_price,e.employer_slug, ei.firstname, ei.lastname, eim.file_name FROM jobs as j JOIN jobs_info as ji ON ji.job_id = j.job_id JOIN jobs_pricing as jp ON jp.job_id = j.job_id JOIN employers as e ON e.employer_id = j.employer_id JOIN employers_info as ei ON ei.employer_id = e.employer_id JOIN employers_images as eim ON eim.employer_id = e.employer_id JOIN employers_status as es ON es.employer_id = e.employer_id WHERE j.job_status = 1 AND es.activation_status = 1 AND eim.image_status = 1 GROUP BY j.job_id ORDER BY j.date_published DESC LIMIT ?,?";
+        $query = $db->query($sql,[$lowerlimit, $perPageCount]);
+
+        return $query->getResultArray();
+    }
 }
+?>

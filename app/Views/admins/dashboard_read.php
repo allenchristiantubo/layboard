@@ -59,7 +59,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -75,7 +75,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -91,7 +91,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -187,22 +187,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           
-          <li class="nav-item">
-            <a href="dashboard_widget" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                
-              </p>
-            </a>
-          </li>
           
           
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Account Lists
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -210,30 +201,25 @@
               <li class="nav-item">
                 <a href="dashboard_simptables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Employers List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="dashboard_datatables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Freelancer List</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="dashboard_jsgridtables" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+          
           <li class="nav-item">
             <a href="dashboard_calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
-              
+               
               </p>
             </a>
           </li>
@@ -268,45 +254,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href= "dashboard_projects" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
+                Projects
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="dashboard_projects" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Projects</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectadd" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectedit" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectdetail" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectcontact" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacts</p>
-                </a>
-              </li>
-            </ul>
           </li>
           
           <li class="nav-item">
@@ -452,7 +405,7 @@
             <div class="card-body p-0">
               <div class="mailbox-read-info">
                 <h5>Message Subject Is Placed Here</h5>
-                <h6>From: support@adminlte.io
+                <h6>From: support@layboard
                   <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span></h6>
               </div>
               <!-- /.mailbox-read-info -->
@@ -586,7 +539,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+   <strong>&copy; 2019-2021 <a href="">Layboard: Freelance Finder for I.T Industry</a>.</strong>
   </footer>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

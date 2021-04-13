@@ -24,12 +24,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+     
     </ul>
 
     <!-- Right navbar links -->
@@ -66,7 +61,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -82,7 +77,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -98,7 +93,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="http://localhost/layboard/layboard/assets/css/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -193,23 +188,14 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
-          <li class="nav-item">
-            <a href="dashboard_widget" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-            
-              </p>
-            </a>
-          </li>
+        
           
           
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Account Lists
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -217,24 +203,19 @@
               <li class="nav-item">
                 <a href="dashboard_simptables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Employers List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="dashboard_datatables" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Freelancer List</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="dashboard_jsgridtables" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+          
           <li class="nav-item">
             <a href="dashboard_calendar" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
@@ -275,45 +256,12 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href= "dashboard_projects" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
+                Projects
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="dashboard_projects" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Projects</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectadd" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Add</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectedit" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Edit</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectdetail" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Project Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="dashboard_projectcontact" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacts</p>
-                </a>
-              </li>
-            </ul>
           </li>
           
           <li class="nav-item">
@@ -376,17 +324,18 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label>Result Type:</label>
-                                    <select class="select2" data-placeholder="Any" style="width: 100%;">
+                                    <select class="select2" multiple="multiple" data-placeholder="Any" style="width: 100%;">
                                         <option>Text only</option>
                                         <option>Images</option>
                                         <option>Video</option>
                                     </select>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
                                     <label>Sort Order:</label>
-                                    <select class="select2" style="width: 100%;">
+                                    <select class="select2"  style="width: 100%;">
                                         <option selected>ASC</option>
                                         <option>DESC</option>
                                     </select>
@@ -395,7 +344,7 @@
                             <div class="col-3">
                                 <div class="form-group">
                                     <label>Order By:</label>
-                                    <select class="select2" style="width: 100%;">
+                                    <select class="select2"  style="width: 100%;">
                                         <option selected>Title</option>
                                         <option>Date</option>
                                     </select>
@@ -404,7 +353,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group input-group-lg">
-                                <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here" value="Lorem ipsum">
+                                <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here" value="Search">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-lg btn-default">
                                         <i class="fa fa-search"></i>
@@ -423,7 +372,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>&copy; 2019-2021 <a href="">Layboard: Freelance Finder for I.T Industry</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

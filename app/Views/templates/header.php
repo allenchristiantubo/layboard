@@ -17,12 +17,6 @@
     <?php endif; ?>
     <script> var baseURL = "<?php echo base_url();?>";</script>
 
-    <?php if(is_array($load_plugins)):?>
-    <?php foreach($load_plugins as $row): ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/plugins/<?=$row;?>">
-    <?php endforeach; ?>
-    <?php endif; ?>
-    <script> var baseURL = "<?php echo base_url();?>";</script>
     
 </head>
 <body class="bg-main sidebar-toggled">

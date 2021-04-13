@@ -58,7 +58,7 @@ $routes->get('/logout', 'PagesController::logout');
 
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
 
-$routes->get('/admin/dashboard_widget/', 'PagesController::dashboard_widget');
+$routes->get('/admin/dashboard_widget', 'PagesController::dashboard_widget');
 
 $routes->get('/admin/dashboard_simptables', 'PagesController::dashboard_simptables');
 
