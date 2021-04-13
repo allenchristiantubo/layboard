@@ -74,8 +74,8 @@ class PagesController extends BaseController
 			//$sessionUserId = $session->get('user_id');
 
 			$data = array(
-				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/freelancer_profile.js"),
+				'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sweetalert/sweetalert2.min.js", "app/freelancer_profile.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -214,12 +214,6 @@ class PagesController extends BaseController
 			$sessionUserId = $session->get("user_id");
 
 			$data = array(
-				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css","fullcalendar/main.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/jobs_employer.js"),
-
-				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/employer_jobs.js"),
-
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -231,7 +225,8 @@ class PagesController extends BaseController
 				$jobsModel = new Jobs_model();
 				$common_utils = new Common_utils();
 
-
+				$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
+				$data['load_js'] = array("sweetalert/sweetalert2.min.js");
 				$data['user_info'] = $freelancerModels->get_info($sessionUserSlug);
 				$data['user_image'] = $freelancerModels->get_image($sessionUserSlug);
 				$perPageCount = 10;
@@ -257,7 +252,8 @@ class PagesController extends BaseController
 				$categoriesModel = new Categories_model();
 				$jobsModel = new Jobs_model();
 				$common_utils = new Common_utils();
-				
+				$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
+				$data['load_js'] = array("sweetalert/sweetalert2.min.js", "app/employer_jobs.js");
 				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
 				$data['categories'] = $categoriesModel->get_categories();
@@ -332,7 +328,7 @@ class PagesController extends BaseController
 	{	
 			$data['load_css'] = array("fontawesome/css/all.min.css", "fullcalendar/main.css");
 	
-			$data['load_js'] = array("fullcalendar/main.js","jquery-ui/jquery-ui.min.js","moment/moment.min.js");
+			$data['load_js'] = array("fullcalendar/main.js","jquery-ui/jquery-ui.min.js","moment/moment.min.js", "app/calendar.js");
 			//views to load...
 			echo view('templates/header', $data);
 			echo view('admins/dashboard_calendar');
@@ -460,7 +456,7 @@ class PagesController extends BaseController
 	public function dashboard_projectensearch()
 	{	
 			$data['load_css'] = array("fontawesome/css/all.min.css","select2/css/select2.min.css");
-			$data['load_js'] = array("select2/js/select2.min.js");
+			$data['load_js'] = array("select2/js/select2.min.js", "select2/select.js");
 
 			//views to load...
 			echo view('templates/header', $data);
