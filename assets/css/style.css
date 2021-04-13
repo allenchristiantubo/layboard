@@ -397,7 +397,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
   border-radius:100px;
 }
 
-.skills-badge:hover, .selected-badge:hover, .edit-selected-badge:hover
+.skills-badge:hover, .selected-badge:hover, .edit-selected-badge:hover, .categories-badge:hover, .cat-selected-badge:hover
 {
   cursor: pointer;
 }

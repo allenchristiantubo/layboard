@@ -5,8 +5,8 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="profile-pic text-center w-100">
+                <div class="col-md-4">
+                    <div class="profile-pic d-flex justify-content-center w-100 mt-3 pb-3">
                     <?php
                         if(!empty($user_image))
                         {
@@ -18,14 +18,40 @@
                         }
                     ?>
                     </div>
+                    <div class="pb-3 border-bottom mt-3">
+                            <button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i></button>
+                            <h3><?php echo $user_info['firstname'] . " " . $user_info['lastname']; ?></h3>
+                            <h6><i class="fas fa-map-marker-alt text-g"></i> Makati City</h6>
+                        </div>
                 </div>
                 <div class="col-md-8 d-flex align-items-stretch">
                     <div class="pt-3 w-100">
                         
-                        <div class="pb-3 border-bottom">
-                        <button class="btn btn-sm btn-third text-arial-rounded float-right"><i class="fas fa-pen"></i></button>
-                            <h3><?php echo $user_info['firstname'] . " " . $user_info['lastname']; ?></h3>
-                            <h6><i class="fas fa-map-marker-alt text-g"></i> Makati City</h6>
+                        
+                        <h5 class="mt-3 border-top pt-3">Categories</h5>
+                        <div class="pb-3 border-bottom" id="categories_container">
+                            <?php
+                            if(!empty($freelancer_skills))
+                            {
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnEditFreelancerCategories"><i class="fas fa-pen"></i></button>';
+                                foreach($freelancer_categories as $category)
+                                {
+                                    echo "<span class='badge badge-pill bg-bg text-light px-2 mx-1'>" .$category['category_name'] . "</span>";
+                                }
+                            }
+                            else
+                            {
+                                echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerCategories"><i class="fas fa-plus"></i></button>';
+                                echo "<h6>Categories has not been set up for this account.</h6>";
+                            }
+                            ?>
+                        </div>
+                        <h5 class="mt-3">Specialties</h5>
+                        <div class="pb-3 border-bottom" id="categories_container">
+                            <?php
+                            echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSpecialties"><i class="fas fa-plus"></i></button>';
+                            echo "<h6>Specialties has not been set up for this account.</h6>";
+                            ?>
                         </div>
                         <h5 class="mt-3">Skills</h5>
                         
@@ -43,7 +69,7 @@
                             else
                             {
                                 echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerSkills"><i class="fas fa-plus"></i></button>';
-                                echo "<h6>No skills set yet.</h6>";
+                                echo "<h6>Skills has not been set up for this account.</h6>";
                             }
                             ?>
                         </div>          
@@ -114,9 +140,12 @@
                 </div>
                 <div class="col-md-8">
                 <h5 class="mt-3">Projects</h5>   
-                        <div class="pb-3 border-bottom" id="projects_container">
-                        
-                        </div>
+                    <div class="pb-3 border-bottom" id="projects_container">
+                        <?php
+                            echo '<button class="btn btn-sm btn-third text-arial-rounded float-right" id="btnAddFreelancerProjects"><i class="fas fa-plus"></i></button>';
+                            echo "<h6>Projects has not been set up for this account.</h6>";
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
