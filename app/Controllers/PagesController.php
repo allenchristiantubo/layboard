@@ -74,8 +74,8 @@ class PagesController extends BaseController
 			//$sessionUserId = $session->get('user_id');
 
 			$data = array(
-				'load_css' => array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
-				'load_js' => array("sweetalert/sweetalert2.min.js", "app/freelancer_profile.js"),
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/freelancer_profile.js"),
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -119,11 +119,22 @@ class PagesController extends BaseController
 			}
 			else if($usertype == "employer")
 			{
+				$employersModel = new Employers_model();
 
-				//$employerID = $session->get("employer_id");
-				echo view('templates/header', $data);
-				echo view('employers/employer_profile', $data);
-				echo view('templates/footer', $data);
+				$accountExistsResult = $employersModel->profile_exists($userslug);
+				if($accountExistsResult)
+				{
+					$data['user_info'] = $employersModel->get_info($userslug);
+					$data['user_image'] = $employersModel->get_image($userslug);
+					if($userslug === $sessionUserSlug)
+					{
+						//$employerID = $session->get("employer_id");
+						echo view('templates/header', $data);
+						echo view('templates/navbar', $data);
+						echo view('employers/employer_profile', $data);
+						echo view('templates/footer', $data);
+					}
+				}
 			}
 			else
 			{
@@ -225,8 +236,8 @@ class PagesController extends BaseController
 				$jobsModel = new Jobs_model();
 				$common_utils = new Common_utils();
 
-				$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
-				$data['load_js'] = array("sweetalert/sweetalert2.min.js");
+				$data['load_css'] = array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
+				$data['load_js'] = array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js");
 				$data['user_info'] = $freelancerModels->get_info($sessionUserSlug);
 				$data['user_image'] = $freelancerModels->get_image($sessionUserSlug);
 				$perPageCount = 10;
@@ -252,8 +263,8 @@ class PagesController extends BaseController
 				$categoriesModel = new Categories_model();
 				$jobsModel = new Jobs_model();
 				$common_utils = new Common_utils();
-				$data['load_css'] = array("fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
-				$data['load_js'] = array("sweetalert/sweetalert2.min.js", "app/employer_jobs.js");
+				$data['load_css'] = array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css");
+				$data['load_js'] = array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/employer_jobs.js");
 				$data['user_info'] = $employersModel->get_info($sessionUserSlug);
 				$data['user_image'] = $employersModel->get_image($sessionUserSlug);	
 				$data['categories'] = $categoriesModel->get_categories();

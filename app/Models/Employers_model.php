@@ -17,6 +17,19 @@ class Employers_model extends Model
         return false;
     }
 
+    public function profile_exists($slug)
+    {
+        $db = db_connect();
+        $builder = $db->table('employers');
+        $builder->where(array("employer_slug" => $slug));
+        $count = $builder->countAllResults();
+        if($count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public function login($email, $password)
     {
         $db = db_connect();
