@@ -201,13 +201,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard_simptables" class="nav-link">
+                <a href="dashboard_employerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Employers List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard_datatables" class="nav-link">
+                <a href="dashboard_freelancerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Freelancer List</p>
                 </a>

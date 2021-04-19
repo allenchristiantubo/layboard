@@ -58,13 +58,9 @@ $routes->get('/logout', 'PagesController::logout');
 
 $routes->get('/profile/(:alpha)/(:alphanum)', 'PagesController::profile/$1/$2');
 
-$routes->get('/admin/dashboard_widget', 'PagesController::dashboard_widget');
+$routes->get('/admin/dashboard_employerslist', 'PagesController::dashboard_employerslist');
 
-$routes->get('/admin/dashboard_simptables', 'PagesController::dashboard_simptables');
-
-$routes->get('/admin/dashboard_datatables', 'PagesController::dashboard_datatables');
-
-$routes->get('/admin/dashboard_jsgridtables', 'PagesController::dashboard_jsgridtables');
+$routes->get('/admin/dashboard_freelancerslist', 'PagesController::dashboard_freelancerslist');
 
 $routes->get('/admin/dashboard_calendar', 'PagesController::dashboard_calendar');
 
@@ -75,14 +71,6 @@ $routes->get('/admin/dashboard_compose', 'PagesController::dashboard_compose');
 $routes->get('/admin/dashboard_read', 'PagesController::dashboard_read');
 
 $routes->get('/admin/dashboard_projects', 'PagesController::dashboard_projects');
-
-$routes->get('/admin/dashboard_projectadd', 'PagesController::dashboard_projectadd');
-
-$routes->get('/admin/dashboard_projectedit', 'PagesController::dashboard_projectedit');
-
-$routes->get('/admin/dashboard_projectdetail', 'PagesController::dashboard_projectdetail');
-
-$routes->get('/admin/dashboard_projectcontact', 'PagesController::dashboard_projectcontact');
 
 $routes->get('/admin/dashboard_projectsimpsearch', 'PagesController::dashboard_projectsimpsearch');
 

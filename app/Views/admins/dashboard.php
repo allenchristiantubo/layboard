@@ -209,13 +209,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 
-                <a href="<?php echo base_url();?>/admin/dashboard_simptables" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_employerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Employer List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>/admin/dashboard_simptables" class="nav-link">
+                <a href="<?php echo base_url();?>/admin/dashboard_freelancerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Freelancer List</p>
                 </a>

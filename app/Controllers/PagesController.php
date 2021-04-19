@@ -300,34 +300,115 @@ class PagesController extends BaseController
 			
 	}	
 
-	public function dashboard_simptables()
+	public function dashboard_employerslist()
 	{	
-		
+			$session = session();
+			$uri = service('uri');
+
+		if($session->has('user_slug'))
+		{
 			
-					$data['load_css'] = array("fontawesome/css/all.min.css");
-					//views to load...
+			$sessionUserType = $session->get("user_type");
+			$sessionUserSlug = $session->get("user_slug");
+			$sessionUserId = $session->get("user_id");
+
+			$data = array(
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css","fullcalendar/main.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/admin_jobs.js"),
+
+
+				'current_page' => $currentPage,
+				'user_slug' => $sessionUserSlug,
+				'user_type' => $sessionUserType
+			);
+
+			if($sessionUserType == "admin")
+			{
+				$adminsModel = new Admins_model();
+				$common_utils = new Common_utils();
+
+
+				$data['user_info'] = $adminsModel->get_info($sessionUserSlug);
+				$data['user_image'] = $adminsModel->get_image($sessionUserSlug);
+				$perPageCount = 10;
+				$jobsRowCount = $adminsModel->get_employers_row_count();
+				$data['pagesCount'] = ceil($jobsRowCount / $perPageCount);
+				$data['employers'] = $adminsModel->get_employers_by_page(1, $perPageCount);
+				$data['employers_elapsed'] = array();
+
+				for($j = 0; $j < count($data['employers']); $j++)
+				{
+					array_push($data['employers_elapsed'], $common_utils->time_elapsed_string($data['employers'][$j]["date_created"]));
+				}
+					
+					$data['load_css'] = array("sweetalert/sweetalert2.min.css", "fontawesome/css/all.min.css");
+					$data['load_js'] = array("sweetalert/sweetalert2.min.js");
 					echo view('templates/header', $data);
-					echo view('admins/dashboard_simptables', $data);
+					echo view('admins/dashboard_employerslist', $data);
 					echo view('templates/footer', $data);
+			}
+				else
+			{
+				return redirect()->to(base_url());
+			}
+		}
 					
 				
 	}	
-	public function dashboard_datatables()
+	public function dashboard_freelancerslist()
 	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_datatables');
-			echo view('templates/footer', $data);
+			$session = session();
+			$uri = service('uri');
+
+		if($session->has('user_slug'))
+		{
+			
+			$sessionUserType = $session->get("user_type");
+			$sessionUserSlug = $session->get("user_slug");
+			$sessionUserId = $session->get("user_id");
+
+			$data = array(
+				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css","fullcalendar/main.css"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/admin_jobs.js"),
+
+
+				'current_page' => $currentPage,
+				'user_slug' => $sessionUserSlug,
+				'user_type' => $sessionUserType
+			);
+
+			if($sessionUserType == "admin")
+			{
+				$adminsModel = new Admins_model();
+				$common_utils = new Common_utils();
+
+
+				$data['user_info'] = $adminsModel->get_info($sessionUserSlug);
+				$data['user_image'] = $adminsModel->get_image($sessionUserSlug);
+				$perPageCount = 10;
+				$jobsRowCount = $adminsModel->get_freelancers_row_count();
+				$data['pagesCount'] = ceil($jobsRowCount / $perPageCount);
+				$data['freelancers'] = $adminsModel->get_freelancers_by_page(1, $perPageCount);
+				$data['freelancers_elapsed'] = array();
+
+				for($j = 0; $j < count($data['freelancers']); $j++)
+				{
+					array_push($data['freelancers_elapsed'], $common_utils->time_elapsed_string($data['freelancers'][$j]["date_created"]));
+				}
+					
+					$data['load_css'] = array("sweetalert/sweetalert2.min.css", "fontawesome/css/all.min.css");
+					$data['load_js'] = array("sweetalert/sweetalert2.min.js");
+					echo view('templates/header', $data);
+					echo view('admins/dashboard_freelancerslist', $data);
+					echo view('templates/footer', $data);
+			}
+				else
+			{
+				return redirect()->to(base_url());
+			}
+		}
 	}	
-	public function dashboard_jsgridtables()
-	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_jsgridtables');
-			echo view('templates/footer', $data);
-	}	
+
 	public function dashboard_calendar()
 	{	
 			$data['load_css'] = array("fontawesome/css/all.min.css", "fullcalendar/main.css");
@@ -376,7 +457,9 @@ class PagesController extends BaseController
 
 			$data = array(
 				'load_css' => array("sbadmin/sb-admin-2.min.css","fontawesome/css/all.min.css", "sweetalert/sweetalert2.min.css", "style.css","fullcalendar/main.css"),
-				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app_uiux/jobs_employer.js"),
+				'load_js' => array("sbadmin/sb-admin-2.min.js","sweetalert/sweetalert2.min.js", "app/admin_jobs.js"),
+
+
 				'current_page' => $currentPage,
 				'user_slug' => $sessionUserSlug,
 				'user_type' => $sessionUserType
@@ -401,10 +484,11 @@ class PagesController extends BaseController
 					array_push($data['jobs_elapsed'], $common_utils->time_elapsed_string($data['jobs'][$j]["date_published"]));
 				}
 					
-					$data['load_css'] = array("fontawesome/css/all.min.css","dist/css/adminlte.min.css");
-					$data['load_js'] = array("dist/js/adminlte.min.js");
+					$data['load_css'] = array("sweetalert/sweetalert2.min.css", "fontawesome/css/all.min.css");
+					$data['load_js'] = array("sweetalert/sweetalert2.min.js", "app/admin_jobs.js");
 					echo view('templates/header', $data);
 					echo view('admins/dashboard_projects', $data);
+					echo view('admins/modals', $data);
 					echo view('templates/footer', $data);
 			}
 				else
@@ -417,38 +501,7 @@ class PagesController extends BaseController
 			//views to load...
 			
 	}	
-	public function dashboard_projectadd()
-	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_projectadd');
-			echo view('templates/footer', $data);
-	}	
-	public function dashboard_projectedit()
-	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_projectedit');
-			echo view('templates/footer', $data);
-	}	
-	public function dashboard_projectdetail()
-	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_projectdetail');
-			echo view('templates/footer', $data);
-	}	
-	public function dashboard_projectcontact()
-	{	
-			$data['load_css'] = array("fontawesome/css/all.min.css");
-			//views to load...
-			echo view('templates/header', $data);
-			echo view('admins/dashboard_projectcontact');
-			echo view('templates/footer', $data);
-	}	
+		
 	public function dashboard_projectsimpsearch()
 	{	
 			$data['load_css'] = array("fontawesome/css/all.min.css");

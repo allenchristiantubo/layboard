@@ -201,13 +201,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="dashboard_simptables" class="nav-link">
+                <a href="dashboard_employerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Employers List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="dashboard_datatables" class="nav-link">
+                <a href="dashboard_freelancerslist" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Freelancer List</p>
                 </a>
@@ -342,34 +342,35 @@
                     }
                     else
                     {
-                    for($i = 0; $i < count($jobs); $i++)
-                    {?>
-                    <div class="card my-3">
+                        echo '<div class="card-body p-0 pb-3">';
+                        for($j = 0; $j < count($jobs); $j++)
+                        {?>
+                        <div class="card my-3">
                         <div class="d-flex justify-content-between p-3">
                             <div class="d-flex flex-row align-items-center">
-                            <img src="<?php echo base_url() ."/assets/uploads/". $jobs[$i]['file_name'];?>" width="40" height="40" class="rounded-circle">
+                            <img src="<?php echo base_url() ."/assets/uploads/". $jobs[$j]['file_name'];?>" width="40" height="40" class="rounded-circle">
                                 <div class="d-flex flex-column">
-                                    <h6 class="h6 ml-3 m-0"><?php echo $jobs[$i]['firstname'] ." ". $jobs[$i]['lastname']; ?></h6>
-                                    <small class="h6 ml-3 m-0"><?php echo $jobs_elapsed[$i]; ?></small>
+                                    <h6 class="h6 ml-3 m-0"><?php echo $jobs[$j]['firstname'] ." ". $jobs[$j]['lastname']; ?></h6>
+                                    <small class="h6 ml-3 m-0"><?php echo $jobs_elapsed[$j]; ?></small>
                                 </div>
                             </div>
                             <div class="d-flex flex-row mt-1">
-                                <button class="btn btn-circle btn-sm float-right" style="box-shadow:none;" data-toggle="dropdown" id="btnJobsDropdown<?php echo $jobs[$i]["job_id"]; ?>"><i class="fas fa-ellipsis-h"></i></button>
-                                    <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnJobsDropdown<?php echo $jobs[$i]["job_id"]; ?>">
-                                        <a class="dropdown-item delete-job-posting" href="#" data-id="<?php echo $jobs[$i]["job_id"]; ?>"><i class="fas fa-trash"></i> Delete</a>
-                                    </div>
+                                <button class="btn btn-circle btn-sm float-right shadow-none" data-toggle="dropdown" id="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-ellipsis-h"></i></button>
+                                <div class="dropdown-menu dropdown-menu-right" style="min-width:20px;" aria-labelledby="btnJobsDropdown<?php echo $jobs[$j]["job_id"]; ?>">
+                                <a class="dropdown-item delete-job-posting" href="#" data-id="<?php echo $jobs[$j]["job_id"]; ?>"><i class="fas fa-trash"></i> Delete</a>
+                                </div>
                             </div>
                         </div>
                         <div class="px-5">
-                            <span class="text-arial-rounded h5 text-dark"> <?php echo $jobs[$i]['job_title'];?> </span>
-                            <span class="font-small ml-2 text-arial-rounded"> <i class="fas fa-tag"></i> &#8369; <span class="text-green"><?php echo $jobs[$i]['job_price']; ?></span></span>
-                            <p class="font-small"><?php echo $jobs[$i]['job_description']; ?></p>
+                            <span class="text-arial-rounded h5 text-dark"> <?php echo $jobs[$j]['job_title'];?> </span>
+                            <span class="font-small ml-2 text-arial-rounded"> <i class="fas fa-tag"></i> &#8369; <span class="text-green"><?php echo $jobs[$j]['job_price']; ?></span></span>
+                            <p class="font-small"><?php echo $jobs[$j]['job_description']; ?></p>
                         </div>
                     </div>
-                <?php   
-                }
-              }
-            ?>
+                        <?php
+                        }
+                    }
+                ?>
 
 
         
