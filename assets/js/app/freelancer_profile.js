@@ -1,6 +1,6 @@
 $(function(){
 
-    var skills = [], skillsSelected = [], skillsDeleted = [], categories = [], categoriesSelected = [], categoriesDeleted = [];
+    var skills = [], skillsSelected = [], skillsDeleted = [], categories = [], categoriesSelected = [], categoriesDeleted = [], resultCategories = [], resultCategoriesName = [];
     
     
     
@@ -9,7 +9,7 @@ $(function(){
       e.preventDefault();
       $.ajax({
         type: "GET",
-        url: baseURL + "/AdminsController/get_skills",
+        url: baseURL + "/FreelancersController/get_skills",
         dataType: "json",
         success: function (response) {
           for(var i = 0; i < response.length; i++)
@@ -187,7 +187,7 @@ $(function(){
       skillsSelected.splice(selectedIndex, 1);
       skills.splice(selectedIndex, 1);
       $(this).remove();
-      $("#addSelectedSkills").append("<span class='badge badge-pill badge-dark px-2 mx-1 selected-badge' id='skills_badge" + id + "' data-id='" + id + "' data-name='"+ name + "'><i class='fas fa-minus'></i> " + name + "</span>");
+      $("#addResultSkills").append("<span class='badge badge-pill badge-dark px-2 mx-1 selected-badge' id='skills_badge" + id + "' data-id='" + id + "' data-name='"+ name + "'><i class='fas fa-minus'></i> " + name + "</span>");
     });
 
 
@@ -274,6 +274,55 @@ $(function(){
 
     $(document).on("click", "#btnEditFreelancerCategories", function(e){
       e.preventDefault();
-      alert("MERN");
+      $.when(
+        $.ajax({
+          type: "GET",
+          url: baseURL + "/FreelancersController/get_categories",
+          dataType: "json",
+          success: function (response) {
+            $("#editResultCategories").html("");
+            for(var i = 0; i < response.length; i++)
+            {
+              categories.push(response[i].category_name);
+              categoriesSelected.push(response[i].category_id);
+            }
+          }
+        }),
+        $.ajax({
+          type: "GET",
+          url: baseURL + "/CategoryController/get_categories",
+          dataType: "json",
+          success: function (response) {
+            $("#editSelectedCategories").html("");
+            for(var i = 0; i < response.length; i++)
+            {
+              resultCategories.push(response[i].category_id);
+              resultCategoriesName.push(response[i].category_name);
+            }
+          }
+        })
+      ).then(function(){
+        for(var i = 0; i < categories.length; i++)
+        {
+          $("#editSelectedCategories").append("<span class='badge badge-pill badge-dark px-2 mx-1 edit-cat-selected-badge' id='categories_badge" + categoriesSelected[i]+ "' data-id='" + categoriesSelected[i] + "' data-name='"+ categories[i] + "'><i class='fas fa-minus'></i> " + categories[i]+ "</span>");
+        }
+        for(var j = 0; j < resultCategories.length; j++)
+        {
+          if($("#categories_badge" + resultCategories[j]).length == 0)
+          {
+            $("#editResultCategories").append("<span class='badge badge-pill badge-dark px-2 mx-1 categories-badge' data-id='"+ resultCategories[j] +"' data-name='" + resultCategoriesName[j] + "'><i class='fas fa-plus'></i> " + resultCategoriesName[j] + "</span>");
+          }
+        }
+        $("#freelancerEditCategories").modal("show");
+      });
+    });
+
+    $("#freelancerEditCategories").on("hidden.bs.modal", function(e){ 
+      categoriesSelected = [];
+      categories = [];
+      resultCategoriesName = [];
+      resultCategories = [];
+      $("#editSelectedCategories").html("");
+      $("#editResultCategories").html("");
     });
 });

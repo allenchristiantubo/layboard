@@ -173,7 +173,7 @@ class Jobs_model extends Model
     {
         $db = db_connect();
 
-        $sql = "SELECT j.job_id, ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? ORDER BY j.date_created";
+        $sql = "SELECT j.job_id, ji.job_title, j.date_created FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? ORDER BY j.date_created DESC";
 
         $query = $db->query($sql,[2, $employer_id]);
 
@@ -183,7 +183,7 @@ class Jobs_model extends Model
     public function get_jobs($employer_id)
     {
         $db = db_connect();
-        $sql = "SELECT j.job_id, ji.job_title, ji.job_description, j.date_published FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? AND ji.job_info_status = 1 ORDER BY j.date_published";
+        $sql = "SELECT j.job_id, ji.job_title, ji.job_description, j.date_published FROM jobs AS j JOIN jobs_info AS ji ON ji.job_id = j.job_id WHERE j.job_status = ? AND j.employer_id = ? AND ji.job_info_status = 1 ORDER BY j.date_published DESC";
         
         $query = $db->query($sql,[1, $employer_id]);
 

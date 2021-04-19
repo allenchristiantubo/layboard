@@ -89,7 +89,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h5 class="modal-title w-100" id="editCategories">Skills</h5>
+        <h5 class="modal-title w-100" id="editCategories">Categories</h5>
       </div>
       <div class="modal-body">
         <h6>Selected Categories</h6>

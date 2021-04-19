@@ -1,0 +1,60 @@
+CRITICAL - 2021-04-14 03:11:20 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-04-14 03:11:47 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-04-14 03:11:48 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+#0 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\layboard\layboard\system\Autoloader\Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(869): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(394): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-04-14 08:51:42 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\layboard\layboard\system\Model.php(1237): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\layboard\layboard\system\Model.php(1816): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(124): CodeIgniter\Model->__call('profile_exists', Array)
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('employer', '4iyeihvds79t081...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-04-14 08:51:43 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\layboard\layboard\system\Model.php(1237): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\layboard\layboard\system\Model.php(1816): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\layboard\layboard\app\Controllers\PagesController.php(124): CodeIgniter\Model->__call('profile_exists', Array)
+#3 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('employer', '4iyeihvds79t081...')
+#4 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#5 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-04-14 08:52:53 --> Call to a member function get_info() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('employer', '4iyeihvds79t081...')
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-04-14 08:52:54 --> Call to a member function get_info() on null
+#0 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(918): App\Controllers\PagesController->profile('employer', '4iyeihvds79t081...')
+#1 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PagesController))
+#2 C:\xampp\htdocs\layboard\layboard\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\layboard\layboard\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
